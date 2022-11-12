@@ -27,4 +27,4 @@ st.caption('Somos un grupo de estudiantes de 5to ciclo de la carrera de Ingenier
 st.markdown("##")
 
 image = Image.open('borrador(1).jpg')
-st.markdown("##") # Linea en blanco
+st.markdown("##")
