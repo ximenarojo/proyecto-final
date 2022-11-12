@@ -2,8 +2,6 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-import plotly.express as px
-import matplotlib.pyplot as plt
 
 st.markdown("<h1 style='text-align: center; color: black;'>SUNEDU: Licenciamiento Institucional</h1>", unsafe_allow_html=True)
 st.markdown("##")
