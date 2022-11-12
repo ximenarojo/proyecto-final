@@ -25,3 +25,6 @@ st.header('¿Quiénes somos?')
 st.markdown("##")
 st.caption('Somos un grupo de estudiantes de 5to ciclo de la carrera de Ingeniería Ambiental de la Universidad Peruana Cayetano Heredia ...')
 st.markdown("##")
+
+image = Image.open('borrador.jpg')
+st.markdown("##") # Linea en blanco
