@@ -11,7 +11,4 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 st.title('SUNEDU: Licenciamiento Institucional')
-st.write(
-    """"**Bienvenido(a)**
-    En está sección podrás encontrar información sobre el avance y estatus del Licenciamiento Institucional de las universidades peruanas
-    """")
+st.write("**Bienvenido(a)** En está sección podrás encontrar información sobre el avance y estatus del Licenciamiento Institucional de las universidades peruanas")
