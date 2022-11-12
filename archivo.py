@@ -10,7 +10,6 @@ st.markdown("<h1 style='text-align: center; color: black;'>Programación Avanzad
 st.markdown("---")
 st.markdown("##")
 st.header('¿Quiénes somos?')
-st.markdown("##")
-st.caption('Somos un grupo de estudiantes de 5to ciclo de la carrera de Ingeniería Ambiental de la Universidad Peruana Cayetano Heredia ...')
+st.caption('Somos un grupo de estudiantes de 5to ciclo de la carrera de Ingeniería Ambiental de la Universidad Peruana Cayetano Heredia, que motivados por el curso de Programación Avanzada hemos creado ..')
 st.markdown("##")
 image = Image.open('borrador(1).jpg')
