@@ -4,7 +4,7 @@ import pandas as pd
 import numpy as np
 from PIL import Image
 
-st.markdown("<h1 style='text-align: center; color: black;'>SUNEDU</h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center; color: black;'>SUNEDU:</h1>", unsafe_allow_html=True)
 st.markdown("<h1 style='text-align: center; color: black;'>Licenciamiento Institucional</h1>", unsafe_allow_html=True)
 st.markdown("##")
 st.markdown("---")
