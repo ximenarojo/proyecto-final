@@ -14,6 +14,9 @@ st.image(image)
 st.markdown("---")
 st.header('¿Qué es el Licenciamiento Institucional?')
 st.write("El Licenciamiento Institucional es un requisito obligatorio para todas las universidades del país, a través del cual cada casa de estudios debe demostrar ante la Superintendencia Nacional de Educación Superior Universitaria (SUNEDU) que cumple con las Condiciones Básicas de Calidad (CBC) para poder brindar el servicio educativo. Como resultado de este proceso, existe un sistema universitario más ordenado y con una mayor orientación hacia la mejora continua (SUNEDU,2018).")
+
+[![Alt text][https://img.youtube.com/vi/2NlkqlD7RTE&t=26s/0.jpg)](https://www.youtube.com/watch?v=2NlkqlD7RTE&t=26s)
+
 st.markdown("##")
 st.header('Condiciones Básicas de Calidad (CBC)')
 st.write("Las Condiciones Básicas de Calidad (CBC) son un conjunto de estándares mínimos con los que la universidad debe contar para obtener el licenciamiento. Estos constituyen un mecanismo de protección a los estudiantes, sus familias y a la sociedad en su conjunto (SUNEDU, 2018).")
