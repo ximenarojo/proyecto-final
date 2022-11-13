@@ -39,39 +39,4 @@ st.write("**Fuente**: SUNEDU. (2015). https://youtu.be/2NlkqlD7RTE&t=26s")
 st.markdown("---")
 st.header("Conoce la lista completa de las universidades licenciadas en el Perú a la fecha (2022-09-01):")
 
-st.markdown("""
-Por favor, seleccione un departamento, provincia y distrito para visualizar las universidades licenciadas correspondientes a una zona geográfica específica del Perú. 
-""")
-#id = 12x_Bum-PL4dXjQbdGTKji7EKUTdfq_7v
-if not os.path.exists('downloads'):
-  os.makedirs('downloads')
-
-@st.experimental_memo
-def download_data():
-    #https://drive.google.com/uc?id=
-    url = "https://drive.google.com/uc?id=12x_Bum-PL4dXjQbdGTKji7EKUTdfq_7v"
-    output = "downloads/data.csv"
-    gdown.download(url,output,quiet = False)
- 
-download_data()
-df = pd.read_csv("downloads/data.csv", sep = ";", parse_dates = ["FECHA_CORTE","FECHA_RESULTADO"])
-#Retiro de columnas
-df = df.drop(columns = ["CODIGO_ENTIDAD", "NOMBRE", "TIPO_GESTION", "ESTADO_LICENCIAMIENTO","FECHA_INICIO_LICENCIAMIENTO","FECHA_FIN_LICENCIAMIENTO","PERIODO_LICENCIAMIENTO", "UBIGEO","LATITUD", "LONGITUD", "FECHA_CORTE"]
-
-set_dep = np.sort(df['DEPARTAMENTO'].dropna().unique())
-op_dep = st.selectbox('Selecciona un departamento', set_dep)
-df_dep = df[df['DEPARTAMENTO'] == op_dep]
-filas = len(df_dep.axes[0]) 
-
-set_prov = np.sort(df_dep['PROVINCIA'].dropna().unique())
-op_prov = st.selectbox('Selecciona una provincia', set_prov)
-df_prov = df_dep[df_dep['PROVINCIA'] == op_prov]
-filas = len(df_prov.axes[0]) 
-
-set_dist = np.sort(df_dep['DISTRITO'].dropna().unique())
-op_dist = st.selectbox('Selecciona un distrito', set_dist)
-df_dist = df_dep[df_dep['DISTRITO'] == op_dist]
-filas = len(df_dist.axes[0]) 
-             
-st.write('Número de registros:', filas)
 
