@@ -18,9 +18,8 @@ if selected == 'Inicio':
   st.header('Condiciones Básicas de Calidad (CBC)')
   st.markdown("##")
   st.write("Las Condiciones Básicas de Calidad (CBC) son un conjunto de estándares mínimos con los que la universidad debe contar para obtener el licenciamiento. Estos constituyen un mecanismo de protección a los estudiantes, sus familias y a la sociedad en su conjunto.")
-  image = Image.open(' ')
+  image = Image.open('CBC.jpeg')
   st.image(image)
-  
   st.markdown("##")
   st.header('¿Por qué es importante contar con Licenciamiento Institucional?')
   st.write("")
