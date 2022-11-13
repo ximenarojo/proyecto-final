@@ -14,13 +14,23 @@ st.image(image)
 st.markdown("---")
 st.header('¿Qué es el Licenciamiento Institucional?')
 st.write("El Licenciamiento Institucional es un requisito obligatorio para todas las universidades del país, a través del cual cada casa de estudios debe demostrar ante la Superintendencia Nacional de Educación Superior Universitaria (SUNEDU) que cumple con las Condiciones Básicas de Calidad (CBC) para poder brindar el servicio educativo. Como resultado de este proceso, existe un sistema universitario más ordenado y con una mayor orientación hacia la mejora continua (SUNEDU,2018).")
+
+st.subheader("¿Qué es a SUNEDU?") 
+col1, col2 = st.columns(2)
+with col1:
+     st.write('La Superintendencia Nacional de Educación Superior Universitaria (SUNEDU) es un organismo peruano adscrito al Ministerio de Educación con autonomía técnica, funcional, administrativa, económica y financiera, el cual se encarga de administrar el Registro Nacional de Grados y Títulos, bajo la consigna de brindar seguridad jurídica de la información que se encuentra registrada y garantizar su autenticidad. Asimismo, tiene como finalidad el licenciamiento, supervisión de la calidad, fiscalización del servicio educativo superior universitario.')
+
+with col2:
+    image= Image.open('')
+    st.image(image)
+              
+        
 st.markdown("##")
 st.header('Condiciones Básicas de Calidad (CBC)')
 st.write("Las Condiciones Básicas de Calidad (CBC) son un conjunto de estándares mínimos con los que la universidad debe contar para obtener el licenciamiento. Estos constituyen un mecanismo de protección a los estudiantes, sus familias y a la sociedad en su conjunto (SUNEDU, 2018).")
 image = Image.open('CBC.jpeg')
 st.image(image)
 st.write("**Fuente**: SUNEDU (2018). Disponible en: https://www.sunedu.gob.pe/8-condiciones-basicas-de-calidad/")
-#st.image(image, caption="Imagen tomada de SUNEDU (2018). Disponible en: https://www.sunedu.gob.pe/8-condiciones-basicas-de-calidad/")
 st.markdown("##")
 st.header('Etapas del Licenciamiento para universidades')
 video_file = open('Etapas del Licenciamiento para las universidades.mp4', 'rb')
