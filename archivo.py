@@ -5,17 +5,9 @@ import numpy as np
 from PIL import Image
 from streamlit_option_menu import option_menu
 
-with st.sidebar:
-    selected = option_menu(
-        menu_title= 'Menu principal',
-        options = ['Inicio', 'Reporte 2020', 'Reporte 2021'],
-        icons=['house','book','book'],
-        menu_icon='cast',
-        default_index=0,
-        #orientation='horizontal',
-    )
+
     
-if selected == 'Inicio':
+#if selected == 'Inicio':
   st.markdown("<h1 style='text-align: center; color: black;'>SUNEDU</h1>", unsafe_allow_html=True)
   st.write("<h1 style='text-align: center'>Licenciamiento Institucional</h1>", unsafe_allow_html=True)
   st.markdown("---")
