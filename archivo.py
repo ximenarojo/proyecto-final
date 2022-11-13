@@ -23,7 +23,6 @@ with col1:
 with col2:
     image= Image.open('SUNEDU.jpg')
     st.image(image)
-     st.write("**Fuente**: SUNEDU (2018). Disponible en: https://www.sunedu.gob.pe/8-condiciones-basicas-de-calidad/")
 st.markdown("##")
 st.header('Condiciones Básicas de Calidad (CBC)')
 st.write("Las Condiciones Básicas de Calidad (CBC) son un conjunto de estándares mínimos con los que la universidad debe contar para obtener el licenciamiento. Estos constituyen un mecanismo de protección a los estudiantes, sus familias y a la sociedad en su conjunto (SUNEDU, 2018).")
