@@ -4,6 +4,16 @@ import pandas as pd
 import numpy as np
 from PIL import Image
 
+with st.sidebar:
+    selected = option_menu(
+        menu_title= 'Menú principal',
+        options = ['Inicio']
+        icons=['house',
+        menu_icon='cast',
+        default_index=0,
+        #orientation='horizontal',
+    )
+               
 if selected == 'Inicio':
   st.markdown("<h1 style='text-align: center; color: black;'>SUNEDU</h1>", unsafe_allow_html=True)
   st.write("<h1 style='text-align: center'>Licenciamiento Institucional</h1>", unsafe_allow_html=True)
