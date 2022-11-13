@@ -3,6 +3,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import gdown
+import os
 from PIL import Image
     
 st.markdown("<h1 style='text-align: center; color: black;'>SUNEDU:</h1>", unsafe_allow_html=True)
