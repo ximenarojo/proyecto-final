@@ -20,8 +20,8 @@ col1, col2 = st.columns(2)
 with col1:
      st.write("La Superintendencia Nacional de Educación Superior Universitaria (SUNEDU) es un organismo peruano adscrito al Ministerio de Educación con autonomía técnica, funcional, administrativa, económica y financiera, el cual se encarga de administrar el Registro Nacional de Grados y Títulos, bajo la consigna de brindar seguridad jurídica de la información que se encuentra registrada y garantizar su autenticidad. Asimismo, tiene como finalidad el licenciamiento, supervisión de la calidad, fiscalización del servicio educativo superior universitario.")
 with col2:
-    #image= Image.open('SUNEDU.jpg')
-    #st.image(image)
+    image= Image.open('SUNEDU.jpg')
+    st.image(image)
 st.markdown("##")
 st.header('Condiciones Básicas de Calidad (CBC)')
 st.write("Las Condiciones Básicas de Calidad (CBC) son un conjunto de estándares mínimos con los que la universidad debe contar para obtener el licenciamiento. Estos constituyen un mecanismo de protección a los estudiantes, sus familias y a la sociedad en su conjunto (SUNEDU, 2018).")
