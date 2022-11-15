@@ -33,7 +33,7 @@ if selected == 'Inicio':
     video_file = open('Etapas del Licenciamiento para las universidades.mp4', 'rb')
     video_bytes = video_file.read()
     st.video(video_bytes)
-    st.write("**Fuente**: SUNEDU, 2015.
+    st.write('**Fuente**: SUNEDU, 2015.')
     st.markdown("---")
     st.header("Conoce la lista completa de las universidades licenciadas en el Perú a la fecha (2022-09-01):")
              
