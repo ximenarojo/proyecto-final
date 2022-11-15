@@ -6,9 +6,10 @@ import base64
 from streamlit_option_menu import option_menu
 from PIL import Image
     
-st.markdown("<h1 style='text-align: center; color: black;'>SUNEDU - Licenciamiento Institucional</h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center; color: black;'>SUNEDU</h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center; color: black;'>Licenciamiento Institucional</h1>", unsafe_allow_html=True)
 st.markdown("---")
-
+#---------------------------------------------------------
 with st.sidebar:
     selected = option_menu(
         menu_title= 'Menú',
