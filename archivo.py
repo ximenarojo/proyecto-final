@@ -6,9 +6,6 @@ import base64
 from streamlit_option_menu import option_menu
 from PIL import Image
     
-st.markdown("<h1 style='text-align: center; color: black;'>SUNEDU</h1>", unsafe_allow_html=True)
-st.markdown("<h1 style='text-align: center; color: black;'>Licenciamiento Institucional</h1>", unsafe_allow_html=True)
-st.markdown("---")
 #---------------------------------------------------------
 with st.sidebar:
     selected = option_menu(
@@ -20,6 +17,9 @@ with st.sidebar:
     )
 #--------------------------------------------------------- 
 if selected == 'Inicio':
+    st.markdown("<h1 style='text-align: center; color: black;'>SUNEDU:</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 style='text-align: center; color: black;'>Licenciamiento Institucional</h1>", unsafe_allow_html=True)
+    st.markdown("---")
     st.header('¿Qué es el Licenciamiento Institucional?')
     st.write("El Licenciamiento Institucional es un requisito obligatorio para todas las universidades del país, a través del cual cada casa de estudios debe demostrar ante la Superintendencia Nacional de Educación Superior Universitaria (SUNEDU) que cumple con las Condiciones Básicas de Calidad (CBC) para poder brindar el servicio educativo. Como resultado de este proceso, existe un sistema universitario más ordenado y con una mayor orientación hacia la mejora continua (SUNEDU, 2018).")
     st.markdown("##")
@@ -29,25 +29,24 @@ if selected == 'Inicio':
     st.image(image)
     st.write("**Fuente**: SUNEDU (2018). Disponible en: https://www.sunedu.gob.pe/8-condiciones-basicas-de-calidad/")
     st.markdown("##")
-    st.header('Etapas del Licenciamiento para universidades')
+    st.header('Etapas del Licenciamiento para universidades:')
     video_file = open('Etapas del Licenciamiento para las universidades.mp4', 'rb')
     video_bytes = video_file.read()
     st.video(video_bytes)
-    st.write("**Fuente**: SUNEDU. (2015). https://youtu.be/2NlkqlD7RTE&t=26s")   
+    st.write("**Fuente**: SUNEDU, 2015.
     st.markdown("---")
     st.header("Conoce la lista completa de las universidades licenciadas en el Perú a la fecha (2022-09-01):")
-
-
-
-
-#st.markdown("---")
-#st.write("La información contenida en esta página web permite acceder al Dataset “Licenciamiento Institucional” elaborado por el Superintendencia Nacional de Educación Superior Universitaria (SUNEDU). Este ha registrado el avance y estatus del Licenciamiento Institucional de las universidades peruanas hasta el día 1 de septiembre de 2022.")
-
-###############################################################################         
-if selected == 'Nostros':       
-    st.header('¿Quiénes somos?')
-    st.caption('Somos un grupo de estudiantes del 5to ciclo de la carrera de Ingeniería Ambiental de la Universidad Peruana Cayetano Heredia, que motivados por los conocimientos adquiridos por el curso de Programación Avanzada y junto a la asesoría de los profesores, hemos desarrollado un dashboard para el análisis, visualización y exploración práctica e interactiva de los datos recopilados sobre el avance y estatus actual del Licenciamiento Institucional de las Universidades tanto públicas como privadas del Perú.')
-    image = Image.open('integrantes.jpg')
-    st.image(image)
+             
+             
+             
     st.markdown("---")
-############################################################################### 
+    st.caption("La información contenida en esta página web permite acceder al Dataset “Licenciamiento Institucional” elaborado por el Superintendencia Nacional de Educación Superior Universitaria (SUNEDU). Este ha registrado el avance y estatus del Licenciamiento Institucional de las universidades peruanas hasta el día 1 de septiembre de 2022.")
+
+#--------------------------------------------------         
+if selected == 'Nostros':
+             st.markdown("<h1 style='text-align: center; color: black;'>Nosotros:</h1>", unsafe_allow_html=True)
+             st.header('¿Quiénes somos?')
+             st.write('Somos un grupo de estudiantes del 5to ciclo de la carrera de Ingeniería Ambiental de la Universidad Peruana Cayetano Heredia, que motivados por los conocimientos adquiridos por el curso de Programación Avanzada y junto a la asesoría de los profesores, hemos desarrollado un dashboard para el análisis, visualización y exploración práctica e interactiva de los datos recopilados sobre el avance y estatus actual del Licenciamiento Institucional de las Universidades tanto públicas como privadas del Perú.')
+             image = Image.open('integrantes.jpg')
+             st.image(image)
+#---------------------------------------------------
