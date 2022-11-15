@@ -51,8 +51,6 @@ if selected == 'Inicio':
         filename="datos_horarios_contaminacion_lima.csv"
         urllib.request.urlretrieve(url,filename)
         df=pd.read_csv('Licenciamiento Institucional.xlsx - Licenciamiento Institucional_7 (1).csv')
-        return df
-    
     download_data()
 
     #st.markdown("---")
