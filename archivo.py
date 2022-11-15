@@ -3,7 +3,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 from streamlit_option_menu import option_menu
-import urllib.request
+#import urllib.request
 from PIL import Image
 
 #---------------------------------------------------------
@@ -40,18 +40,13 @@ if selected == 'Inicio':
     
     
     #id = 13yU9xnaFk0nyFV4O5uePmD1aaruFdCoq
-    #@st.experimental_memo
-    #def download_data():
-        #url = "https://drive.google.com/uc?id=13yU9xnaFk0nyFV4O5uePmD1aaruFdCoq"
-        #output = 'data.csv'
+  #  @st.experimental_memo
+  #  def download_data():
+        #url=""
+        #filename=""
+        #urllib.request.urlretrieve(url,filename)
+        #df=pd.read_csv('')
     #download_data()
-    @st.experimental_memo
-    def download_data():
-        url="https://github.com/ximenarojo/prueba/blob/main/Licenciamiento%20Institucional.xlsx%20-%20Licenciamiento%20Institucional_7%20(1).csv"
-        filename="datos_horarios_contaminacion_lima.csv"
-        urllib.request.urlretrieve(url,filename)
-        df=pd.read_csv('Licenciamiento Institucional.xlsx - Licenciamiento Institucional_7 (1).csv')
-    download_data()
 
     #st.markdown("---")
     st.caption("La información contenida en esta página web permite acceder al Dataset “Licenciamiento Institucional” elaborado por el Superintendencia Nacional de Educación Superior Universitaria (SUNEDU). Este ha registrado el avance y estatus del Licenciamiento Institucional de las universidades peruanas hasta el día 1 de septiembre de 2022.")
