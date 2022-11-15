@@ -2,8 +2,8 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-import gdown
 from streamlit_option_menu import option_menu
+import urllib.request
 from PIL import Image
 
 #---------------------------------------------------------
@@ -36,6 +36,8 @@ if selected == 'Inicio':
     st.write('**Fuente**: SUNEDU, 2015.')
     st.markdown("---")
     st.header("Conoce la lista completa de las universidades licenciadas en el Perú:")
+    st.write("Dataset SUNEDU")
+    
     
     #id = 13yU9xnaFk0nyFV4O5uePmD1aaruFdCoq
     #@st.experimental_memo
@@ -43,7 +45,17 @@ if selected == 'Inicio':
         #url = "https://drive.google.com/uc?id=13yU9xnaFk0nyFV4O5uePmD1aaruFdCoq"
         #output = 'data.csv'
     #download_data()
-    
+    @st.experimental_memo
+    def download_data():
+        url="https://github.com/ximenarojo/prueba/blob/main/Licenciamiento%20Institucional.xlsx%20-%20Licenciamiento%20Institucional_7%20(1).csv"
+        filename="datos_horarios_contaminacion_lima.csv"
+        urllib.request.urlretrieve(url,filename)
+        df=pd.read_csv('Licenciamiento Institucional.xlsx - Licenciamiento Institucional_7 (1).csv')
+        return df
+   c=download_data()
+st.write('Dimensiones: ' + str(c.shape[0]) + ' filas y ' + str(c.shape[1]) + ' columnas')
+st.dataframe(c)
+
     st.markdown("---")
     st.caption("La información contenida en esta página web permite acceder al Dataset “Licenciamiento Institucional” elaborado por el Superintendencia Nacional de Educación Superior Universitaria (SUNEDU). Este ha registrado el avance y estatus del Licenciamiento Institucional de las universidades peruanas hasta el día 1 de septiembre de 2022.")
     st.caption("Fuente de datos: https://www.datosabiertos.gob.pe/dataset/sunedu-licenciamiento-institucional")
