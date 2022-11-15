@@ -5,7 +5,14 @@ import numpy as np
 import gdown
 from streamlit_option_menu import option_menu
 from PIL import Image
-    
+
+#id = 13yU9xnaFk0nyFV4O5uePmD1aaruFdCoq
+@st.experimental_memo
+def download_data():
+    url = "https://drive.google.com/uc?id=13yU9xnaFk0nyFV4O5uePmD1aaruFdCoq"
+    output = 'data.csv'
+    gdown.download(url,output,quiet=False)
+download_data()
 #---------------------------------------------------------
 with st.sidebar:
     selected = option_menu(
@@ -37,15 +44,6 @@ if selected == 'Inicio':
     st.markdown("---")
     st.header("Conoce la lista completa de las universidades licenciadas en el Perú:")
   
-    #id = 13yU9xnaFk0nyFV4O5uePmD1aaruFdCoq
-    @st.experimental_memo
-    def download_data():
-        url = "https://drive.google.com/uc?id=13yU9xnaFk0nyFV4O5uePmD1aaruFdCoq"
-        output = 'data.csv'
-        gdown.download(url,output,quiet=False)
-    download_data()
-
- 
  
     
     st.markdown("---")
