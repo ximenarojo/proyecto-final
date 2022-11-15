@@ -36,6 +36,14 @@ if selected == 'Inicio':
     st.write('**Fuente**: SUNEDU, 2015.')
     st.markdown("---")
     st.header("Conoce la lista completa de las universidades licenciadas en el Perú:")
+    #id = 1rBYC5M-qUhwv8n6PF3olcldNoo60jidk
+    @st.experimental_memo
+    def download_data():
+        url = "https://drive.google.com/uc?id=1rBYC5M-qUhwv8n6PF3olcldNoo60jidk"
+        output = 'data.xlxs'
+        gdown.download(url,output,quiet=False)
+    download_data()
+    
 
     st.markdown("---")
     st.caption("La información contenida en esta página web permite acceder al Dataset “Licenciamiento Institucional” elaborado por el Superintendencia Nacional de Educación Superior Universitaria (SUNEDU). Este ha registrado el avance y estatus del Licenciamiento Institucional de las universidades peruanas hasta el día 1 de septiembre de 2022.")
