@@ -52,7 +52,7 @@ if selected == 'Inicio':
         urllib.request.urlretrieve(url,filename)
         df=pd.read_csv('Licenciamiento Institucional.xlsx - Licenciamiento Institucional_7 (1).csv')
         return df
-   download_data()
+   #download_data()
 st.write('Dimensiones: ' + str(c.shape[0]) + ' filas y ' + str(c.shape[1]) + ' columnas')
 
 
