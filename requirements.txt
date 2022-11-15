@@ -1,1 +1,6 @@
 streamlit-option-menu
+plotly
+matplotlib
+scikit-learn
+pyxlsb
+XlsxWriter
