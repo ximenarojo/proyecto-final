@@ -2,16 +2,29 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
+from streamlit_option_menu import option_menu
 from PIL import Image
     
 st.markdown("<h1 style='text-align: center; color: black;'>SUNEDU:</h1>", unsafe_allow_html=True)
 st.markdown("<h1 style='text-align: center; color: black;'>Licenciamiento Institucional</h1>", unsafe_allow_html=True)
 st.markdown("---")
-st.header('¿Quiénes somos?')
-st.caption('Somos un grupo de estudiantes del 5to ciclo de la carrera de Ingeniería Ambiental de la Universidad Peruana Cayetano Heredia, que motivados por los conocimientos adquiridos por el curso de Programación Avanzada y junto a la asesoría de los profesores, hemos desarrollado un dashboard para el análisis, visualización y exploración práctica e interactiva de los datos recopilados sobre el avance y estatus actual del Licenciamiento Institucional de las Universidades tanto públicas como privadas del Perú.')
-image = Image.open('integrantes.jpg')
-st.image(image)
-st.markdown("---")
+
+#BARRA LATERAL DE LA PÁGINA####################################################
+with st.sidebar:
+    selected = option_menu(
+        menu_title= 'Menu principal',
+        options = ['Inicio', 'Reporte', 'Equipo'],
+        icons=['house','book','book'],
+        menu_icon='cast',
+        default_index=0,
+        #orientation='horizontal',
+    )
+    
+###############################################################################
+###############################################################################    
+if selected == 'Inicio':
+###############################################################################
+#ENCABEZADO DE LA PÁGINA#######################################################
 st.header('¿Qué es el Licenciamiento Institucional?')
 st.write("El Licenciamiento Institucional es un requisito obligatorio para todas las universidades del país, a través del cual cada casa de estudios debe demostrar ante la Superintendencia Nacional de Educación Superior Universitaria (SUNEDU) que cumple con las Condiciones Básicas de Calidad (CBC) para poder brindar el servicio educativo. Como resultado de este proceso, existe un sistema universitario más ordenado y con una mayor orientación hacia la mejora continua (SUNEDU, 2018).")
 st.markdown("##")
@@ -40,10 +53,14 @@ st.header("Conoce la lista completa de las universidades licenciadas en el Perú
 
 
 
-
-
-
 #st.markdown("---")
 #st.write("La información contenida en esta página web permite acceder al Dataset “Licenciamiento Institucional” elaborado por el Superintendencia Nacional de Educación Superior Universitaria (SUNEDU). Este ha registrado el avance y estatus del Licenciamiento Institucional de las universidades peruanas hasta el día 1 de septiembre de 2022.")
 
-
+###############################################################################         
+if selected == 'Equipo':       
+st.header('¿Quiénes somos?')
+st.caption('Somos un grupo de estudiantes del 5to ciclo de la carrera de Ingeniería Ambiental de la Universidad Peruana Cayetano Heredia, que motivados por los conocimientos adquiridos por el curso de Programación Avanzada y junto a la asesoría de los profesores, hemos desarrollado un dashboard para el análisis, visualización y exploración práctica e interactiva de los datos recopilados sobre el avance y estatus actual del Licenciamiento Institucional de las Universidades tanto públicas como privadas del Perú.')
+image = Image.open('integrantes.jpg')
+st.image(image)
+st.markdown("---")
+############################################################################### 
