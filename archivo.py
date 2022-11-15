@@ -13,6 +13,8 @@ def download_data():
     output = 'data.csv'
     gdown.download(url,output,quiet=False)
 download_data()
+df = pd.read_csv('data.csv',sep = ";",  skip_blank_lines=True, nrows=10000,parse_dates=['FECHA_CORTE', 'FECHA_RESULTADO'])
+
 #---------------------------------------------------------
 with st.sidebar:
     selected = option_menu(
