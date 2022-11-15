@@ -27,10 +27,12 @@ if selected == 'Inicio':
     st.write("El Licenciamiento Institucional es un requisito obligatorio para todas las universidades del país, a través del cual cada casa de estudios debe demostrar ante la Superintendencia Nacional de Educación Superior Universitaria (SUNEDU) que cumple con las Condiciones Básicas de Calidad (CBC) para poder brindar el servicio educativo. Como resultado de este proceso, existe un sistema universitario más ordenado y con una mayor orientación hacia la mejora continua (SUNEDU, 2018).")
     st.markdown("##")
     st.subheader("¿Qué es la SUNEDU?") 
+ ##############################################################################
     col1, col2 = st.columns(2)
-     with col1:
+    with col1:
         st.write("La Superintendencia Nacional de Educación Superior Universitaria (SUNEDU) es un organismo peruano adscrito al Ministerio de Educación con autonomía técnica, funcional, administrativa, económica y financiera, el cual se encarga de administrar el Registro Nacional de Grados y Títulos, bajo la consigna de brindar seguridad jurídica de la información que se encuentra registrada y garantizar su autenticidad. Asimismo, tiene como finalidad el licenciamiento, supervisión de la calidad, fiscalización del servicio educativo superior universitario.")
-     with col2:
+    
+    with col2:
         image= Image.open('SUNEDU.jpg')
         st.image(image)
     st.markdown("##")
