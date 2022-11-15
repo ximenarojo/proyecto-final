@@ -36,11 +36,11 @@ if selected == 'Inicio':
     st.write('**Fuente**: SUNEDU, 2015.')
     st.markdown("---")
     st.header("Conoce la lista completa de las universidades licenciadas en el Perú:")
-    #id = 1rBYC5M-qUhwv8n6PF3olcldNoo60jidk
+    #id = 13yU9xnaFk0nyFV4O5uePmD1aaruFdCoq
     @st.experimental_memo
     def download_data():
-        url = "https://drive.google.com/uc?id=1rBYC5M-qUhwv8n6PF3olcldNoo60jidk"
-        output = 'data.xlxs'
+        url = "https://drive.google.com/uc?id=13yU9xnaFk0nyFV4O5uePmD1aaruFdCoq"
+        output = 'data.cvs'
         gdown.download(url,output,quiet=False)
     download_data()
     
