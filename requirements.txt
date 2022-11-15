@@ -4,3 +4,4 @@ matplotlib
 scikit-learn
 pyxlsb
 XlsxWriter
+gdown==4.4.0
