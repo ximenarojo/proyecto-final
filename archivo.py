@@ -10,7 +10,6 @@ st.markdown("<h1 style='text-align: center; color: black;'>SUNEDU:</h1>", unsafe
 st.markdown("<h1 style='text-align: center; color: black;'>Licenciamiento Institucional</h1>", unsafe_allow_html=True)
 st.markdown("---")
 
-#BARRA LATERAL DE LA PÁGINA####################################################
 with st.sidebar:
     selected = option_menu(
         menu_title= 'Menu principal',
@@ -18,11 +17,9 @@ with st.sidebar:
         icons=['house','book','book'],
         menu_icon='cast',
         default_index=0,
-        #orientation='horizontal',
+        orientation='vertical',
     )
-    
-###############################################################################
-###############################################################################    
+#--------------------------------------------------------- 
 if selected == 'Inicio':
     st.header('¿Qué es el Licenciamiento Institucional?')
     st.write("El Licenciamiento Institucional es un requisito obligatorio para todas las universidades del país, a través del cual cada casa de estudios debe demostrar ante la Superintendencia Nacional de Educación Superior Universitaria (SUNEDU) que cumple con las Condiciones Básicas de Calidad (CBC) para poder brindar el servicio educativo. Como resultado de este proceso, existe un sistema universitario más ordenado y con una mayor orientación hacia la mejora continua (SUNEDU, 2018).")
