@@ -6,15 +6,6 @@ import gdown
 from streamlit_option_menu import option_menu
 from PIL import Image
 
-#id = 13yU9xnaFk0nyFV4O5uePmD1aaruFdCoq
-@st.experimental_memo
-def download_data():
-    url = "https://drive.google.com/uc?id=13yU9xnaFk0nyFV4O5uePmD1aaruFdCoq"
-    output = 'data.csv'
-    gdown.download(url,output,quiet=False)
-download_data()
-df = pd.read_csv('data.csv',sep = ";",  skip_blank_lines=True, nrows=10000,parse_dates=['FECHA_CORTE', 'FECHA_RESULTADO'])
-
 #---------------------------------------------------------
 with st.sidebar:
     selected = option_menu(
@@ -45,8 +36,13 @@ if selected == 'Inicio':
     st.write('**Fuente**: SUNEDU, 2015.')
     st.markdown("---")
     st.header("Conoce la lista completa de las universidades licenciadas en el Perú:")
-  
- 
+    
+    #id = 13yU9xnaFk0nyFV4O5uePmD1aaruFdCoq
+    #@st.experimental_memo
+    #def download_data():
+        #url = "https://drive.google.com/uc?id=13yU9xnaFk0nyFV4O5uePmD1aaruFdCoq"
+        #output = 'data.csv'
+    #download_data()
     
     st.markdown("---")
     st.caption("La información contenida en esta página web permite acceder al Dataset “Licenciamiento Institucional” elaborado por el Superintendencia Nacional de Educación Superior Universitaria (SUNEDU). Este ha registrado el avance y estatus del Licenciamiento Institucional de las universidades peruanas hasta el día 1 de septiembre de 2022.")
