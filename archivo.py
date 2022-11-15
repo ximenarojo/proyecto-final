@@ -12,12 +12,11 @@ st.markdown("---")
 
 with st.sidebar:
     selected = option_menu(
-        menu_title= 'Menu principal',
-        options = ['Inicio', 'Reporte', 'Equipo'],
-        icons=['house','book','book'],
+        menu_title= 'Menú',
+        options = ['Inicio', 'Reporte', 'Nosotros'],
+        icons=['house','book','person'],
         menu_icon='cast',
         default_index=0,
-        orientation='vertical',
     )
 #--------------------------------------------------------- 
 if selected == 'Inicio':
