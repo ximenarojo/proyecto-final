@@ -6,14 +6,13 @@ import base64
 from streamlit_option_menu import option_menu
 from PIL import Image
     
-st.markdown("<h1 style='text-align: center; color: black;'>SUNEDU:</h1>", unsafe_allow_html=True)
-st.markdown("<h1 style='text-align: center; color: black;'>Licenciamiento Institucional</h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center; color: black;'>SUNEDU: Licenciamiento Institucional</h1>", unsafe_allow_html=True)
 st.markdown("---")
 
 with st.sidebar:
     selected = option_menu(
         menu_title= 'Menú',
-        options = ['Inicio', 'Reporte', 'Nosotros'],
+        options = ['Inicio', 'Reporte 2022', 'Nosotros'],
         icons=['house','book','people'],
         menu_icon='cast',
         default_index=0,
@@ -33,7 +32,8 @@ if selected == 'Inicio':
         image= Image.open('SUNEDU.jpg')
         st.image(image)
     st.markdown("##")
-    st.header('Condiciones Básicas de Calidad (CBC)')
+   
+st.header('Condiciones Básicas de Calidad')
     st.write("Las Condiciones Básicas de Calidad (CBC) son un conjunto de estándares mínimos con los que la universidad debe contar para obtener el licenciamiento. Estos constituyen un mecanismo de protección a los estudiantes, sus familias y a la sociedad en su conjunto (SUNEDU, 2018).")
     image = Image.open('CBC.jpeg')
     st.image(image)
