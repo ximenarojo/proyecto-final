@@ -53,10 +53,10 @@ if selected == 'Inicio':
         df=pd.read_csv('Licenciamiento Institucional.xlsx - Licenciamiento Institucional_7 (1).csv')
         return df
    #download_data()
-st.write('Dimensiones: ' + str(c.shape[0]) + ' filas y ' + str(c.shape[1]) + ' columnas')
+    st.write('Dimensiones: ' + str(c.shape[0]) + ' filas y ' + str(c.shape[1]) + ' columnas')
 
 
-    st.markdown("---")
+    #st.markdown("---")
     st.caption("La información contenida en esta página web permite acceder al Dataset “Licenciamiento Institucional” elaborado por el Superintendencia Nacional de Educación Superior Universitaria (SUNEDU). Este ha registrado el avance y estatus del Licenciamiento Institucional de las universidades peruanas hasta el día 1 de septiembre de 2022.")
     st.caption("Fuente de datos: https://www.datosabiertos.gob.pe/dataset/sunedu-licenciamiento-institucional")
 
