@@ -39,14 +39,13 @@ if selected == 'Inicio':
     st.write("Dataset SUNEDU")
     
     
-    #id = 13yU9xnaFk0nyFV4O5uePmD1aaruFdCoq
-  #  @st.experimental_memo
-  #  def download_data():
-        #url=""
-        #filename=""
-        #urllib.request.urlretrieve(url,filename)
-        #df=pd.read_csv('')
-    #download_data()
+    #URL del archivo en formato raw
+    url ='https://raw.githubusercontent.com/ximenarojo/prueba/main/Licenciamiento%20Institucional.csv?token=GHSAT0AAAAAAB3DVK4DMDRMV7I4W7VSAEYUY3XQ5MQ'
+    #Descargar y leer el archivo y considerar las comas como separadores
+    datos = pd.read_csv(url, sep=',')
+    
+    
+    
 
     #st.markdown("---")
     st.caption("La información contenida en esta página web permite acceder al Dataset “Licenciamiento Institucional” elaborado por el Superintendencia Nacional de Educación Superior Universitaria (SUNEDU). Este ha registrado el avance y estatus del Licenciamiento Institucional de las universidades peruanas hasta el día 1 de septiembre de 2022.")
