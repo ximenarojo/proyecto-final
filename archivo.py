@@ -42,6 +42,7 @@ if selected == 'Inicio':
     #Descargar y leer el archivo y considerar las comas como separadores
     datos = pd.read_csv(url, sep=',')
     st.line_chart(data=datos, x='NOMBRE', y='PERIODO_LICENCIAMIENTO')
+    st.dataframe(df.head(20))
   
     
    
