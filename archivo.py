@@ -42,7 +42,7 @@ if selected == 'Inicio':
     url ='https://raw.githubusercontent.com/ximenarojo/prueba/main/Licenciamiento%20Institucional.csv?token=GHSAT0AAAAAAB3DVK4DMDRMV7I4W7VSAEYUY3XQ5MQ'
     #Descargar y leer el archivo y considerar las comas como separadores
     datos = pd.read_csv(url, sep=',')
-    download (datos)
+    print (datos)
     
     
     
