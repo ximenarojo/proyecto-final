@@ -2,6 +2,7 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
+import gdown
 from streamlit_option_menu import option_menu
 from PIL import Image
 
@@ -37,12 +38,22 @@ if selected == 'Inicio':
     st.header("Conoce la lista completa de las universidades licenciadas en el Perú:")
     st.write("Dataset SUNEDU")
     
+    @st.experimental_memo
+    #id= 1omgQxUg83yYExsGOaI__jdoT44O46Yfv
+    def download_data():
+        url = "https://drive.google.com/uc?id=1omgQxUg83yYExsGOaI__jdoT44O46Yfv"
+        output = 'data.csv'
+        gdown.download(url,output,quiet=False)
+    download_data()
+    df = pd.read_csv('data.csv',sep = ";",  skip_blank_lines=True, nrows=1000,parse_dates=['FECHA_CORTE', 'FECHA_RESULTADO'])
+
+
     #URL del archivo en formato raw
     url ='https://raw.githubusercontent.com/ximenarojo/prueba/main/Licenciamiento%20Institucional_2.csv'
     #Descargar y leer el archivo y considerar las comas como separadores
     datos = pd.read_csv(url, sep=',')
-    st.line_chart(data=datos, x='NOMBRE', y='PERIODO_LICENCIAMIENTO')
-    st.dataframe(df.head(20))
+   # st.line_chart(data=datos, x='NOMBRE', y='PERIODO_LICENCIAMIENTO')
+    st.dataframe(df.head(50))
   
     
    
