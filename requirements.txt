@@ -7,4 +7,4 @@ XlsxWriter
 gdown==4.4.0
 numpy==1.22.4
 pandas==1.4.2
-streamlit==1.10.0
+streamlit==1.13.0
