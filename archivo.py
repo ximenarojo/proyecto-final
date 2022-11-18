@@ -2,7 +2,6 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-import gdown
 from streamlit_option_menu import option_menu
 from PIL import Image
 
@@ -38,9 +37,6 @@ if selected == 'Inicio':
     st.header("Conoce la lista completa de las universidades licenciadas en el Perú:")
     st.write("Dataset SUNEDU")
     
-    @st.experimental_memo
-    #id= 1omgQxUg83yYExsGOaI__jdoT44O46Yfv
- 
 
     #URL del archivo en formato raw
     url ='https://raw.githubusercontent.com/ximenarojo/prueba/main/Licenciamiento%20Institucional_2.csv'
