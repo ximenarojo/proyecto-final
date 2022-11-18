@@ -5,6 +5,11 @@ import numpy as np
 from streamlit_option_menu import option_menu
 from PIL import Image
 
+#URL del archivo en formato raw
+    url ='https://raw.githubusercontent.com/ximenarojo/prueba/main/Licenciamiento%20Institucional_2.csv?token=GHSAT0AAAAAAB3DVK4DKAF63GD2F2DW2W24Y3XSPEA'
+    #Descargar y leer el archivo y considerar las comas como separadores
+    datos = pd.read_csv(url, sep='')
+    st.line_chart(data=datos, x='NOMBRE', y='PERIODO_LICENCIAMIENTO')
 #---------------------------------------------------------
 with st.sidebar:
     selected = option_menu(
@@ -38,11 +43,7 @@ if selected == 'Inicio':
     st.write("Dataset SUNEDU")
     
     
-    #URL del archivo en formato raw
-    url ='https://raw.githubusercontent.com/ximenarojo/prueba/main/Licenciamiento%20Institucional_2.csv?token=GHSAT0AAAAAAB3DVK4DDCYYRELO7YUITSHYY3XRQAQ'
-    #Descargar y leer el archivo y considerar las comas como separadores
-    datos = pd.read_csv(url, sep='')
-    st.line_chart(data=datos, x='NOMBRE', y='PERIODO_LICENCIAMIENTO')
+  
     
     
     
