@@ -39,10 +39,11 @@ if selected == 'Inicio':
     
     
     #URL del archivo en formato raw
-    url ='https://raw.githubusercontent.com/ximenarojo/prueba/main/Licenciamiento%20Institucional_2.csv'
+    url ='https://raw.githubusercontent.com/ximenarojo/prueba/main/Licenciamiento%20Institucional_2.csv?token=GHSAT0AAAAAAB3DVK4DDCYYRELO7YUITSHYY3XRQAQ'
     #Descargar y leer el archivo y considerar las comas como separadores
     datos = pd.read_csv(url, sep='')
-    print (datos)
+    st.line_chart(data=datos, x='NOMBRE', y='PERIODO_LICENCIAMIENTO')
+    
     
     
    
