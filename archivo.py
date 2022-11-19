@@ -34,7 +34,8 @@ if selected == 'Inicio':
     st.write('**Fuente**: SUNEDU, 2015.')
     st.markdown("---")
     st.header("Conoce la lista completa de las universidades licenciadas en el Perú:")
-    st.write("Dataset SUNEDU")
+    st.header("Tabla de datos:")
+    df.lista = pd.read_excel(r'
     
 
     #URL del archivo en formato raw
