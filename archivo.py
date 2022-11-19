@@ -11,7 +11,7 @@ with st.sidebar:
         menu_title= 'Menú',
         options = ['Inicio', 'Reporte 2022', 'Nosotros'],
         icons=['house','book','people'],
-        menu_icon='cast',
+        menu_icon='bars',
         default_index=0,
     )
 #--------------------------------------------------------- 
