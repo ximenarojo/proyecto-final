@@ -15,7 +15,8 @@ with st.sidebar:
     )
 #--------------------------------------------------------- 
 if selected == 'Inicio':
-    st.markdown("<h1 style='text-align: center'>SUNEDU: Licenciamiento Institucional</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 style='text-align: center'>Licenciamiento Institucional</h1>", unsafe_allow_html=True)
+    st.markdown("---")
     st.write("A continuación, se presenta el avance y estatus del Licenciamiento Institucional de las universidades peruanas. Incluye información de región y tipo de entidad.")
     st.markdown("##")
     st.write('Contexto')
