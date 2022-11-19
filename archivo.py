@@ -15,7 +15,7 @@ with st.sidebar:
     )
 #--------------------------------------------------------- 
 if selected == 'Inicio':
-    st.markdown("<h1 style='text-align: center'>Licenciamiento Institucional</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 style='text-align: center'>Sunedu</h1>", unsafe_allow_html=True)
     st.markdown("<h1 style='text-align: center'>Licenciamiento Institucional</h1>", unsafe_allow_html=True)
     st.markdown("---")
     st.header('¿Qué es el Licenciamiento Institucional?')
