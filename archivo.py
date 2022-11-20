@@ -46,7 +46,7 @@ if selected == 'Inicio':
         gdown.download(url,output,quiet=False)
     download_data()
    # filename=" "
-    df=pd.read_csv('data.csv',sep="," ncol= 14, nrows=144,parse_dates=['FECHA_INICIO_LICENCIAMIENTO','FECHA_FIN_LICENCIAMIENTO','FECHA_CORTE'])
+    df=pd.read_csv('data.csv',sep=",", parse_dates=['FECHA_INICIO_LICENCIAMIENTO','FECHA_FIN_LICENCIAMIENTO','FECHA_CORTE'])
    # print(df)
     #st.dataframe(df.head(51))
     
