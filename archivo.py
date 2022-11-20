@@ -47,7 +47,7 @@ if selected == 'Inicio':
     download_data()
    # filename=" "
     df=pd.read_csv('data.csv',sep=",", parse_dates=['FECHA_INICIO_LICENCIAMIENTO','FECHA_FIN_LICENCIAMIENTO','FECHA_CORTE'])
-   # print(df)
+    print(df)
     #st.dataframe(df.head(51))
     
     
