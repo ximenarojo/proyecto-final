@@ -52,6 +52,8 @@ if selected == 'Inicio':
     st.caption('Para mayor información acceder a: https://www.datosabiertos.gob.pe/dataset/sunedu-licenciamiento-institucional')
     st.subheader('Análisis exploratorio')
     st.write('Para visualizar la información de una zona geográfica específica del Perú, seleccione el nombre de un departamento, provincia y distrito.')
+    
+    df =pd.read_csv('Licenciamiento%20Institucional_2.csv')
     #Simplificar el Dataset
     df = df.drop(columns = ["CODIGO_ENTIDAD","NOMBRE","TIPO_GESTIÓN","FECHA_INICIO_LICENCIAMIENTO","FECHA_FIN_LICENCIAMIENTO","UBIGEO","LATITUD","LONGITUD", "FECHA_CORTE"])
     set_dep = np.sort(df['DEPARTAMENTO'].dropna().unique())
