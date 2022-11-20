@@ -10,8 +10,8 @@ import urllib.request
 with st.sidebar:
     selected = option_menu(
         menu_title= 'Menú',
-        options = ['Inicio', 'Reporte 2022', 'Nosotros'],
-        icons=['house','book','people'],
+        options = ['Inicio', 'Nosotros'],
+        icons=['house', 'people'],
         default_index=0,
     )
 #--------------------------------------------------------- 
@@ -50,6 +50,7 @@ if selected == 'Inicio':
     download_data()
     st.dataframe(download_data())
     st.caption('Para mayor información acceder a: https://www.datosabiertos.gob.pe/dataset/sunedu-licenciamiento-institucional')
+    st.markdown("###")
     st.subheader('Análisis exploratorio')
     st.write('Para visualizar la información de una zona geográfica específica del Perú, seleccione el nombre de un departamento, provincia y distrito.')
     
