@@ -47,9 +47,10 @@ if selected == 'Inicio':
         urllib.request.urlretrieve(url,filename)
         df=pd.read_csv('Licenciamiento%20Institucional_2.csv')
         return df
-    x=download_data()
-    st.write('Dimensiones: ' + str(x.shape[0]) + ' filas y ' + str(x.shape[1]) + ' columnas')
-    st.dataframe(x)
+    download_data()
+    #x=download_data()
+    #st.write('Dimensiones: ' + str(x.shape[0]) + ' filas y ' + str(x.shape[1]) + ' columnas')
+    #st.dataframe(x)
     
 
     #st.markdown("---")
