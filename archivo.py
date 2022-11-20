@@ -49,7 +49,6 @@ if selected == 'Inicio':
         return df
     download_data()
     st.dataframe(download_data())
-    st.markdown("###")
     st.caption('Para mayor información acceder a: https://www.datosabiertos.gob.pe/dataset/sunedu-licenciamiento-institucional')
     
 #-------------------------------------------------- 
