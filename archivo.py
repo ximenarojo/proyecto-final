@@ -38,6 +38,8 @@ if selected == 'Inicio':
     st.write('**Fuente**: SUNEDU, 2015.')
     st.markdown("---")
     st.header("Estatus del Licenciamiento Institucional:")
+    st.caption('La información presentada a continuación, permite acceder al Dataset “Licenciamiento Institucional” elaborado por la Superintendencia Nacional de Educación Superior Universitaria (SUNEDU). En este, se ha registrado el avance y estatus del Licenciamiento Institucional de las universidades peruanas.')
+    st.caption ('Última actualización: 31/08/2022.')
     @st.experimental_memo
     def download_data():
         url ="https://raw.githubusercontent.com/ximenarojo/prueba/main/Licenciamiento%20Institucional_2.csv"
@@ -48,7 +50,6 @@ if selected == 'Inicio':
     download_data()
     st.dataframe(download_data())
     st.markdown("###")
-    st.caption('La información contenida en esta página permite acceder al Dataset “Licenciamiento Institucional” elaborado por la Superintendencia Nacional de Educación Superior Universitaria (SUNEDU). En este, se ha registrado el avance y estatus del Licenciamiento Institucional de las universidades peruanas con la última actualización al día 31 de agosto de 2022.')
     st.caption('Para mayor información acceder a: https://www.datosabiertos.gob.pe/dataset/sunedu-licenciamiento-institucional')
     
 #-------------------------------------------------- 
