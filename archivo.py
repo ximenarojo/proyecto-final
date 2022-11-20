@@ -37,7 +37,7 @@ if selected == 'Inicio':
     st.video(video_bytes)
     st.write('**Fuente**: SUNEDU, 2015.')
     st.markdown("---")
-    st.subheader("Avance y estatus del Licenciamiento Institucional:")
+    st.header("Estatus del Licenciamiento Institucional:")
     @st.experimental_memo
     def download_data():
         url ="https://raw.githubusercontent.com/ximenarojo/prueba/main/Licenciamiento%20Institucional_2.csv"
