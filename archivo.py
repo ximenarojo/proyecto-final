@@ -46,8 +46,9 @@ if selected == 'Inicio':
         df =pd.read_csv('Licenciamiento%20Institucional_2.csv')
         return df
     download_data()
-    st.dataframe(download_data())    
-    st.caption('La información contenida en esta página web permite acceder al Dataset “Licenciamiento Institucional” elaborado por el Superintendencia Nacional de Educación Superior Universitaria (SUNEDU). Este ha registrado el avance y estatus del Licenciamiento Institucional de las universidades peruanas hasta el día 31 de agosto de 2022 (2022-08-31).')
+    st.dataframe(download_data())
+    st.markdown("###")
+    st.caption('La información contenida en esta página web permite acceder al Dataset “Licenciamiento Institucional” elaborado por el Superintendencia Nacional de Educación Superior Universitaria (SUNEDU). Este ha registrado el avance y estatus del Licenciamiento Institucional de las universidades peruanas hasta el día 31 de agosto de 2022.')
     st.caption('Para mayor información acceder a: https://www.datosabiertos.gob.pe/dataset/sunedu-licenciamiento-institucional')
     
 #-------------------------------------------------- 
@@ -63,7 +64,7 @@ if selected == 'Nosotros':
              st.markdown("<h1 style='text-align: center; color: black;'>¿Quiénes somos?</h1>", unsafe_allow_html=True)
              st.markdown("---")
              st.write('Somos un grupo de estudiantes de 5to ciclo de la carrera de Ingeniería Ambiental de la Universidad Peruana Cayetano Heredia, que motivados por los conocimientos adquiridos por el curso de Programación Avanzada y junto a la asesoría de los profesores, hemos desarrollado un dashboard para el análisis, visualización y exploración práctica e interactiva de los datos recopilados sobre el avance y estatus actual del Licenciamiento Institucional de las Universidades tanto públicas como privadas del Perú.')
-             st.markdown("##")
+             st.markdown("###")
              image = Image.open('integrantes.jpg')
              st.image(image)
 #---------------------------------------------------
