@@ -55,7 +55,7 @@ if selected == 'Inicio':
     
     df =pd.read_csv('Licenciamiento%20Institucional_2.csv')
     #Simplificar el Dataset
-    df = df.drop(columns = ["CODIGO_ENTIDAD","NOMBRE","TIPO_GESTIÓN","FECHA_INICIO_LICENCIAMIENTO","FECHA_FIN_LICENCIAMIENTO","UBIGEO","LATITUD","LONGITUD", "FECHA_CORTE"])
+    df = df.drop(columns = ["CODIGO_ENTIDAD","NOMBRE","TIPO_GESTION","FECHA_INICIO_LICENCIAMIENTO","FECHA_FIN_LICENCIAMIENTO","UBIGEO","LATITUD","LONGITUD", "FECHA_CORTE"])
     set_dep = np.sort(df['DEPARTAMENTO'].dropna().unique())
     op_dep = st.selectbox('Por favor, seleccione un departamento', set_dep)
     df_dep = df[df['DEPARTAMENTO'] == op_dep]
