@@ -9,19 +9,19 @@ import urllib.request
 #---------------------------------------------------------
 with st.sidebar:
     selected = option_menu(
-        menu_title= 'Menú',
+        menu_title = 'Menú',
         options = ['Inicio', 'Nosotros'],
-        icons=['house', 'people'],
-        default_index=0,
+        icons = ['house', 'people'],
+        default_index = 0,
     )
 #--------------------------------------------------------- 
 if selected == 'Inicio':
-    st.markdown("<h1 style='text-align: center'>SUNEDU:</h1>", unsafe_allow_html=True)
-    st.markdown("<h1 style='text-align: center'>Licenciamiento Institucional</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 style ='text-align: center'>SUNEDU:</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 style ='text-align: center'>Licenciamiento Institucional</h1>", unsafe_allow_html=True)
     st.markdown("---")
     st.subheader('Contexto:')
     st.write("El mayor reto que enfrenta la sociedad peruana en materia de educación superior universitaria es el de reorganizar el sistema universitario y promover uno basado en la calidad. Es así que, La Ley Nº 30220, Ley Universitaria, entre otras medidas, creó la Superintendencia Nacional de Educación Superior Universitaria (SUNEDU) e introdujo la figura del licenciamiento obligatorio y renovable de las universidades. Gracias a esto, el Licenciamiento Institucional junto a la acreditación conforman dos etapas complementarias del aseguramiento de la calidad, que aseguran que se brinde un servicio educativo superior universitario en base a las Condiciones Básicas de Calidad (CBC) establecidas.")
-    image= Image.open('Sunedu.jpg')
+    image = Image.open('Sunedu.jpg')
     st.image(image)
     st.write("**Fuente**: Andina, 2021.")
     st.subheader('¿Qué es el Licenciamiento Institucional?')
@@ -45,34 +45,33 @@ if selected == 'Inicio':
         url ="https://raw.githubusercontent.com/ximenarojo/prueba/main/Licenciamiento%20Institucional_2.csv"
         filename ="Licenciamiento%20Institucional_2.csv"
         urllib.request.urlretrieve(url,filename)
-        df =pd.read_csv('Licenciamiento%20Institucional_2.csv')
+        df = pd.read_csv('Licenciamiento%20Institucional_2.csv')
         return df
     download_data()
     st.dataframe(download_data())
     st.caption('Para mayor información acceder a: https://www.datosabiertos.gob.pe/dataset/sunedu-licenciamiento-institucional')
     st.markdown("###")
     st.header('¡Comienza el análisis exploratorio!')
-    st.write('Para visualizar la información de una zona geográfica específica del Perú, seleccione el nombre de un departamento, provincia y distrito.')
-    
-    df =pd.read_csv('Licenciamiento%20Institucional_2.csv')
-    #Simplificar el Dataset
-    df = df.drop(columns = ["CODIGO_ENTIDAD","NOMBRE","TIPO_GESTION","FECHA_INICIO_LICENCIAMIENTO","FECHA_FIN_LICENCIAMIENTO","UBIGEO","LATITUD","LONGITUD", "FECHA_CORTE"])
-    set_dep = np.sort(df['DEPARTAMENTO'].dropna().unique())
-    op_dep = st.selectbox('Por favor, seleccione un departamento', set_dep)
-    df_dep = df[df['DEPARTAMENTO'] == op_dep]
-    num_filas = len(df_dep.axes[0])
-    
-    set_prov = np.sort(df_dep['PROVINCIA'].dropna().unique())
-    op_prov = st.selectbox('Por favor, seleccione una provincia', set_prov)
-    df_prov = df_dep[df_dep['PROVINCIA'] == op_prov]
-    num_filas = len(df_prov.axes[0]) 
-
-    set_dist = np.sort(df_dep['DISTRITO'].dropna().unique())
-    op_dist = st.selectbox('Por favor, seleccione un distrito', set_dist)
-    df_dist = df_dep[df_dep['DISTRITO'] == op_dist]
-    num_filas = len(df_dist.axes[0]) 
-    
-    st.write('Numero de registros:', num_filas)
+    st.write('Por favor, seleccione el nombre de un departamento, provincia y distrito para visualizar la información correspondiente a una zona geográfica del Perú.')
+    df = pd.read_csv('Licenciamiento%20Institucional_2.csv')
+    # Para minimizar el Dataset
+    df = df.drop(columns =  ["CODIGO_ENTIDAD","NOMBRE","TIPO_GESTION","FECHA_INICIO_LICENCIAMIENTO","FECHA_FIN_LICENCIAMIENTO","UBIGEO","LATITUD","LONGITUD", "FECHA_CORTE"])
+    # -----------------------------------------------------
+    set1 = np.sort(df['DEPARTAMENTO'].dropna().unique())
+    sel1 = st.selectbox('Seleccione un departamento', set1)
+    dep = df[df['DEPARTAMENTO'] == sel1]
+    fil = len(dep.axes[0])
+    # ----------------------------------------------------
+    set2 = np.sort(dep['PROVINCIA'].dropna().unique())
+    sel2 = st.selectbox('Seleccione una provincia', set2)
+    prov = dep[dep['PROVINCIA'] == sel2]
+    fil = len(prov.axes[0]) 
+    # ---------------------------------------------------
+    set3 = np.sort(dep['DISTRITO'].dropna().unique())
+    sel3 = st.selectbox('Seleccione un distrito', set3)
+    dist = dep[dep['DISTRITO'] == sel3]
+    fil = len(dist.axes[0]) 
+    st.write('Registros:', fil)
     
     
     
