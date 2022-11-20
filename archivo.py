@@ -47,8 +47,8 @@ if selected == 'Inicio':
         return df
     download_data()
     st.dataframe(download_data())
-    st.write("La información contenida en esta página web permite acceder al Dataset “Licenciamiento Institucional” elaborado por el Superintendencia Nacional de Educación Superior Universitaria (SUNEDU). Este ha registrado el avance y estatus del Licenciamiento Institucional de las universidades peruanas hasta el día 1 de septiembre de 2022.")
-    st.write("**Para mayor información acceder a**: https://www.datosabiertos.gob.pe/dataset/sunedu-licenciamiento-institucional")
+    st.write('La información contenida en esta página web permite acceder al Dataset “Licenciamiento Institucional” elaborado por el Superintendencia Nacional de Educación Superior Universitaria (SUNEDU). Este ha registrado el avance y estatus del Licenciamiento Institucional de las universidades peruanas hasta el día 1 de septiembre de 2022.')
+    st.write("Para mayor información acceder a: https://www.datosabiertos.gob.pe/dataset/sunedu-licenciamiento-institucional")
     
 #-------------------------------------------------- 
 
