@@ -48,9 +48,8 @@ if selected == 'Inicio':
     st.line_chart(data=datos, x='NOMBRE', y='ESTADO_LICENCIAMIENTO')
     
     
-   #Lectura de datos desde CSV
     if not os.path.exists('downloads'):
-    os.makedirs('downloads')
+        os.makedirs('downloads')
     
     @st.experimental_memo
     def download_data():
