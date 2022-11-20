@@ -32,7 +32,6 @@ if selected == 'Inicio':
     st.image(image)
     st.write("**Fuente**: SUNEDU, 2018.")
     st.subheader('Etapas del Licenciamiento Institucional:')
-    st.subheader("<h1 style='text-align: center; color: Blue '>Etapas del Licenciamiento Institucional:</h1>", unsafe_allow_html=True)
     video_file = open('Etapas del Licenciamiento para las universidades.mp4', 'rb')
     video_bytes = video_file.read()
     st.video(video_bytes)
