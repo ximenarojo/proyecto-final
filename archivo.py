@@ -35,7 +35,7 @@ if selected == 'Inicio':
     st.markdown("---")
     st.header("Conoce la lista completa de las universidades licenciadas en el Perú:")
     st.header("Tabla de datos:")
-    df.lista = pd.read_excel(r'
+    
     
 
     #URL del archivo en formato raw
