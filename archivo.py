@@ -4,6 +4,7 @@ import pandas as pd
 import numpy as np
 from streamlit_option_menu import option_menu
 from PIL import Image
+import gdown
 
 
 #---------------------------------------------------------
@@ -38,10 +39,16 @@ if selected == 'Inicio':
     st.write('**Fuente**: SUNEDU, 2015.')
     st.markdown("---")
     st.subheader("Conoce la lista completa de las universidades licenciadas en el Perú:")
-    #filename=" "
-    #df=pd.read_csv(filename,sep=",")
-    #df
-    st.dataframe(df.head(51))
+    @st.experimental_memo
+    def download_data():
+        url = "https://drive.google.com/uc?id=13yU9xnaFk0nyFV4O5uePmD1aaruFdCoq"
+        output = 'data.csv'
+        gdown.download(url,output,quiet=False)
+    download_data()
+   # filename=" "
+    df=pd.read_csv('data.csv',sep=";", skip_blank_lines=True, nrows=200,parse_dates=['FECHA_CORTE', 'FECHA_RESULTADO']))
+   # print(df)
+    #st.dataframe(df.head(51))
     
     
     
