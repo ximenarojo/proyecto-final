@@ -16,9 +16,8 @@ with st.sidebar:
     )
 #--------------------------------------------------------- 
 if selected == 'Inicio':
-    st.markdown("<h1 style='text-align: center'>Licenciamiento Institucional</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 style='left: center'>SUNEDU: Licenciamiento Institucional</h1>", unsafe_allow_html=True)
     st.markdown("---")
-    st.caption("Se presenta el avance y estatus del Licenciamiento Institucional de las Universidades peruanas. Incluye información de región y tipo de entidad.")
     st.header('¿Qué es el Licenciamiento Institucional?')
     st.write("El Licenciamiento Institucional es un requisito obligatorio para todas las universidades del país, a través del cual cada casa de estudios debe demostrar ante la Superintendencia Nacional de Educación Superior Universitaria (SUNEDU) que cumple con las Condiciones Básicas de Calidad (CBC) para poder brindar el servicio educativo. Como resultado de este proceso, existe un sistema universitario más ordenado y con una mayor orientación hacia la mejora continua (SUNEDU, 2018).")
     st.markdown("##")
