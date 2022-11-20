@@ -51,7 +51,7 @@ if selected == 'Inicio':
     st.dataframe(download_data())
     st.caption('Para mayor información acceder a: https://www.datosabiertos.gob.pe/dataset/sunedu-licenciamiento-institucional')
     
-    st.button('Conocer más', on_click= Reporte 2022)
+    st.button(Conocer más, on_click= Reporte 2022)
     
 #-------------------------------------------------- 
 
