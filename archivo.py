@@ -39,8 +39,7 @@ if selected == 'Inicio':
     st.write('**Fuente**: SUNEDU, 2015.')
     st.markdown("---")
     st.subheader("Conoce la lista completa de las universidades licenciadas en el Perú:")
-    st.dataframe(df.head(50))
-    
+    df_bonilla = pd.read_excel(r'https://www.datosabiertos.gob.pe/sites/default/files/Monitoreo_setiembre_Bonilla.xlsx', header= 0) 
     
     
 
