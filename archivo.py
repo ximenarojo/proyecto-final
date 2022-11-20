@@ -28,7 +28,7 @@ if selected == 'Inicio':
     st.image(image)
     st.write("**Fuente**: SUNEDU (2018). Disponible en: https://www.sunedu.gob.pe/8-condiciones-basicas-de-calidad/")
     st.markdown("##")
-   st.subheader('Etapas del Licenciamiento Institucional:')
+    st.subheader('Etapas del Licenciamiento Institucional:')
     video_file = open('Etapas del Licenciamiento para las universidades.mp4', 'rb')
     video_bytes = video_file.read()
     st.video(video_bytes)
