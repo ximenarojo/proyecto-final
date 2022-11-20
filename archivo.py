@@ -37,7 +37,8 @@ if selected == 'Inicio':
     st.video(video_bytes)
     st.write('**Fuente**: SUNEDU, 2015.')
     st.markdown("---")
-    st.header("¡Conozca el avance y estatus del Licenciamiento Institucional de las Universidades peruanas!")
+    st.subheader("¡Conozca el avance y estatus del Licenciamiento Institucional de las Universidades peruanas!")
+    st.write('Dataset:')
     @st.experimental_memo
     def download_data():
         url ="https://raw.githubusercontent.com/ximenarojo/prueba/main/Licenciamiento%20Institucional_2.csv"
@@ -47,8 +48,23 @@ if selected == 'Inicio':
         return df
     download_data()
     st.dataframe(download_data())
-    st.write('La información contenida en esta página web permite acceder al Dataset “Licenciamiento Institucional” elaborado por el Superintendencia Nacional de Educación Superior Universitaria (SUNEDU). Este ha registrado el avance y estatus del Licenciamiento Institucional de las universidades peruanas hasta el día 1 de septiembre de 2022.')
-    st.write("Para mayor información acceder a: https://www.datosabiertos.gob.pe/dataset/sunedu-licenciamiento-institucional")
+    st.subheader('Descripción del Dataset:')
+    st.write('- CODIGO_ENTIDAD: Código de la Entidad de Estudios.')
+    st.write('- NOMBRE: Nombre de la Entidad de Estudios.')
+    st.write('- TIPO_GESTION: Tipo de Gestión de la Entidad de Estudios (Público o Privado).')
+    st.write('- ESTADO_LICENCIAMIENTO: Estado de Licenciamiento de la Entidad de Estudios (Licencia otorgada, Licencia denegada, Con informe de observaciones (IO) notificado, Con informe de revisión documentaria (IRD), En verificación presencial, Ninguno.')
+    st.write('- FECHA_INICIO_LICENCIAMIENTO: Fecha de inicio del período de licenciamiento.')
+    st.write('- FECHA_FIN_LICENCIAMIENTO: Fecha de finalización del período de licenciamiento.')
+    st.write('- PERIODO_LICENCIAMIENTO: Período de licenciamiento de la Entidad de Estudios en años.')
+    st.write('- DEPARTAMENTO: Departamento del local principal de la Entidad de Estudios.')
+    st.write('- PROVINCIA: Provincia del local principal de la Entidad de Estudios.')
+    st.write('- DISTRITO: Distrito del local principal de la Entidad de Estudios.')
+    st.write('- UBIGEO: Código de ubigeo del local principal de la Entidad de Estudios.')
+    st.write('- LATITUD: Latitud del local principal de la Entidad de Estudios.')
+    st.write('- LONGITUD: Longitud del local principal de la Entidad de Estudios.')
+    st.write('- FECHA_CORTE: Fecha de generación de la información.')             
+    st.caption('La información contenida en esta página web permite acceder al Dataset “Licenciamiento Institucional” elaborado por el Superintendencia Nacional de Educación Superior Universitaria (SUNEDU). Este ha registrado el avance y estatus del Licenciamiento Institucional de las universidades peruanas hasta el día 31 de agosto de 2022 (2022-08-31).')
+    st.caption('Para mayor información acceder a: https://www.datosabiertos.gob.pe/dataset/sunedu-licenciamiento-institucional')
     
 #-------------------------------------------------- 
 
