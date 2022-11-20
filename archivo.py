@@ -48,7 +48,7 @@ if selected == 'Inicio':
         df=pd.read_csv('Licenciamiento%20Institucional_2.csv')
         return df
     x=download_data()
-    st.write('Dimensiones: ' + str(c.shape[0]) + ' filas y ' + str(c.shape[1]) + ' columnas')
+    st.write('Dimensiones: ' + str(x.shape[0]) + ' filas y ' + str(x.shape[1]) + ' columnas')
     st.dataframe(x)
     
 
