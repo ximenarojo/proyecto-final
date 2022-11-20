@@ -41,10 +41,10 @@ if selected == 'Inicio':
     
     @st.experimental_memo
     def download_data():
-        url="https://www.datosabiertos.gob.pe/sites/default/files/Licenciamiento%20Institucional_7.csv"
-        filename="Licenciamiento%20Institucional_7.csv"
+        url="https://raw.githubusercontent.com/ximenarojo/prueba/main/Licenciamiento%20Institucional_2.csv"
+        filename="Licenciamiento%20Institucional_2.csv"
         urllib.request.urlretrieve(url,filename)
-        df=pd.read_csv('Licenciamiento%20Institucional_7.csv')
+        df=pd.read_csv('Licenciamiento%20Institucional_2.csv')
         return df
     c=download_data()
     st.write('Dimensiones: ' + str(c.shape[0]) + ' filas y ' + str(c.shape[1]) + ' columnas')
@@ -53,10 +53,10 @@ if selected == 'Inicio':
     
 
     #URL del archivo en formato raw
-    url ='https://raw.githubusercontent.com/ximenarojo/prueba/main/Licenciamiento%20Institucional_2.csv'
+    #url ='https://raw.githubusercontent.com/ximenarojo/prueba/main/Licenciamiento%20Institucional_2.csv'
     #Descargar y leer el archivo y considerar las comas como separadores
-    datos = pd.read_csv(url, sep=',')
-    st.line_chart(data=datos, x='NOMBRE', y='ESTADO_LICENCIAMIENTO')
+    #datos = pd.read_csv(url, sep=',')
+    #st.line_chart(data=datos, x='NOMBRE', y='ESTADO_LICENCIAMIENTO')
   
 
 
