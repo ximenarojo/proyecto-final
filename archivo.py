@@ -50,6 +50,26 @@ if selected == 'Inicio':
     download_data()
     st.dataframe(download_data())
     st.caption('Para mayor información acceder a: https://www.datosabiertos.gob.pe/dataset/sunedu-licenciamiento-institucional')
+    st.subheader('Análisis exploratorio')
+    st.write('Para visualizar la información de una zona geográfica específica del Perú, seleccione el nombre de un departamento, provincia y distrito.')
+    #Simplificar el Dataset
+    df = df.drop(columns = ["CODIGO_ENTIDAD","NOMBRE","TIPO_GESTIÓN","FECHA_INICIO_LICENCIAMIENTO","FECHA_FIN_LICENCIAMIENTO","UBIGEO","LATITUD","LONGITUD", "FECHA_CORTE"])
+    set_dep = np.sort(df['DEPARTAMENTO'].dropna().unique())
+    op_dep = st.selectbox('Por favor, seleccione un departamento', set_dep)
+    df_dep = df[df['DEPARTAMENTO'] == op_dep]
+    num_filas = len(df_dep.axes[0])
+    
+    set_prov = np.sort(df_dep['PROVINCIA'].dropna().unique())
+    op_prov = st.selectbox('Por favor, seleccione una provincia', set_prov)
+    df_prov = df_dep[df_dep['PROVINCIA'] == op_prov]
+    num_filas = len(df_prov.axes[0]) 
+
+    set_dist = np.sort(df_dep['DISTRITO'].dropna().unique())
+    op_dist = st.selectbox('Por favor, seleccione un distrito', set_dist)
+    df_dist = df_dep[df_dep['DISTRITO'] == op_dist]
+    num_filas = len(df_dist.axes[0]) 
+    
+    st.write('Numero de registros:', num_filas)
     
     
     
