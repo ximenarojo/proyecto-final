@@ -40,6 +40,7 @@ if selected == 'Inicio':
     st.markdown("---")
     st.subheader("Conoce la lista completa de las universidades licenciadas en el Perú:")
     df_bonilla = pd.read_excel(r'https://www.datosabiertos.gob.pe/sites/default/files/Monitoreo_setiembre_Bonilla.xlsx', header= 0) 
+    st.write(df_bonilla)
     
     
 
