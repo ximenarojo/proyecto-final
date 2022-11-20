@@ -37,7 +37,7 @@ if selected == 'Inicio':
     st.video(video_bytes)
     st.write('**Fuente**: SUNEDU, 2015.')
     st.markdown("---")
-    st.subheader("¡Conozca el avance y estatus del Licenciamiento Institucional de las Universidades peruanas!")
+    st.subheader("Avance y estatus del Licenciamiento Institucional")
     st.write('Dataset:')
     @st.experimental_memo
     def download_data():
