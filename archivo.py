@@ -37,20 +37,19 @@ if selected == 'Inicio':
     st.video(video_bytes)
     st.write('**Fuente**: SUNEDU, 2015.')
     st.markdown("---")
-    st.header("Conoce el avance y estatus del Licenciamiento Institucional de las Universidades peruanas:")
-    st.subheader("Dataset SUNEDU")
-     
+    st.subheader("Conoce el avance y estatus del Licenciamiento Institucional de las Universidades peruanas:")
+    st.write("Dataset SUNEDU")
     @st.experimental_memo
     def download_data():
-        url="https://raw.githubusercontent.com/ximenarojo/prueba/main/Licenciamiento%20Institucional_2.csv"
-        filename="Licenciamiento%20Institucional_2.csv"
+        url ="https://raw.githubusercontent.com/ximenarojo/prueba/main/Licenciamiento%20Institucional_2.csv"
+        filename ="Licenciamiento%20Institucional_2.csv"
         urllib.request.urlretrieve(url,filename)
-        df=pd.read_csv('Licenciamiento%20Institucional_2.csv')
+        df =pd.read_csv('Licenciamiento%20Institucional_2.csv')
         return df
-    download_data()
-    #x=download_data()
-    #st.write('Dimensiones: ' + str(x.shape[0]) + ' filas y ' + str(x.shape[1]) + ' columnas')
-    st.dataframe(download_data())
+    #download_data()
+    x=download_data()
+    st.caption('Dimensiones: ' + str(x.shape[0]) + ' filas y ' + str(x.shape[1]) + ' columnas')
+    st.dataframe(x)
     
 
     #st.markdown("---")
