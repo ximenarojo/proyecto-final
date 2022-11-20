@@ -4,6 +4,8 @@ import pandas as pd
 import numpy as np
 from streamlit_option_menu import option_menu
 from PIL import Image
+import os
+
 
 #---------------------------------------------------------
 with st.sidebar:
@@ -42,7 +44,41 @@ if selected == 'Inicio':
     url ='https://raw.githubusercontent.com/ximenarojo/prueba/main/Licenciamiento%20Institucional_2.csv'
     #Descargar y leer el archivo y considerar las comas como separadores
     datos = pd.read_csv(url, sep=',')
-    st.line_chart(data=datos, x='NOMBRE', y='ESTADO_LICENCIAMIENTO')  
+    st.line_chart(data=datos, x='NOMBRE', y='ESTADO_LICENCIAMIENTO')
+    
+    
+    
+ 
+   #Lectura de datos desde CSV
+   if not os.path.exists('downloads'):
+    os.makedirs('downloads')
+    
+    @st.experimental_memo
+    def download_data():
+        #https://drive.google.com/uc?id=
+        url = "https://drive.google.com/uc?id=13yU9xnaFk0nyFV4O5uePmD1aaruFdCoq"
+        output = "downloads/data.csv"
+        gdown.download(url,output,quiet = False)
+    
+    download_data()
+    df = pd.read_csv("downloads/data.csv", sep = ";", parse_dates = ["FECHA_CORTE","FECHA_RESULTADO"])
+    #Simplificacion del dataset (retiro de columnas)
+    df = df.drop(columns = ["FECHA_CORTE","FECHA_RESULTADO","UBIGEO","id_persona"])
+    
+    #Sistema de filtros
+    #Construccion del set/list de departamentos (Valores unicos sin NA)
+    set_departamentos = np.sort(df['DEPARTAMENTO'].dropna().unique())
+    #Seleccion del departamento
+    opcion_departamento = st.selectbox('Selecciona un departamento', set_departamentos)
+    df_departamentos = df[df['DEPARTAMENTO'] == opcion_departamento]
+    num_filas = len(df_departamentos.axes[0]) 
+    #Construccion del set/list de provincias (Valores unicos sin NA)
+    set_provincias = np.sort(df_departamentos['PROVINCIA'].dropna().unique())#Seleccion de la provincia
+    opcion_provincia = st.selectbox('Selecciona una provincia', set_provincias)
+    df_provincias = df_departamentos[df_departamentos['PROVINCIA'] == opcion_provincia]
+    num_filas = len(df_provincias.axes[0]) 
+    
+    st.write('Numero de registros:', num_filas)
    
 
     #st.markdown("---")
