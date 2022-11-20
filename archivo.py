@@ -39,16 +39,10 @@ if selected == 'Inicio':
     st.write('**Fuente**: SUNEDU, 2015.')
     st.markdown("---")
     st.subheader("Conoce la lista completa de las universidades licenciadas en el Perú:")
-    @st.experimental_memo
-    def download_data():
-        url = "https://drive.google.com/uc?id=13yU9xnaFk0nyFV4O5uePmD1aaruFdCoq"
-        output = 'data.csv'
-        gdown.download(url,output,quiet=False)
-    download_data()
+ 
    # filename=" "
-    df=pd.read_csv('data.csv',sep=",", parse_dates=['FECHA_INICIO_LICENCIAMIENTO','FECHA_FIN_LICENCIAMIENTO','FECHA_CORTE'])
-    print(df)
-    #st.dataframe(df.head(51))
+  #  df=pd.read_csv('data.csv',sep=",", parse_dates=['FECHA_INICIO_LICENCIAMIENTO','FECHA_FIN_LICENCIAMIENTO','FECHA_CORTE'])
+    st.dataframe(df.head(51))
     
     
     
