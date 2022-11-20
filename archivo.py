@@ -38,6 +38,10 @@ if selected == 'Inicio':
     st.write('**Fuente**: SUNEDU, 2015.')
     st.markdown("---")
     st.subheader("Conoce la lista completa de las universidades licenciadas en el Perú:")
+    #filename=" "
+    #df=pd.read_csv(filename,sep=",")
+    #df
+    st.dataframe(df.head(51))
     
     
     
