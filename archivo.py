@@ -20,22 +20,22 @@ if selected == 'Inicio':
     st.markdown("<h1 style='text-align: center'>Licenciamiento Institucional</h1>", unsafe_allow_html=True)
     st.markdown("---")
     st.subheader('¿Qué es el Licenciamiento Institucional?')
-    st.markdown("El Licenciamiento Institucional es un requisito obligatorio para todas las universidades del país, a través del cual cada casa de estudios debe demostrar ante la Superintendencia Nacional de Educación Superior Universitaria (SUNEDU) que cumple con las Condiciones Básicas de Calidad (CBC) para poder brindar el servicio educativo. Como resultado de este proceso, existe un sistema universitario más ordenado y con una mayor orientación hacia la mejora continua.")
+    st.write("El Licenciamiento Institucional es un requisito obligatorio para todas las universidades del país, a través del cual cada casa de estudios debe demostrar ante la Superintendencia Nacional de Educación Superior Universitaria (SUNEDU) que cumple con las Condiciones Básicas de Calidad (CBC) para poder brindar el servicio educativo. Como resultado de este proceso, existe un sistema universitario más ordenado y con una mayor orientación hacia la mejora continua.")
     st.markdown("##")
-    st.header('Condiciones Básicas de Calidad (CBC)')
+    st.subheader('Condiciones Básicas de Calidad')
     st.write('Las Condiciones Básicas de Calidad (CBC) son un conjunto de estándares mínimos con los que la universidad debe contar para obtener el licenciamiento. Estos constituyen un mecanismo de protección a los estudiantes, sus familias y a la sociedad en su conjunto (SUNEDU, 2018).')
     image = Image.open('CBC.jpeg')
     st.image(image)
     st.write("**Fuente**: SUNEDU (2018). Disponible en: https://www.sunedu.gob.pe/8-condiciones-basicas-de-calidad/")
     st.markdown("##")
-    st.header('¿Cuáles son las etapas del Licenciamiento Institucional?')
+   st.subheader('Etapas del Licenciamiento Institucional:')
     video_file = open('Etapas del Licenciamiento para las universidades.mp4', 'rb')
     video_bytes = video_file.read()
     st.video(video_bytes)
     st.write('**Fuente**: SUNEDU, 2015.')
     st.markdown("---")
-    st.header("Conoce la lista completa de las universidades licenciadas en el Perú:")
-    st.header("Tabla de datos:")
+    st.subheader("Conoce la lista completa de las universidades licenciadas en el Perú:")
+    
     
     
 
