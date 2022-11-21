@@ -70,7 +70,7 @@ if selected == 'Inicio':
     # ---------------------------------------------------
     set3 = np.sort(dep['DISTRITO'].dropna().unique())
     sel3 = st.selectbox('Seleccione un distrito:', set3)
-    dist = dep[dep['DISTRITO'] == sel3]
+    dist = prov[prov['DISTRITO'] == sel3]
     fil = len(dist.axes[0]) 
     st.caption('Número de registros de universidades:', fil)
     
