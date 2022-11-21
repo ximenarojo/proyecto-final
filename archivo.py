@@ -95,7 +95,7 @@ if selected == 'Inicio':
     st.markdown("###")
     st.pyplot(fig1)
     
-    #url ='https://raw.githubusercontent.com/ximenarojo/prueba/main/Licenciamiento%20Institucional_2.csv'
+    url ='https://raw.githubusercontent.com/ximenarojo/prueba/main/Licenciamiento%20Institucional_2.csv'
     datos = pd.read_csv(url, sep=',')
     st.bar_chart(data=datos, x= 'TIPO_GESTION', y='TIPO_GESTION')
     
