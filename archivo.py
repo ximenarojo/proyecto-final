@@ -90,14 +90,14 @@ if selected == 'Inicio':
     fig1, ax1 = plt.subplots()
     ax1.pie(pie_chart['TOTAL'], labels = pie_chart['ESTADO_LICENCIAMIENTO'], autopct='%1.1f%%')
     ax1.axis('equal')
-    st.write('**Estado de Licenciamiento (en %) de las universidades según zona geográfica seleccionada.**')
+    st.write('**Gráfico 1. Estado de Licenciamiento (en %) de las universidades según zona geográfica seleccionada.**')
     st.markdown("###")
     st.pyplot(fig1)
     
     bar_chart = df_DISTRITO.TIPO_GESTION.value_counts()
     bar_chart = pd.DataFrame(bar_chart)
     bar_chart.columns = ['TIPO DE GESTION']
-    st.write('**Tipo de gestión de las universidades según zona geográfica seleccionada.**')
+    st.write('**Gráfico 2. Tipo de gestión de las universidades según zona geográfica seleccionada.**')
     st.markdown("###")
     st.bar_chart(bar_chart)
    
