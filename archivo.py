@@ -112,9 +112,11 @@ if selected == 'Equipo':
     image = Image.open('integrantes.jpg')
     st.image(image)
     st.write('Contáctanos:')
+    ```
     st.write('- richerd.chavez@upch.pe')
     st.write('- isai.damazo@upch.pe')
     st.write('- ximena.rojo@upch.pe')
+    ```
     #-milena.yalli@upch.pe
 #---------------------------------------------------
 
