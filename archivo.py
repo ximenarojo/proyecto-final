@@ -75,7 +75,7 @@ if selected == 'Inicio':
     st.write('Número de registros de universidades:',n)
     st.markdown("###")
 
-    datos = pd.DataFrame(columns=["Licencia otorgada", "Licencia denegada", "IO", "Ninguno"].value_counts())
+    datos = pd.DataFrame(columns=["Licencia otorgada", "Licencia denegada", "IO", "Ninguno"])
     st.bar_chart(datos)
     
   
