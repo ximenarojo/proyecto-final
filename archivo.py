@@ -110,10 +110,7 @@ if selected == 'Ubicación':
     datos = pd.read_csv(url, sep=',')
     st.line_chart(data=datos, x=['FECHA_INICIO_LICENCIAMIENTO','FECHA_FIN_LICENCIAMIENTO'], y='NOMBRE')
     
-    df = pd.DataFrame(
-        np.random.randn(1000,2)/[50,50]+[37.76,-122.4],
-        columns=['lat','lon']
-    st.map(df)
+   
     
     
 #--------------------------------------------------
