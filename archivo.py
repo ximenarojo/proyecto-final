@@ -82,7 +82,7 @@ if selected == 'Inicio':
     pie_chart.columns = ['ESTADO_LICENCIAMIENTO']
     
     fig1, ax1 = plt.subplots()
-    ax1.pie(pie_chart['ESTADO_LICENCIAMIENTO'], labels=pie_chart['ESTADO_LICENCIAMIENTO'], autopct='%1.1f%%')
+    ax1.pie(pie_chart['TIPO_GESTION'], labels=pie_chart['ESTADO_LICENCIAMIENTO'], autopct='%1.1f%%')
     ax1.axis('equal')
     st.write('Distribución (en %) del Estado de Linceciamiento de las universidades:')
     st.pyplot(fig1)
