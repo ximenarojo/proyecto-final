@@ -74,25 +74,35 @@ if selected == 'Inicio':
     df_dist = df_dep[df_dep['DISTRITO'] == sel3]
     n = len(df_dist.axes[0])
     st.write('Se encontraron', n,'registros de universidades para su búsqueda.')
-    st.markdown("###")
     
+    st.markdown("###")
     pie_chart = df_dist.ESTADO_LICENCIAMIENTO.value_counts()
     pie_chart = pd.DataFrame(pie_chart)
-    pie_chart = pie_chart.reset_index()  
-    pie_chart.columns = ['ESTADO_LICENCIAMIENTO','TIPO_GESTION']
+    #pie_chart = pie_chart.reset_index()  
+    #pie_chart.columns = ['ESTADO_LICENCIAMIENTO','TIPO_GESTION']
     
     fig1, ax1 = plt.subplots()
     ax1.pie(pie_chart['TIPO_GESTION'], labels = pie_chart['ESTADO_LICENCIAMIENTO'], autopct='%1.1f%%')
     ax1.axis('equal')
     st.write('Distribución (en %) del Estado de Linceciamiento de las universidades:')
     st.pyplot(fig1)
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
         
-    df_TIPO_GESTION= pie_chart.TIPO_GESTION.value_counts()
-    st.write('Tipo de gestión:')
-    st.bar_chart(df_TIPO_GESTION)
-    
-    
-
+    #df_TIPO_GESTION= pie_chart.TIPO_GESTION.value_counts()
+    #st.write('Tipo de gestión:')
+    #st.bar_chart(df_TIPO_GESTION)
     #URL del archivo en formato raw
     #url ='https://raw.githubusercontent.com/ximenarojo/prueba/main/Licenciamiento%20Institucional_2.csv'
     #Descargar y leer el archivo y considerar las comas como separadores
