@@ -101,7 +101,7 @@ if selected == 'Inicio':
     
     bar_chart = df_DISTRITO.TIPO_GESTION.value_counts()
     bar_chart = pd.DataFrame(bar_chart)
-    bar_chart.columns = [x='TIPO_GESTION',y ='NOMBRE']
+    bar_chart.columns = ['TIPO_GESTION']
     st.bar_chart(bar_chart)
    
     
