@@ -66,7 +66,7 @@ if selected == 'Inicio':
     st.markdown("###")
     df = pd.read_csv('Licenciamiento%20Institucional_2.csv')
     # Para minimizar el Dataset
-    df = df.drop(columns =  ["CODIGO_ENTIDAD","NOMBRE","FECHA_INICIO_LICENCIAMIENTO","FECHA_FIN_LICENCIAMIENTO","LATITUD","LONGITUD","UBIGEO","FECHA_CORTE"])
+    #df = df.drop(columns =  ["CODIGO_ENTIDAD","NOMBRE","FECHA_INICIO_LICENCIAMIENTO","FECHA_FIN_LICENCIAMIENTO","LATITUD","LONGITUD","UBIGEO","FECHA_CORTE"])
     # -----------------------------------------------------
     set1 = np.sort(df['DEPARTAMENTO'].dropna().unique())
     sel1 = st.selectbox('Seleccione un departamento:', set1)
@@ -105,6 +105,20 @@ if selected == 'Inicio':
     st.markdown("###")
     st.bar_chart(bar_chart)
 #-------------------------------------------------- 
+if selected == 'Ubicación':
+    url ='https://raw.githubusercontent.com/ximenarojo/prueba/main/Licenciamiento%20Institucional_2.csv'
+    datos = pd.read_csv(url, sep=',')
+    st.line_chart(data=datos, x=['FECHA_INICIO_LICENCIAMIENTO','FECHA_FIN_LICENCIAMIENTO'], y='NOMBRE')
+    
+    df = pd.DataFrame(
+        np.random.randn(
+    st.write('')
+    
+    
+#--------------------------------------------------
+if selected == 'Reportes':
+    
+#--------------------------------------------------
 if selected == 'Equipo':
     st.markdown("<h1 style='text-align: center'>¿Quiénes somos?</h1>", unsafe_allow_html=True)
     st.markdown("---")
