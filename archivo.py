@@ -56,7 +56,7 @@ if selected == 'Inicio':
     st.markdown("###")
     df = pd.read_csv('Licenciamiento%20Institucional_2.csv')
     # Para minimizar el Dataset
-    df = df.drop(columns =  ["CODIGO_ENTIDAD","NOMBRE","TIPO_GESTION","FECHA_INICIO_LICENCIAMIENTO","FECHA_FIN_LICENCIAMIENTO","UBIGEO","FECHA_CORTE"])
+    df = df.drop(columns =  ["CODIGO_ENTIDAD","NOMBRE","TIPO_GESTION","FECHA_INICIO_LICENCIAMIENTO","FECHA_FIN_LICENCIAMIENTO","LATITUD","LONGITUD","UBIGEO","FECHA_CORTE"])
     # -----------------------------------------------------
     set1 = np.sort(df['DEPARTAMENTO'].dropna().unique())
     sel1 = st.selectbox('Seleccione un departamento:', set1)
@@ -73,11 +73,7 @@ if selected == 'Inicio':
     df_dist = df_dep[df_dep['DISTRITO'] == sel3]
     n = len(df_dist.axes[0])
     st.write('Número de registros de universidades:',n)
-    df_vis = None
-    df_vis = df_vis.replace(columns={'LATITUD':'lat', 'LONGITUD':'lon'})
-    st.map(df_vis[['lat','lon']])
-    st.dataframe(df_vis)
-    st.caption('Gráfico 1. Universidades peruanas localizadas en un mapa interactivo mundial.')
+    
     
   
     
