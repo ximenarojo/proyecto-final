@@ -74,14 +74,27 @@ if selected == 'Inicio':
     n = len(df_dist.axes[0])
     st.write('Número de registros de universidades:',n)
     st.markdown("###")
+   
+
+pie_chart = df_dist.ESTADO_LICENCIAMIENTO.value_counts()
+pie_chart = pd.DataFrame(pie_chart)
+pie_chart = pie_chart.reset_index()  
+pie_chart.columns = ['ESTADO_LICENCIAMIENTO', 'TIPO_GESTION']
+
+fig1, ax1 = plt.subplots()
+ax1.pie(pie_chart['TIPO_GESTION'], labels=pie_chart['ESTADO_LICENCIAMIENTO'], autopct='%1.1f%%')
+ax1.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
+st.write('xx:')
+st.pyplot(fig1)
+        
     
     
 
     #URL del archivo en formato raw
-    url ='https://raw.githubusercontent.com/ximenarojo/prueba/main/Licenciamiento%20Institucional_2.csv'
+    #url ='https://raw.githubusercontent.com/ximenarojo/prueba/main/Licenciamiento%20Institucional_2.csv'
     #Descargar y leer el archivo y considerar las comas como separadores
-    datos = pd.read_csv(url, sep=',')
-    st.bar_chart(data=datos, x='NOMBRE', y='ESTADO_LICENCIAMIENTO')
+    #datos = pd.read_csv(url, sep=',')
+    #st.bar_chart(data=datos, x='NOMBRE', y='ESTADO_LICENCIAMIENTO')
 
 #-------------------------------------------------- 
 if selected == 'Nosotros':
