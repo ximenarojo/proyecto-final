@@ -137,7 +137,7 @@ if selected == 'Equipo':
     st.markdown("###")
     image = Image.open('integrantes.jpg')
     st.image(image)
-    st.write('Correo de contacto:')
+    st.write('Contáctanos:')
     st.write('- richerd.chavez@upch.pe')
     st.write('- isai.damazo@upch.pe')
     st.write('- ximena.rojo@upch.pe')
