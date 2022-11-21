@@ -52,7 +52,7 @@ if selected == 'Inicio':
     st.caption('Para mayor información acceder a: https://www.datosabiertos.gob.pe/dataset/sunedu-licenciamiento-institucional')
     st.markdown("###")
     st.header('¡Comienza el análisis exploratorio!')
-    st.write('A continuación, seleccione un departamento, provincia y distrito para visualizar la información correspondiente a una zona geográfica del Perú.')
+    st.write('Seleccione un departamento, provincia y distrito para visualizar la información correspondiente a una zona geográfica del Perú.')
     st.markdown("###")
     df = pd.read_csv('Licenciamiento%20Institucional_2.csv')
     # Para minimizar el Dataset
@@ -72,7 +72,7 @@ if selected == 'Inicio':
     sel3 = st.selectbox('Seleccione un distrito', set3)
     dist = dep[dep['DISTRITO'] == sel3]
     fil = len(dist.axes[0]) 
-    st.write('Registros:', fil)
+    st.write('Número de registros de universidades:', fil)
     
     
     
