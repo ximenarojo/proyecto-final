@@ -99,9 +99,10 @@ if selected == 'Inicio':
     #datos = pd.read_csv(url, sep=',')
     #st.bar_chart(data=datos, x= 'TIPO_GESTION', y ='NOMBRE')
     
-    TIPO_GESTION =  df_DISTRITO.TIPO_GESTION.value_counts()
-    st.write('Distribución por :')
-    st.bar_chart(x='TIPO_GESTION',y ='NOMBRE')
+    bar_chart = df_DISTRITO.TIPO_GESTION.value_counts()
+    bar_chart = pd.DataFrame(bar_chart)
+    bar_chart.columns = [x='TIPO_GESTION',y ='NOMBRE']
+    st.bar_chart(bar_chart)
    
     
     
