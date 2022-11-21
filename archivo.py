@@ -105,9 +105,9 @@ if selected == 'Inicio':
     st.bar_chart(bar_chart)
 #-------------------------------------------------- 
 if selected == 'Equipo':
-             st.markdown("<h1 style='text-align: center'>Integrantes:</h1>", unsafe_allow_html=True)
+             st.markdown("<h1 style='text-align: center'>Nosotros</h1>", unsafe_allow_html=True)
              st.markdown("---")
-             st.write('Somos un grupo de estudiantes de 5to ciclo de la carrera de Ingeniería Ambiental de la Universidad Peruana Cayetano Heredia, que motivados por los conocimientos adquiridos por el curso de Programación Avanzada y junto a la asesoría de los profesores, hemos desarrollado un dashboard para el análisis, visualización y exploración práctica e interactiva de los datos recopilados sobre el avance y estatus actual del Licenciamiento Institucional de las Universidades tanto públicas como privadas del Perú.')
+             st.write('Somos un grupo de estudiantes de 5to ciclo de la carrera de Ingeniería Ambiental de la Universidad Peruana Cayetano Heredia, que motivados por los conocimientos adquiridos por el curso de Programación Avanzada y junto a la asesoría de los profesores, hemos desarrollado una app interactiva para la visualización y exploración práctica de los datos recopilados sobre el avance y estatus actual del Licenciamiento Institucional de las Universidades tanto públicas como privadas del Perú.')
              st.markdown("###")
              #image = Image.open('integrantes.jpg')
              #st.image(image)
