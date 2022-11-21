@@ -106,7 +106,7 @@ if selected == 'Inicio':
     st.bar_chart(bar_chart)
 #-------------------------------------------------- 
 if selected == 'Ubicación':
-    st.markdown("<h1 style ='text-align: center'>Localización</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 style ='text-align: center'>Ubicación: Mapa interactivo</h1>", unsafe_allow_html=True)
     st.markdown("---")
     st.write('**A continuación, seleccione una opción para visualizar la información.**')
     dataset = st.selectbox(
