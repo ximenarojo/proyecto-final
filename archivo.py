@@ -87,9 +87,9 @@ if selected == 'Inicio':
     st.write('Distribución (en %) del Estado de Linceciamiento de las universidades:')
     st.pyplot(fig1)
         
-    df_SEXO = pie_chart.TIPO_GESTION.value_counts()
+    df_TIPO_GESTION= pie_chart.TIPO_GESTION.value_counts()
     st.write('Tipo de gestión:')
-    st.bar_chart(df_SEXO)
+    st.bar_chart(df_TIPO_GESTION)
     
     
 
