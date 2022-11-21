@@ -18,7 +18,7 @@ with st.sidebar:
 #--------------------------------------------------------- 
 if selected == 'Inicio':
     st.markdown("<h1 style ='text-align: center'>SUNEDU:</h1>", unsafe_allow_html=True)
-    st.markdown("<h1 style ='text-align: center'>Licenciamiento Institucional</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 style ='text-align: center_aligned'>Licenciamiento Institucional</h1>", unsafe_allow_html=True)
     st.markdown("---")
     st.subheader('Contexto:')
     st.write("El mayor reto que enfrenta la sociedad peruana en materia de educación superior universitaria es el de reorganizar el sistema universitario y promover uno basado en la calidad. Es así que, La Ley Nº 30220, Ley Universitaria, entre otras medidas, creó la Superintendencia Nacional de Educación Superior Universitaria (SUNEDU) e introdujo la figura del licenciamiento obligatorio y renovable de las universidades. Gracias a esto, el Licenciamiento Institucional junto a la acreditación conforman dos etapas complementarias del aseguramiento de la calidad, que aseguran que se brinde un servicio educativo superior universitario en base a las Condiciones Básicas de Calidad (CBC) establecidas.")
