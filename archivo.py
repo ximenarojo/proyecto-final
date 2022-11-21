@@ -19,7 +19,7 @@ with st.sidebar:
         menu_title = 'Menú',
         options = ['Inicio', 'Ubicación','Reportes','Equipo'],
         icons = ['house', 'map', 'book','people'],
-        menu_icon='arrow',
+        menu_icon='hand',
         default_index = 0,
     )
 #--------------------------------------------------------- 
