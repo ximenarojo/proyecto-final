@@ -73,7 +73,7 @@ if selected == 'Inicio':
     df_dist = df_dep[df_dep['DISTRITO'] == sel3]
     n = len(df_dist.axes[0])
     st.write('Número de registros de universidades:',n)
-
+    df_vis = None
     df_vis = df_vis.rename(columns={'LATITUD':'lat', 'LONGITUD':'lon'})
     st.map(df_vis[['lat','lon']])
     st.caption('Gráfico 1. Universidades peruanas localizadas en un mapa interactivo mundial.')
