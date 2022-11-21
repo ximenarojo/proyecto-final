@@ -79,7 +79,7 @@ if selected == 'Inicio':
     pie_chart = df_dist.ESTADO_LICENCIAMIENTO.value_counts()
     pie_chart = pd.DataFrame(pie_chart)
     pie_chart = pie_chart.reset_index()  
-    pie_chart.columns = ['ESTADO_LICENCIAMIENTO']
+    pie_chart.columns = ['ESTADO_LICENCIAMIENTO','TIPO_GESTION']
     
     fig1, ax1 = plt.subplots()
     ax1.pie(pie_chart['TIPO_GESTION'], labels=pie_chart['ESTADO_LICENCIAMIENTO'], autopct='%1.1f%%')
@@ -87,6 +87,9 @@ if selected == 'Inicio':
     st.write('Distribución (en %) del Estado de Linceciamiento de las universidades:')
     st.pyplot(fig1)
         
+    df_SEXO = pie_chart.ESTADO_LICENCIAMIENTO.value_counts()
+    st.write('Distribución por SEXO:')
+    st.bar_chart(df_SEXO)
     
     
 
