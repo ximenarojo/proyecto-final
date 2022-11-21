@@ -83,25 +83,22 @@ if selected == 'Inicio':
     n = len(df_DISTRITO.axes[0])
     st.write('Se encontraron', n,'registros de universidades para su búsqueda.')
     st.markdown("###")
+    pie_chart = df_DISTRITO.ESTADO_LICENCIAMIENTO.value_counts()
+    pie_chart = pd.DataFrame(pie_chart)
+    pie_chart = pie_chart.reset_index()
+    pie_chart.columns = ['ESTADO_LICENCIAMIENTO','TOTAL']
+    fig1, ax1 = plt.subplots()
+    ax1.pie(pie_chart['TOTAL'], labels = pie_chart['ESTADO_LICENCIAMIENTO'], autopct='%1.1f%%')
+    ax1.axis('equal')
+    st.write('**Estado de Licenciamiento (en %) de las universidades según zona geográfica seleccionada.**')
+    st.markdown("###")
+    st.pyplot(fig1)
     
-    col1, col2 = st.columns(2)
-    with col1:
-        pie_chart = df_DISTRITO.ESTADO_LICENCIAMIENTO.value_counts()
-        pie_chart = pd.DataFrame(pie_chart)
-        pie_chart = pie_chart.reset_index()
-        pie_chart.columns = ['ESTADO_LICENCIAMIENTO','TOTAL']
-        fig1, ax1 = plt.subplots()
-        ax1.pie(pie_chart['TOTAL'], labels = pie_chart['ESTADO_LICENCIAMIENTO'], autopct='%1.1f%%')
-        ax1.axis('equal')
-        #st.write('**Estado de Licenciamiento (en %) de las universidades según zona geográfica seleccionada.**')
-        st.markdown("###")
-        st.pyplot(fig1)
-    
-    with col2:
-        bar_chart = df_DISTRITO.TIPO_GESTION.value_counts()
-        bar_chart = pd.DataFrame(bar_chart)
-        bar_chart.columns = ['TIPO DE GESTION']
-        st.bar_chart(bar_chart)
+    bar_chart = df_DISTRITO.TIPO_GESTION.value_counts()
+    bar_chart = pd.DataFrame(bar_chart)
+    bar_chart.columns = ['TIPO DE GESTION']
+    st.write('**Tipo de gestión de las universidades según zona geográfica seleccionada.**')
+    st.bar_chart(bar_chart)
    
     
     
