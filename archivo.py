@@ -17,7 +17,7 @@ from PIL import Image
 with st.sidebar:
     selected = option_menu(
         menu_title = 'Menú',
-        options = ['Inicio', 'Ubicación','Reportes','Equipo'],
+        options = ['Inicio', 'Localización','Reportes','Equipo'],
         icons = ['house', 'map', 'book','people'],
         menu_icon='cast',
         default_index = 0,
@@ -105,8 +105,8 @@ if selected == 'Inicio':
     st.markdown("###")
     st.bar_chart(bar_chart)
 #-------------------------------------------------- 
-if selected == 'Ubicación':
-    st.markdown("<h1 style ='text-align: center'>Ubicación: Mapa interactivo</h1>", unsafe_allow_html=True)
+if selected == 'Localización':
+    st.markdown("<h1 style ='text-align: center'>Localización: Mapa interactivo</h1>", unsafe_allow_html=True)
     st.markdown("---")
     st.write('**A continuación, seleccione una opción para visualizar la información.**')
     dataset = st.selectbox(
