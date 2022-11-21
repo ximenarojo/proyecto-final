@@ -75,16 +75,14 @@ if selected == 'Inicio':
     st.write('Número de registros de universidades:',n)
     st.markdown("###")
     
-    
-    
-  
-#-------------------------------------------------- 
+
+     
 
     #URL del archivo en formato raw
-    #url ='https://raw.githubusercontent.com/ximenarojo/prueba/main/Licenciamiento%20Institucional_2.csv'
+    url ='https://raw.githubusercontent.com/ximenarojo/prueba/main/Licenciamiento%20Institucional_2.csv'
     #Descargar y leer el archivo y considerar las comas como separadores
-    #datos = pd.read_csv(url, sep=',')
-    #st.line_chart(data=datos, x='NOMBRE', y='ESTADO_LICENCIAMIENTO')
+    datos = pd.read_csv(url, sep=',')
+    st.line_chart(data=datos, x='NOMBRE', y='TIPO_GESTION')
 
 #-------------------------------------------------- 
 if selected == 'Nosotros':
