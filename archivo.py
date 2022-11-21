@@ -92,6 +92,7 @@ if selected == 'Inicio':
     ax1.axis('equal')
     st.write('**Gráfico 1. Estado de Licenciamiento (en %) de las universidades según zona geográfica seleccionada.**')
     st.markdown("###")
+     st.markdown("###")
     st.pyplot(fig1)
     
     bar_chart = df_DISTRITO.TIPO_GESTION.value_counts()
