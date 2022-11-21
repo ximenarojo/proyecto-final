@@ -110,6 +110,7 @@ if selected == 'Ubicación':
     st.markdown("---")
     st.write('**A continuación, seleccione una opción para visualizar la información.**')
     dataset = st.selectbox(
+        ''
         ('Licencia otorgada',
          'Licencia denegada',
          'Con informe de observaciones (IO) notificado',
@@ -118,12 +119,13 @@ if selected == 'Ubicación':
 
     
     
+    
+    
+    
+    
     #url ='https://raw.githubusercontent.com/ximenarojo/prueba/main/Licenciamiento%20Institucional_2.csv'
     #datos = pd.read_csv(url, sep=',')
     #st.line_chart(data=datos, x='NOMBRE', y=['FECHA_INICIO_LICENCIAMIENTO','FECHA_FIN_LICENCIAMIENTO'])
-   
-    
-    
 #--------------------------------------------------
 #if selected == 'Reportes':
     
