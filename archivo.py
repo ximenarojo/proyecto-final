@@ -83,6 +83,7 @@ if selected == 'Inicio':
     n = len(df_DISTRITO.axes[0])
     st.write('Se encontraron', n,'registros de universidades para su búsqueda.')
     st.markdown("###")
+    st.markdown("###")
     pie_chart = df_DISTRITO.ESTADO_LICENCIAMIENTO.value_counts()
     pie_chart = pd.DataFrame(pie_chart)
     pie_chart = pie_chart.reset_index()
@@ -92,7 +93,6 @@ if selected == 'Inicio':
     ax1.axis('equal')
     st.write('**Gráfico 1. Estado de Licenciamiento (en %) de las universidades según zona geográfica seleccionada.**')
     st.markdown("###")
-     st.markdown("###")
     st.pyplot(fig1)
     
     bar_chart = df_DISTRITO.TIPO_GESTION.value_counts()
