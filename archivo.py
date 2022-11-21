@@ -98,6 +98,7 @@ if selected == 'Inicio':
     bar_chart = pd.DataFrame(bar_chart)
     bar_chart.columns = ['TIPO DE GESTION']
     st.write('**Tipo de gestión de las universidades según zona geográfica seleccionada.**')
+    st.markdown("###")
     st.bar_chart(bar_chart)
    
     
