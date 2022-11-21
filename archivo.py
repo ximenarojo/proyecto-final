@@ -53,7 +53,7 @@ if selected == 'Inicio':
     st.caption('Para mayor información acceder a: https://www.datosabiertos.gob.pe/dataset/sunedu-licenciamiento-institucional')
     st.markdown("###")
     st.header('¡Comienza el análisis exploratorio!')
-    st.write('A continuación, seleccione una zona geográfica para visualizar el registro de universidades.')
+    st.write('**A continuación, seleccione una zona geográfica para visualizar el registro de universidades.**')
     st.markdown("###")
     df = pd.read_csv('Licenciamiento%20Institucional_2.csv')
     # Para minimizar el Dataset
@@ -73,7 +73,7 @@ if selected == 'Inicio':
     sel3 = st.selectbox('Seleccione un distrito:', set3)
     df_dist = df_dep[df_dep['DISTRITO'] == sel3]
     n = len(df_dist.axes[0])
-    st.write('Número de registros de universidades:',n)
+    st.write('Se encontraron', n,'registros de universidades para su búsqueda.')
     st.markdown("###")
     
     pie_chart = df_dist.ESTADO_LICENCIAMIENTO.value_counts()
@@ -82,7 +82,7 @@ if selected == 'Inicio':
     pie_chart.columns = ['ESTADO_LICENCIAMIENTO','TIPO_GESTION']
     
     fig1, ax1 = plt.subplots()
-    ax1.pie(pie_chart['TIPO_GESTION'], labels=pie_chart['ESTADO_LICENCIAMIENTO'], autopct='%1.1f%%')
+    ax1.pie(pie_chart['TIPO_GESTION'], labels = pie_chart['ESTADO_LICENCIAMIENTO'], autopct='%1.1f%%')
     ax1.axis('equal')
     st.write('Distribución (en %) del Estado de Linceciamiento de las universidades:')
     st.pyplot(fig1)
