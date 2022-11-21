@@ -60,18 +60,19 @@ if selected == 'Inicio':
     # -----------------------------------------------------
     set1 = np.sort(df['DEPARTAMENTO'].dropna().unique())
     sel1 = st.selectbox('Seleccione un departamento:', set1)
-    df_dep = df[df['DEPARTAMENTO'] == sel1]
-    fil = len(df_dep.axes[0])
+    dep = df[df['DEPARTAMENTO'] == sel1]
+    fil = len(dep.axes[0])
     # ----------------------------------------------------
-    set2 = np.sort(df_dep['PROVINCIA'].dropna().unique())
+    set2 = np.sort(dep['PROVINCIA'].dropna().unique())
     sel2 = st.selectbox('Seleccione una provincia:', set2)
-    df_prov = df_dep[df_dep['PROVINCIA'] == sel2]
-    fil = len(df_prov.axes[0]) 
+    prov = dep[dep['PROVINCIA'] == sel2]
+    fil = len(prov.axes[0]) 
     # ---------------------------------------------------
-    set3 = np.sort(df_dep['DISTRITO'].dropna().unique())
+    set3 = np.sort(dep['DISTRITO'].dropna().unique())
     sel3 = st.selectbox('Seleccione un distrito:', set3)
-    df_dist = df_dep[df_dep['DISTRITO'] == sel3]
-    fil = len(df_dist.axes[0]) 
+    dist = dep[dep['DISTRITO'] == sel3]
+    fil = len(dist.axes[0])
+    
     st.caption('Número de registros de universidades:', fil)
     
     
