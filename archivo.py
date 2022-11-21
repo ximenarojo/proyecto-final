@@ -106,9 +106,17 @@ if selected == 'Inicio':
     st.bar_chart(bar_chart)
 #-------------------------------------------------- 
 if selected == 'Ubicación':
-    df = df.rename(columns={'LATITUD':'lat', 'LONGITUD':'lon'})
-    st.map(df)
-        
+    st.markdown("<h1 style ='text-align: center'>Localización:</h1>", unsafe_allow_html=True)
+    st.markdown("---")
+    st.write('A continuación, seleccione una opción para visualizar la información.')
+    dataset = st.selectbox(
+        '¿Seleccione una opción?',
+        ('Licencia otorgada',
+         'Licencia denegada',
+         'Con informe de observaciones (IO) notificado',
+         'Ninguno')
+        )
+
     
     
     #url ='https://raw.githubusercontent.com/ximenarojo/prueba/main/Licenciamiento%20Institucional_2.csv'
