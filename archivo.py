@@ -106,9 +106,7 @@ if selected == 'Inicio':
     st.bar_chart(bar_chart)
 #-------------------------------------------------- 
 if selected == 'Ubicación':
-    df = pd.DataFrame(
-        np.random.randn(
-        df = df.rename(columns={'LATITUD':'lat', 'LONGITUD':'lon'})
+    df = df.rename(columns={'LATITUD':'lat', 'LONGITUD':'lon'})
     st.map(df)
         
     
