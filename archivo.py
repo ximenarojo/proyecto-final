@@ -74,17 +74,10 @@ if selected == 'Inicio':
     n = len(df_dist.axes[0])
     st.write('Número de registros de universidades:',n)
     st.markdown("###")
-    
-    #url ="https://raw.githubusercontent.com/ximenarojo/prueba/main/Licenciamiento%20Institucional_2.csv"
-    #datos = pd.read_csv(url, sep=',')
-    #st.bar_chart(data=datos, x='NOMBRE', y='ESTADO_LICENCIAMIENTO')
 
-    chart_data = pd.DataFrame(
-        np.random.randn(20, 3),
-        columns=["Licencia otorgada", "Licencia denegada", "IO", "Ninguno"])
-    st.bar_chart(chart_data)
+    datos = pd.DataFrame(columns=["Licencia otorgada", "Licencia denegada", "IO", "Ninguno"].value_counts())
+    st.bar_chart(datos)
     
-  
   
 #-------------------------------------------------- 
 
