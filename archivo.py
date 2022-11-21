@@ -110,7 +110,7 @@ if selected == 'Ubicación':
     st.markdown("---")
     st.write('**A continuación, seleccione una opción para visualizar la información.**')
     dataset = st.selectbox(
-        'Seleccione una opción:'
+        'Seleccione una opción:',
         ('Licencia otorgada',
          'Licencia denegada',
          'Con informe de observaciones (IO) notificado',
