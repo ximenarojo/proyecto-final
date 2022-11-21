@@ -17,8 +17,8 @@ from PIL import Image
 with st.sidebar:
     selected = option_menu(
         menu_title = 'Menú',
-        options = ['Inicio', 'Equipo'],
-        icons = ['house', 'people'],
+        options = ['Inicio', 'Ubicación','Equipo'],
+        icons = ['house', 'map', 'people'],
         default_index = 0,
     )
 #--------------------------------------------------------- 
