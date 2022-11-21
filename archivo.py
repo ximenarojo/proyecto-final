@@ -78,7 +78,7 @@ if selected == 'Inicio':
     st.markdown("###")
     pie_chart = df_dist.ESTADO_LICENCIAMIENTO.value_counts()
     pie_chart = pd.DataFrame(pie_chart)
-    #pie_chart = pie_chart.reset_index()  
+    pie_chart = pie_chart.reset_index()  
     #pie_chart.columns = ['ESTADO_LICENCIAMIENTO','TIPO_GESTION']
     
     fig1, ax1 = plt.subplots()
