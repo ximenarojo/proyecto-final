@@ -61,29 +61,28 @@ if selected == 'Inicio':
     # -----------------------------------------------------
     set1 = np.sort(df['DEPARTAMENTO'].dropna().unique())
     sel1 = st.selectbox('Seleccione un departamento:', set1)
-    df_dep = df[df['DEPARTAMENTO'] == sel1]
-    n = len(df_dep.axes[0])
+    df_DEPARTAMENTO = df[df['DEPARTAMENTO'] == sel1]
+    n = len(df_DEPARTAMENTO.axes[0])
     # ----------------------------------------------------
-    set2 = np.sort(df_dep['PROVINCIA'].dropna().unique())
+    set2 = np.sort(df_DEPARTAMENTO['PROVINCIA'].dropna().unique())
     sel2 = st.selectbox('Seleccione una provincia:', set2)
-    df_prov = df_dep[df_dep['PROVINCIA'] == sel2]
-    n = len(df_prov.axes[0]) 
+    df_PROVINCIA = df_DEPARTAMENTO[df_DEPARTAMENTO['PROVINCIA'] == sel2]
+    n = len(df_PROVINCIA.axes[0]) 
     # ---------------------------------------------------
-    set3 = np.sort(df_dep['DISTRITO'].dropna().unique())
+    set3 = np.sort(df_DEPARTAMENTO['DISTRITO'].dropna().unique())
     sel3 = st.selectbox('Seleccione un distrito:', set3)
-    df_dist = df_dep[df_dep['DISTRITO'] == sel3]
-    n = len(df_dist.axes[0])
+    df_DISTRITO = df_DEPARTAMENTO[df_DEPARTAMENTO['DISTRITO'] == sel3]
+    n = len(df_DISTRITO.axes[0])
     st.write('Se encontraron', n,'registros de universidades para su búsqueda.')
     
     st.markdown("###")
-    pie_chart = df_dist.ESTADO_LICENCIAMIENTO.value_counts()
+    pie_chart = df_DISTRITO.ESTADO_LICENCIAMIENTO.value_counts()
     pie_chart = pd.DataFrame(pie_chart)
     pie_chart = pie_chart.reset_index()
-    pie_chart.columns = ['ESTADO_LICENCIAMIENTO']
-    #pie_chart.columns = ['ESTADO_LICENCIAMIENTO','TIPO_GESTION']
+    pie_chart.columns = ['ESTADO_LICENCIAMIENTO','Total']
     
     fig1, ax1 = plt.subplots()
-    #ax1.pie(pie_chart['STADO_LICENCIAMIENTO'], labels = pie_chart['ESTADO_LICENCIAMIENTO'], autopct='%1.1f%%')
+    #ax1.pie(pie_chart['Total'], labels = pie_chart['ESTADO_LICENCIAMIENTO'], autopct='%1.1f%%')
     ax1.axis('equal')
     st.write('**Estado de Linceciamiento (en %) de las universidades según zona geográfica seleccionada.**')
     st.pyplot(fig1)
