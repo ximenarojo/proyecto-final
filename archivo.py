@@ -17,7 +17,7 @@ from PIL import Image
 with st.sidebar:
     selected = option_menu(
         menu_title = 'Menú',
-        options = ['Inicio', 'Nosotros'],
+        options = ['Inicio', 'Equipo'],
         icons = ['house', 'people'],
         default_index = 0,
     )
@@ -83,6 +83,7 @@ if selected == 'Inicio':
     n = len(df_DISTRITO.axes[0])
     st.write('Se encontraron', n,'registros de universidades para su búsqueda.')
     st.markdown("###")
+    
     st.markdown("###")
     pie_chart = df_DISTRITO.ESTADO_LICENCIAMIENTO.value_counts()
     pie_chart = pd.DataFrame(pie_chart)
@@ -102,16 +103,13 @@ if selected == 'Inicio':
     st.write('**Gráfico 2. Tipo de gestión de las universidades según zona geográfica seleccionada.**')
     st.markdown("###")
     st.bar_chart(bar_chart)
-   
-    
-    
 #-------------------------------------------------- 
-if selected == 'Nosotros':
-             st.markdown("<h1 style='text-align: center; color: black;'>¿Quiénes somos?</h1>", unsafe_allow_html=True)
+if selected == 'Equipo':
+             st.markdown("<h1 style='text-align: center'>Integrantes:</h1>", unsafe_allow_html=True)
              st.markdown("---")
              st.write('Somos un grupo de estudiantes de 5to ciclo de la carrera de Ingeniería Ambiental de la Universidad Peruana Cayetano Heredia, que motivados por los conocimientos adquiridos por el curso de Programación Avanzada y junto a la asesoría de los profesores, hemos desarrollado un dashboard para el análisis, visualización y exploración práctica e interactiva de los datos recopilados sobre el avance y estatus actual del Licenciamiento Institucional de las Universidades tanto públicas como privadas del Perú.')
              st.markdown("###")
-             image = Image.open('integrantes.jpg')
-             st.image(image)
+             #image = Image.open('integrantes.jpg')
+             #st.image(image)
 #---------------------------------------------------
 
