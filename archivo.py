@@ -3,9 +3,15 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 from streamlit_option_menu import option_menu
-from PIL import Image
 import urllib.request
 import matplotlib.pyplot as plt
+from PIL import Image
+
+#URL del archivo en formato raw
+#url ='https://raw.githubusercontent.com/ximenarojo/prueba/main/Licenciamiento%20Institucional_2.csv'
+#Descargar y leer el archivo y considerar las comas como separadores
+#datos = pd.read_csv(url, sep=',')
+#st.line_chart(data=datos, x='NOMBRE', y='ESTADO_LICENCIAMIENTO')
 
 #---------------------------------------------------------
 with st.sidebar:
@@ -18,7 +24,7 @@ with st.sidebar:
 #--------------------------------------------------------- 
 if selected == 'Inicio':
     st.markdown("<h1 style ='text-align: center'>SUNEDU:</h1>", unsafe_allow_html=True)
-    st.markdown("<h1 style ='text-align: center_aligned'>Licenciamiento Institucional</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 style ='text-align: center'>Licenciamiento Institucional</h1>", unsafe_allow_html=True)
     st.markdown("---")
     st.subheader('Contexto:')
     st.write("El mayor reto que enfrenta la sociedad peruana en materia de educación superior universitaria es el de reorganizar el sistema universitario y promover uno basado en la calidad. Es así que, La Ley Nº 30220, Ley Universitaria, entre otras medidas, creó la Superintendencia Nacional de Educación Superior Universitaria (SUNEDU) e introdujo la figura del licenciamiento obligatorio y renovable de las universidades. Gracias a esto, el Licenciamiento Institucional junto a la acreditación conforman dos etapas complementarias del aseguramiento de la calidad, que aseguran que se brinde un servicio educativo superior universitario en base a las Condiciones Básicas de Calidad (CBC) establecidas.")
@@ -41,6 +47,7 @@ if selected == 'Inicio':
     st.header("Estatus del Licenciamiento Institucional:")
     st.caption('La información presentada a continuación permite acceder al Dataset “Licenciamiento Institucional” elaborado por la Superintendencia Nacional de Educación Superior Universitaria (SUNEDU) donde se ha registrado el avance y estatus del Licenciamiento Institucional de las universidades del Perú.')
     st.caption ('Última actualización: 31/08/2022.')
+    
     @st.experimental_memo
     def download_data():
         url ="https://raw.githubusercontent.com/ximenarojo/prueba/main/Licenciamiento%20Institucional_2.csv"
@@ -51,6 +58,7 @@ if selected == 'Inicio':
     download_data()
     st.dataframe(download_data())
     st.caption('Para mayor información acceder a: https://www.datosabiertos.gob.pe/dataset/sunedu-licenciamiento-institucional')
+    
     st.markdown("###")
     st.header('¡Comienza el análisis exploratorio!')
     st.write('**A continuación, seleccione una zona geográfica para visualizar el registro de universidades.**')
@@ -80,34 +88,17 @@ if selected == 'Inicio':
     pie_chart = pd.DataFrame(pie_chart)
     pie_chart = pie_chart.reset_index()
     pie_chart.columns = ['ESTADO_LICENCIAMIENTO','TOTAL']
-    
     fig1, ax1 = plt.subplots()
     ax1.pie(pie_chart['TOTAL'], labels = pie_chart['ESTADO_LICENCIAMIENTO'], autopct='%1.1f%%')
     ax1.axis('equal')
     st.write('**Estado de Licenciamiento (en %) de las universidades según zona geográfica seleccionada.**')
+    st.markdown("###")
     st.pyplot(fig1)
     
+    df_TIPO_GESTION = df_DISTRITO.TIPO_GESTION.value_counts()
+    st.write('**Tipo de gestión de las universidades según zona geográfica seleccionada.**')
+    st.bar_chart(df_TIPO_GESTION)
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-        
-    #df_TIPO_GESTION= pie_chart.TIPO_GESTION.value_counts()
-    #st.write('Tipo de gestión:')
-    #st.bar_chart(df_TIPO_GESTION)
-    #URL del archivo en formato raw
-    #url ='https://raw.githubusercontent.com/ximenarojo/prueba/main/Licenciamiento%20Institucional_2.csv'
-    #Descargar y leer el archivo y considerar las comas como separadores
-    #datos = pd.read_csv(url, sep=',')
-    #st.bar_chart(data=datos, x='NOMBRE', y='ESTADO_LICENCIAMIENTO')
 
 #-------------------------------------------------- 
 if selected == 'Nosotros':
