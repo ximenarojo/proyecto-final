@@ -76,6 +76,7 @@ if selected == 'Inicio':
     df_vis = None
     df_vis = df_vis.rename(columns={'LATITUD':'lat', 'LONGITUD':'lon'})
     st.map(df_vis[['lat','lon']])
+    st.dataframe(df_vis)
     st.caption('Gráfico 1. Universidades peruanas localizadas en un mapa interactivo mundial.')
     
   
