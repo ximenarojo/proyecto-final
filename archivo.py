@@ -52,27 +52,27 @@ if selected == 'Inicio':
     st.caption('Para mayor información acceder a: https://www.datosabiertos.gob.pe/dataset/sunedu-licenciamiento-institucional')
     st.markdown("###")
     st.header('¡Comienza el análisis exploratorio!')
-    st.write('Seleccione un departamento, provincia y distrito para visualizar la información correspondiente a una zona geográfica del Perú.')
+    st.write('A continuación, seleccione una zona geográfica para visualizar el registro de universidades.')
     st.markdown("###")
     df = pd.read_csv('Licenciamiento%20Institucional_2.csv')
     # Para minimizar el Dataset
     df = df.drop(columns =  ["CODIGO_ENTIDAD","NOMBRE","TIPO_GESTION","FECHA_INICIO_LICENCIAMIENTO","FECHA_FIN_LICENCIAMIENTO","UBIGEO","LATITUD","LONGITUD", "FECHA_CORTE"])
     # -----------------------------------------------------
     set1 = np.sort(df['DEPARTAMENTO'].dropna().unique())
-    sel1 = st.selectbox('Seleccione un departamento', set1)
+    sel1 = st.selectbox('Seleccione un departamento:', set1)
     dep = df[df['DEPARTAMENTO'] == sel1]
     fil = len(dep.axes[0])
     # ----------------------------------------------------
     set2 = np.sort(dep['PROVINCIA'].dropna().unique())
-    sel2 = st.selectbox('Seleccione una provincia', set2)
+    sel2 = st.selectbox('Seleccione una provincia:', set2)
     prov = dep[dep['PROVINCIA'] == sel2]
     fil = len(prov.axes[0]) 
     # ---------------------------------------------------
     set3 = np.sort(dep['DISTRITO'].dropna().unique())
-    sel3 = st.selectbox('Seleccione un distrito', set3)
+    sel3 = st.selectbox('Seleccione un distrito:', set3)
     dist = dep[dep['DISTRITO'] == sel3]
     fil = len(dist.axes[0]) 
-    st.write('Número de registros de universidades:', fil)
+    st.caption('Número de registros de universidades:', fil)
     
     
     
