@@ -106,10 +106,16 @@ if selected == 'Inicio':
     st.bar_chart(bar_chart)
 #-------------------------------------------------- 
 if selected == 'Ubicación':
-    url ='https://raw.githubusercontent.com/ximenarojo/prueba/main/Licenciamiento%20Institucional_2.csv'
-    datos = pd.read_csv(url, sep=',')
-    st.line_chart(data=datos, x='NOMBRE', y=['FECHA_INICIO_LICENCIAMIENTO','FECHA_FIN_LICENCIAMIENTO'])
+    df = pd.DataFrame(
+        np.random.randn(
+        df = df.rename(columns={'LATITUD':'lat', 'LONGITUD':'lon'})
+    st.map(df)
+        
     
+    
+    #url ='https://raw.githubusercontent.com/ximenarojo/prueba/main/Licenciamiento%20Institucional_2.csv'
+    #datos = pd.read_csv(url, sep=',')
+    #st.line_chart(data=datos, x='NOMBRE', y=['FECHA_INICIO_LICENCIAMIENTO','FECHA_FIN_LICENCIAMIENTO'])
    
     
     
