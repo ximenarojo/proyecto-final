@@ -79,12 +79,12 @@ if selected == 'Inicio':
     pie_chart = df_DISTRITO.ESTADO_LICENCIAMIENTO.value_counts()
     pie_chart = pd.DataFrame(pie_chart)
     pie_chart = pie_chart.reset_index()
-    pie_chart.columns = ['ESTADO_LICENCIAMIENTO','Total']
+    pie_chart.columns = ['ESTADO_LICENCIAMIENTO','TOTAL']
     
     fig1, ax1 = plt.subplots()
-    ax1.pie(pie_chart['Total'], labels = pie_chart['ESTADO_LICENCIAMIENTO'], autopct='%1.1f%%')
+    ax1.pie(pie_chart['TOTAL'], labels = pie_chart['ESTADO_LICENCIAMIENTO'], autopct='%1.1f%%')
     ax1.axis('equal')
-    st.write('**Estado de Linceciamiento (en %) de las universidades según zona geográfica seleccionada.**')
+    st.write('**Estado de Licenciamiento (en %) de las universidades según zona geográfica seleccionada.**')
     st.pyplot(fig1)
     
     
