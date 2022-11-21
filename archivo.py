@@ -95,13 +95,9 @@ if selected == 'Inicio':
     st.markdown("###")
     st.pyplot(fig1)
     
-    #url ='https://raw.githubusercontent.com/ximenarojo/prueba/main/Licenciamiento%20Institucional_2.csv'
-    #datos = pd.read_csv(url, sep=',')
-    #st.bar_chart(data=datos, x= 'TIPO_GESTION', y ='NOMBRE')
-    
     bar_chart = df_DISTRITO.TIPO_GESTION.value_counts()
     bar_chart = pd.DataFrame(bar_chart)
-    bar_chart.columns = ['TIPO_GESTION']
+    bar_chart.columns = ['TIPO DE GESTION']
     st.bar_chart(bar_chart)
    
     
