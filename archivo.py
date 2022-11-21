@@ -108,7 +108,7 @@ if selected == 'Inicio':
 if selected == 'Ubicación':
     url ='https://raw.githubusercontent.com/ximenarojo/prueba/main/Licenciamiento%20Institucional_2.csv'
     datos = pd.read_csv(url, sep=',')
-    st.line_chart(data=datos, x=['FECHA_INICIO_LICENCIAMIENTO','FECHA_FIN_LICENCIAMIENTO'], y='NOMBRE')
+    st.line_chart(data=datos, x=['FECHA_INICIO_LICENCIAMIENTO'], y='NOMBRE')
     
    
     
