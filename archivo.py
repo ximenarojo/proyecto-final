@@ -73,7 +73,7 @@ if selected == 'Inicio':
     dist = dep[dep['DISTRITO'] == sel3]
     fil = len(dist.axes[0])
     
-    st.caption('Número de registros de universidades:', fil)
+    st.write('Número de registros de universidades:',fil)
     
     
     
