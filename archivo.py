@@ -20,10 +20,10 @@ if selected == 'Inicio':
     st.markdown("<h1 style ='text-align: center'>Licenciamiento Institucional</h1>", unsafe_allow_html=True)
     st.markdown("---")
     st.subheader('Contexto:')
-    st.write("El mayor reto que enfrenta la sociedad peruana en materia de educación superior universitaria es el de reorganizar el sistema universitario y promover uno basado en la calidad. Es así que, La Ley Nº 30220, Ley Universitaria, entre otras medidas, creó la Superintendencia Nacional de Educación Superior Universitaria (SUNEDU) e introdujo la figura del licenciamiento obligatorio y renovable de las universidades. Gracias a esto, el Licenciamiento Institucional junto a la acreditación conforman dos etapas complementarias del aseguramiento de la calidad, que aseguran que se brinde un servicio educativo superior universitario en base a las Condiciones Básicas de Calidad (CBC) establecidas.")
+    st.text("El mayor reto que enfrenta la sociedad peruana en materia de educación superior universitaria es el de reorganizar el sistema universitario y promover uno basado en la calidad. Es así que, La Ley Nº 30220, Ley Universitaria, entre otras medidas, creó la Superintendencia Nacional de Educación Superior Universitaria (SUNEDU) e introdujo la figura del licenciamiento obligatorio y renovable de las universidades. Gracias a esto, el Licenciamiento Institucional junto a la acreditación conforman dos etapas complementarias del aseguramiento de la calidad, que aseguran que se brinde un servicio educativo superior universitario en base a las Condiciones Básicas de Calidad (CBC) establecidas.")
     image = Image.open('Sunedu.jpg')
     st.image(image)
-    st.write("**Fuente**: Andina, 2021.")
+    st.text("**Fuente**: Andina, 2021.")
     st.subheader('¿Qué es el Licenciamiento Institucional?')
     st.write("El Licenciamiento Institucional es un requisito obligatorio para todas las universidades del país, a través del cual cada casa de estudios debe demostrar ante la SUNEDU que cumple con las Condiciones Básicas de Calidad (CBC) para poder brindar el servicio educativo. Como resultado de este proceso, existe un sistema universitario más ordenado y con una mayor orientación hacia la mejora continua.")
     st.subheader('¿Qué son las Condiciones Básicas de Calidad?')
@@ -74,9 +74,8 @@ if selected == 'Inicio':
     n = len(df_dist.axes[0])
     st.write('Número de registros de universidades:',n)
     st.markdown("###")
-
-    datos = pd.DataFrame(columns=["Licencia otorgada", "Licencia denegada", "IO", "Ninguno"])
-    st.bar_chart(datos)
+    
+    
     
   
 #-------------------------------------------------- 
