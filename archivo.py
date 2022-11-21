@@ -95,11 +95,11 @@ if selected == 'Inicio':
     st.markdown("###")
     st.pyplot(fig1)
     
-    df_TIPO = df_DISTRITO.TIPO_GESTION.value_counts()
-    st.write('**Tipo de gestión de las universidades según zona geográfica seleccionada.**')
-    st.bar_chart(df_TIPO)
+    #url ='https://raw.githubusercontent.com/ximenarojo/prueba/main/Licenciamiento%20Institucional_2.csv'
+    datos = pd.read_csv(url, sep=',')
+    st.bar_chart(data=datos, *, x= 'TIPO_GESTION', y='TIPO_GESTION')
     
-
+    
 #-------------------------------------------------- 
 if selected == 'Nosotros':
              st.markdown("<h1 style='text-align: center; color: black;'>¿Quiénes somos?</h1>", unsafe_allow_html=True)
