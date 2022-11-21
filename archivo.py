@@ -95,6 +95,7 @@ if selected == 'Inicio':
     st.markdown("###")
     st.pyplot(fig1)
     
+    st.markdown("###")
     bar_chart = df_DISTRITO.TIPO_GESTION.value_counts()
     bar_chart = pd.DataFrame(bar_chart)
     bar_chart.columns = ['TIPO DE GESTION']
