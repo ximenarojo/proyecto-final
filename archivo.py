@@ -81,7 +81,7 @@ if selected == 'Inicio':
     url ='https://raw.githubusercontent.com/ximenarojo/prueba/main/Licenciamiento%20Institucional_2.csv'
     #Descargar y leer el archivo y considerar las comas como separadores
     datos = pd.read_csv(url, sep=',')
-    st.bar_chart(data=datos, x='NOMBRE', y='TIPO_GESTION')
+    st.bar_chart(data=datos, x='NOMBRE', y='ESTADO_LICENCIAMIENTO')
 
 #-------------------------------------------------- 
 if selected == 'Nosotros':
