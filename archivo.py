@@ -95,9 +95,9 @@ if selected == 'Inicio':
     st.markdown("###")
     st.pyplot(fig1)
     
-    df_TIPO_GESTION = df_DISTRITO.TIPO_GESTION.value_counts()
+    df_TIPO = df_DISTRITO.TIPO_GESTION.value_counts()
     st.write('**Tipo de gestión de las universidades según zona geográfica seleccionada.**')
-    st.bar_chart(df_TIPO_GESTION)
+    st.bar_chart(df_TIPO)
     
 
 #-------------------------------------------------- 
