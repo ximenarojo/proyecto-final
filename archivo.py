@@ -155,7 +155,7 @@ if selected == 'Localización':
         st.markdown("###")
         st.write('**Gráfico 3. Universidades con '+opcion+' localizadas en un mapa interactivo mundial.**')
         map = folium.Map()
-        st_map = st_folium(map, width=750, height=450)
+        st_map = st_folium(map, width=800, height=450)
         st.markdown("###")
         st.dataframe(df_otorgada)
         n = len(df_otorgada.axes[0]) 
