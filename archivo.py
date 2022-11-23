@@ -16,7 +16,7 @@ from PIL import Image
 #---------------------------------------------------------
 with open('style.css') as f:
     st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
-with st.sidebar:
+#with st.sidebar:
     st.sidebar.header('Dashboard')
     selected = option_menu(
         menu_title = 'Menú',
