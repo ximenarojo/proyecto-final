@@ -119,14 +119,17 @@ if selected == 'Inicio':
     st.bar_chart(bar_chart)
     
 #--------------------------------------------------
-@st.experimental_memo
-def download_data():
-    url ="https://raw.githubusercontent.com/ximenarojo/prueba/main/Licenciadas.csv"
-    filename ="Licenciadas.csv"
-    urllib.request.urlretrieve(url,filename)
-    df_otorgada = pd.read_csv('Licenciadas.csv')
-    return df_otorgada
-download_data()
+url ="https://raw.githubusercontent.com/ximenarojo/prueba/main/Licenciadas.csv"
+datos1 = pd.read_csv(url, sep=',')
+
+#@st.experimental_memo
+#def download_data():
+    #url ="https://raw.githubusercontent.com/ximenarojo/prueba/main/Licenciadas.csv"
+    #filename ="Licenciadas.csv"
+    #urllib.request.urlretrieve(url,filename)
+    #df_otorgada = pd.read_csv('Licenciadas.csv')
+    #return df_otorgada
+#download_data()
 
 #df_denegada =
 #df_io =
@@ -143,11 +146,10 @@ if selected == 'Localización':
          'Con informe de observaciones (IO) notificado',
          'Ninguno')
         )
-    df_otorgada = pd.read_csv('Licenciadas.csv')
     df_map = None
     opcion = '-'
     if dataset == 'Licencia otorgada':
-        df_map = df_otorgada
+        df_map = datos1
         opcion = 'licencia otorgada'
     
     #elif dataset == 'Licencia denegada':
