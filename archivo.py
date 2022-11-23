@@ -153,11 +153,13 @@ if selected == 'Localización':
         df_map = df_otorgada
         opcion = 'licencia otorgada'
         st.markdown("###")
-        st.dataframe(df_otorgada)
-        n = len(df_otorgada.axes[0])
         st.write('**Gráfico 3. Universidades con '+opcion+' localizadas en un mapa interactivo mundial.**')
         map = folium.Map()
         st_map = st_folium(map)
+        n = len(df_otorgada.axes[0])
+        st.markdown("###")
+        st.dataframe(df_otorgada)
+        #n = len(df_otorgada.axes[0])
     elif dataset == 'Licencia denegada':
         df_map = df_denegada
         opcion = 'licencia denegada'
