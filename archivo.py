@@ -32,6 +32,8 @@ with st.sidebar:
             "nav-link-selected":{"background-color":"skyblue"}
         },
     )
+    st.sidebar.header("Acerca de")
+    st.sidebar.info('Análisis y exploración de datos sobre el avance y estatus del Licenciamiento Institucional de las universidades peruanas.')
 #--------------------------------------------------------- 
 if selected == 'Inicio':
     st.markdown("<h1 style ='text-align: center'>SUNEDU:</h1>", unsafe_allow_html=True)
@@ -151,8 +153,6 @@ if selected == 'Localización':
         df_map = df_otorgada
         opcion = 'licencia otorgada'
         st.markdown("###")
-        #df_map = df_map.rename(columns = {'LATITUD':'lat', 'LONGITUD':'lon'})
-        st.write('**Lista de universidades con '+opcion+' localizadas en un mapa interactivo mundial.**')
         st.dataframe(df_otorgada)
         n = len(df_otorgada.axes[0])
     elif dataset == 'Licencia denegada':
@@ -177,11 +177,8 @@ if selected == 'Localización':
         st.dataframe(df_ninguno)
         n = len(df_ninguno.axes[0])
         
-    st.write('Se encontraron', n,'registros de universidades para su búsqueda.')
-
-        
-        
     #st.write('**Gráfico 3. Universidades con '+opcion+' localizadas en un mapa interactivo mundial.**')
+    st.write('Se encontraron', n,'registros de universidades para su búsqueda.')    
     
    
     
