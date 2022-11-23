@@ -15,7 +15,7 @@ from PIL import Image
 
 #---------------------------------------------------------
 with st.sidebar:
-    st.sidebar.header('Proyecto Final 2022-2')
+    st.sidebar.header('Proyecto Final 2022-2'
     menu_title = 'Menú',
     options = ['Inicio', 'Localización','Reportes','Equipo'],
     icons = ['house', 'map', 'book','people'],
