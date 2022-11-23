@@ -120,14 +120,12 @@ if selected == 'Inicio':
     
 #--------------------------------------------------
 @st.experimental_memo
-df_otorgada = None
 def download_data():
     url ="https://raw.githubusercontent.com/ximenarojo/prueba/main/Licenciadas.csv"
     filename ="Licenciadas.csv"
     urllib.request.urlretrieve(url,filename)
     df_otorgada = pd.read_csv('Licenciadas.csv')
     return df_otorgada
-
 download_data()
 
 #df_denegada =
@@ -145,6 +143,7 @@ if selected == 'Localización':
          'Con informe de observaciones (IO) notificado',
          'Ninguno')
         )
+    df_otorgada = pd.read_csv('Licenciadas.csv')
     df_map = None
     opcion = '-'
     if dataset == 'Licencia otorgada':
@@ -167,7 +166,7 @@ if selected == 'Localización':
         st.map(df_map[['lat','lon']])
         
         #st.subheader('En base al mapa interactivo, podemos visualizar '+str(len(df_map.index))+' universidades '+opcion+' '')
-        #st.dataframe(df_map)
+        st.dataframe(df_map)
 
     
     
