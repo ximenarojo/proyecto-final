@@ -30,7 +30,7 @@ with st.sidebar:
         styles={
             "nav-link-selected":{"background-color":"skyblue"}
         },
-    )
+    ) 
 #--------------------------------------------------------- 
 if selected == 'Inicio':
     st.markdown("<h1 style ='text-align: center'>SUNEDU:</h1>", unsafe_allow_html=True)
