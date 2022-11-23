@@ -14,6 +14,9 @@ from PIL import Image
 #st.line_chart(data=datos, x='NOMBRE', y='ESTADO_LICENCIAMIENTO')
 
 #---------------------------------------------------------
+with open('style.css') as f:
+    st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
+    
 with st.sidebar: 
     st.sidebar.header('Proyecto Final 2022-2')
     selected = option_menu(
@@ -31,7 +34,7 @@ if selected == 'Inicio':
     st.subheader('Contexto:')
     st.write("En la actualidad, el principal reto que enfrenta la sociedad peruana en términos de educación superior es el de reorganizar el sistema universitario y promover uno basado en la calidad. Es así que en el 2014, la promulgación de la Ley Universitaria, Ley Nº 30220, introduce el licenciamiento obligatorio y renovable para las universidades tanto públicas como privadas del país con la finalidad de asegurar que se brinde un servicio educativo superior que cumpla con las Condiciones Básicas de Calidad (CBC) establecidas.")
     image = Image.open('Sunedu.jpg')
-    st.image(image)
+    st.image(image) 
     st.write("**Fuente**: Andina, 2021.")
     st.subheader('¿Qué es el Licenciamiento Institucional?')
     st.write("El Licenciamiento Institucional es un procedimiento obligatorio cuyo objetivo es verificar que las universidades cumplan con las CBC a fin de obtener una licencia que autorice su funcionamiento legal y, de esta manera, poder ofrecer un servicio educativo superior universitario. Como resultado, existe un sistema universitario más ordenado y con una mayor orientación hacia la mejora continua.")
