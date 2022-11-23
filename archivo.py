@@ -28,7 +28,7 @@ with st.sidebar:
         menu_icon='cast',
         default_index = 0,
         styles={
-            "nav-link-selected":{"background-color":"yellow"}
+            "nav-link-selected":{"background-color":"skyblue"}
         },
     )
 #--------------------------------------------------------- 
