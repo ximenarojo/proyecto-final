@@ -165,8 +165,8 @@ if selected == 'Localización':
         df_map = df_map.rename(columns = {'LATITUD':'lat', 'LONGITUD':'lon'})
         st.map(df_map[['lat','lon']])
         
-        st.subheader('En base al mapa interactivo, podemos visualizar '+str(len(df_map.index))+' universidades '+opcion+' :'')
-                     st.dataframe(df_map)
+        #st.subheader('En base al mapa interactivo, podemos visualizar '+str(len(df_map.index))+' universidades '+opcion+' '')
+        #st.dataframe(df_map)
 
     
     
