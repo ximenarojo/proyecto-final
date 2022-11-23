@@ -54,8 +54,8 @@ if selected == 'Inicio':
         url ="https://raw.githubusercontent.com/ximenarojo/prueba/main/Licenciamiento%20Institucional_2.csv"
         filename ="Licenciamiento%20Institucional_2.csv"
         urllib.request.urlretrieve(url,filename)
-        df = pd.read_csv('Licenciamiento%20Institucional_2.csv')
-        return df
+        df_LI = pd.read_csv('Licenciamiento%20Institucional_2.csv')
+        return df_LI
     download_data()
     st.dataframe(download_data())
     st.caption('Para mayor información acceder a: https://www.datosabiertos.gob.pe/dataset/sunedu-licenciamiento-institucional')
@@ -67,8 +67,8 @@ if selected == 'Inicio':
         url ="https://raw.githubusercontent.com/ximenarojo/prueba/main/variables.csv"
         filename ="variables.csv"
         urllib.request.urlretrieve(url,filename)
-        df = pd.read_csv('variables.csv')
-        return df
+        df_variables = pd.read_csv('variables.csv')
+        return df_variables
     download_data()
     st.dataframe(download_data())        
     
@@ -118,9 +118,22 @@ if selected == 'Inicio':
     st.markdown("###")
     st.bar_chart(bar_chart)
     
-#-------------------------------------------------- 
+#--------------------------------------------------
+@st.experimental_memo
+    def download_data():
+        url ="https://raw.githubusercontent.com/ximenarojo/prueba/main/Licenciadas.csv"
+        filename ="Licenciadas.csv"
+        urllib.request.urlretrieve(url,filename)
+        df_otorgada = pd.read_csv('Licenciadas.csv')
+        return df_otorgada
+    download_data()
+
+#df_denegada =
+#df_io =
+#df_ninguno =
+
 if selected == 'Localización':
-    st.markdown("<h1 style ='text-align: center'>Localización: Mapa interactivo</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 style ='text-align: center'>Mapa interactivo: Localización</h1>", unsafe_allow_html=True)
     st.markdown("---")
     st.write('**A continuación, seleccione una opción para visualizar la información.**')
     dataset = st.selectbox(
@@ -130,6 +143,29 @@ if selected == 'Localización':
          'Con informe de observaciones (IO) notificado',
          'Ninguno')
         )
+    
+    df_map = None
+    opcion = '-'
+    if dataset == 'Licencia otorgada':
+    df_map = df_otorgada
+    opcion = 'licencia otorgada'
+    #elif dataset == 'Licencia denegada':
+    #df_map = df_denegada
+    #opcion = 'licencia denegada'
+    #elif dataset == 'Con informe de observaciones (IO) notificado':
+    #df_map = df_io
+    #opcion = 'informe de observaciones (IO) notificado'
+    #elif dataset == 'Ninguno':
+    #df_map = df_ninguno
+    #opcion = 'ningún estado de licenciamiento'
+    
+    st.write('**Gráfico 3. Universidades con '+**opcion**+' localizadas en un mapa interactivo mundial**')
+    st.markdown("###")
+    df_map = df_map.rename(columns = {'LATITUD':'lat', 'LONGITUD':'lon'})
+    st.map(df_map[['lat','lon']])
+
+    st.subheader('En base al mapa interactivo, podemos visualizar '+str(len(df_map.index))+' universidades '+opcion+' :'')
+    st.dataframe(df_map)
 
     
     
