@@ -15,6 +15,13 @@ from PIL import Image
 
 #---------------------------------------------------------
 with st.sidebar:
+    /* Logo */
+    [data-testid="stSidebar"] {
+        background-image: url(https://streamlit.io/images/brand/streamlit-logo-secondary-colormark-darktext.png);
+        background-size: 200px;
+        background-repeat: no-repeat;
+        background-position: 4px 20px;
+    }
     st.sidebar.header('Proyecto Final 2022-2')
     selected = option_menu(
         menu_title = 'Menú',
@@ -23,7 +30,6 @@ with st.sidebar:
         menu_icon='cast',
         default_index = 0,
     )
-    
 #--------------------------------------------------------- 
 if selected == 'Inicio':
     st.markdown("<h1 style ='text-align: center'>SUNEDU:</h1>", unsafe_allow_html=True)
