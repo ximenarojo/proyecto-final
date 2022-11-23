@@ -120,6 +120,7 @@ if selected == 'Inicio':
     
 #--------------------------------------------------
 @st.experimental_memo
+df_otorgada = None
 def download_data():
     url ="https://raw.githubusercontent.com/ximenarojo/prueba/main/Licenciadas.csv"
     filename ="Licenciadas.csv"
