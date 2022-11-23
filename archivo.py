@@ -15,7 +15,6 @@ from PIL import Image
 
 #---------------------------------------------------------
 with st.sidebar:
-    /* Logo */
     [data-testid="stSidebar"] {
         background-image: url(https://streamlit.io/images/brand/streamlit-logo-secondary-colormark-darktext.png);
         background-size: 200px;
