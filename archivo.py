@@ -151,25 +151,28 @@ if selected == 'Localización':
         df_map = df_otorgada
         opcion = 'licencia otorgada'
         st.markdown("###")
-        df_map = df_map.rename(columns = {'LATITUD':'lat', 'LONGITUD':'lon'})
+        #df_map = df_map.rename(columns = {'LATITUD':'lat', 'LONGITUD':'lon'})
         st.write('**Lista de universidades con '+opcion+' localizadas en un mapa interactivo mundial.**')
         st.dataframe(df_otorgada)
         n = len(df_otorgada.axes[0])
     elif dataset == 'Licencia denegada':
         df_map = df_denegada
         opcion = 'licencia denegada'
+        st.markdown("###")
         st.write('**Lista de universidades con '+opcion+' localizadas en un mapa interactivo mundial.**')
         st.dataframe(df_denegada)
         n = len(df_denegada.axes[0])
     elif dataset == 'Con informe de observaciones (IO) notificado':
         df_map = df_io
         opcion = 'informe de observaciones (IO) notificado'
+        st.markdown("###")
         st.write('**Lista de universidades con '+opcion+' localizadas en un mapa interactivo mundial.**')
         st.dataframe(df_io)
         n = len(df_io.axes[0])
     elif dataset == 'Ninguno':
         df_map = df_ninguno
         opcion = 'ningún estado de licenciamiento'
+        st.markdown("###")
         st.write('**Lista de universidades con '+opcion+' localizadas en un mapa interactivo mundial.**')
         st.dataframe(df_ninguno)
         n = len(df_ninguno.axes[0])
