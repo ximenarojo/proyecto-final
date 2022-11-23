@@ -28,7 +28,7 @@ with st.sidebar:
         default_index = 0,
     )
 #--------------------------------------------------------- 
-if selected == 'Inicio': 
+if selected == 'Inicio':
     st.markdown("<h1 style ='text-align: center'>SUNEDU:</h1>", unsafe_allow_html=True)
     st.markdown("<h1 style ='text-align: center'>Licenciamiento Institucional</h1>", unsafe_allow_html=True)
     st.markdown("---")
