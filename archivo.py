@@ -20,7 +20,7 @@ with open('style.css') as f:
     
 with st.sidebar: 
     st.sidebar.header('Proyecto Final 2022-2')
-    st.write('Análisis y exploración de datos sobre el avance y estatus del Licenciamiento Institucional de las universidades peruanas. Incluye información de región y tipo de entidad.')
+    st.write('Análisis y exploración de datos sobre el avance y estatus del Licenciamiento Institucional de las universidades peruanas.')
     selected = option_menu(
         menu_title = 'Menú',
         options = ['Inicio', 'Localización','Reportes','Equipo'],
