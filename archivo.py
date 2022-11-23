@@ -6,6 +6,8 @@ from streamlit_option_menu import option_menu
 import urllib.request
 import matplotlib.pyplot as plt
 import plotly.express as px
+import folium
+from streamli_folium import st_folium
 from PIL import Image
 
 #URL del archivo en formato raw
@@ -153,6 +155,9 @@ if selected == 'Localización':
         st.markdown("###")
         st.dataframe(df_otorgada)
         n = len(df_otorgada.axes[0])
+        st.write('**Gráfico 3. Universidades con '+opcion+' localizadas en un mapa interactivo mundial.**')
+        map = folium.Map()
+        st_map = st_folium(map)
     elif dataset == 'Licencia denegada':
         df_map = df_denegada
         opcion = 'licencia denegada'
@@ -174,8 +179,8 @@ if selected == 'Localización':
         st.write('**Lista de universidades con '+opcion+' localizadas en un mapa interactivo mundial.**')
         st.dataframe(df_ninguno)
         n = len(df_ninguno.axes[0])
-        
-    #st.write('**Gráfico 3. Universidades con '+opcion+' localizadas en un mapa interactivo mundial.**')
+       
+    
     st.write('Se encontraron', n,'registros de universidades para su búsqueda.')    
     
    
