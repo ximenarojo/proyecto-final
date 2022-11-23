@@ -7,7 +7,7 @@ import urllib.request
 import matplotlib.pyplot as plt
 import plotly.express as px
 import folium
-from streamli_folium import st_folium
+from streamlit_folium import st_folium
 from PIL import Image
 
 #URL del archivo en formato raw
