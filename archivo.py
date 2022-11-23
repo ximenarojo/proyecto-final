@@ -120,13 +120,14 @@ if selected == 'Inicio':
     
 #--------------------------------------------------
 @st.experimental_memo
-    def download_data():
-        url ="https://raw.githubusercontent.com/ximenarojo/prueba/main/Licenciadas.csv"
-        filename ="Licenciadas.csv"
-        urllib.request.urlretrieve(url,filename)
-        df_otorgada = pd.read_csv('Licenciadas.csv')
-        return df_otorgada
-    download_data()
+def download_data():
+    url ="https://raw.githubusercontent.com/ximenarojo/prueba/main/Licenciadas.csv"
+    filename ="Licenciadas.csv"
+    urllib.request.urlretrieve(url,filename)
+    df_otorgada = pd.read_csv('Licenciadas.csv')
+    return df_otorgada
+
+download_data()
 
 #df_denegada =
 #df_io =
