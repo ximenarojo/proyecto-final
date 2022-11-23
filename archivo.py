@@ -164,12 +164,7 @@ if selected == 'Localización':
         st.write('**Gráfico 3. Universidades con '+opcion+' localizadas en un mapa interactivo mundial.**')
         st.markdown("###")
         #df_map = df_map.rename(columns = {'LATITUD':'lat', 'LONGITUD':'lon'})
-        df_map = pd.DataFrame(
-            download_data
-            df_map.rename(columns = {'LATITUD':'lat', 'LONGITUD':'lon'})
-        st.map(df)
- 
-        
+      
 
         #st.subheader('En base al mapa interactivo, podemos visualizar '+str(len(df_map.index))+' universidades '+opcion+' '')
         #st.dataframe(df_otorgada)
