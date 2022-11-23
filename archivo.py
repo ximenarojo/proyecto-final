@@ -144,12 +144,11 @@ if selected == 'Localización':
          'Con informe de observaciones (IO) notificado',
          'Ninguno')
         )
-    
     df_map = None
     opcion = '-'
     if dataset == 'Licencia otorgada':
-    df_map = df_otorgada
-    opcion = 'licencia otorgada'
+        df_map = df_otorgada
+        opcion = 'licencia otorgada'
     #elif dataset == 'Licencia denegada':
     #df_map = df_denegada
     #opcion = 'licencia denegada'
