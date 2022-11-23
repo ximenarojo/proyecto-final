@@ -127,7 +127,6 @@ def download_data():
     df_otorgada = pd.read_csv('Licenciadas.csv')
     return df_otorgada
 download_data()
-st.dataframe(download_data)
     
 #df_denegada =
 #df_io =
@@ -150,6 +149,8 @@ if selected == 'Localización':
     if dataset == 'Licencia otorgada':
         df_map = df_otorgada
         opcion = 'licencia otorgada'
+        st.dataframe(download_data)
+
     
     #elif dataset == 'Licencia denegada':
     #df_map = df_denegada
