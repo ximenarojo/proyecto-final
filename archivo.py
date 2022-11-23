@@ -15,7 +15,7 @@ from PIL import Image
 
 #---------------------------------------------------------
 with st.sidebar:
-    st.sidebar.header('Proyecto Final 2022-2')
+    st.sidebar.subheader('Proyecto Final 2022-2')
     st.sidebar.write('Análisis y exploración de datos sobre el avance y estatus del Licenciamiento Institucional de las Universidades peruanas. Incluye información de región y tipo de entidad.')
     selected = option_menu(
         menu_title = 'Menú',
