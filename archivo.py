@@ -190,7 +190,7 @@ if selected == 'Equipo':
     <textarea name="message" placeholder="¡Escríbenos un mensaje!"></textarea>
     <button type= "submit">Enviar</button>
     </form>
-    """
+    """ 
     st.markdown(contact_form, unsafe_allow_html=True)
     #Para dar formato:
     with open('message.css') as f:
