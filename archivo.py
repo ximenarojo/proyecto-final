@@ -14,13 +14,6 @@ from PIL import Image
 #st.line_chart(data=datos, x='NOMBRE', y='ESTADO_LICENCIAMIENTO')
 
 #---------------------------------------------------------
-[data-testid="stSidebar"] {
-    background-image: url(https://streamlit.io/images/brand/streamlit-logo-secondary-colormark-darktext.png);
-    background-size: 200px;
-    background-repeat: no-repeat;
-    background-position: 4px 20px;
-}
-
 with st.sidebar: 
     st.sidebar.header('Proyecto Final 2022-2')
     selected = option_menu(
