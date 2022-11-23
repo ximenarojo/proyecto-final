@@ -147,7 +147,7 @@ if selected == 'Localización':
     
     df = pd.DataFrame(
         download_data
-        columns=['lat', 'lon'])
+        df.rename(columns = {'LATITUD':'lat', 'LONGITUD':'lon'})
     st.map(df)
  
 
