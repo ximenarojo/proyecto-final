@@ -138,6 +138,7 @@ if selected == 'Localización':
         datos1 = pd.read_csv('Licenciadas.csv')
         return df_otorgada
     download_data()
+    datos1['LATITUD'],datos1['LONGITUD']=np.where(datos1['LATITUD']<-74,(datos1['LONGITUD'],datos1['LATITUD']),(datos1['LATITUD'],datos1['LONGITUD']))
 #df_denegada =
 #df_io =
 #df_ninguno =
