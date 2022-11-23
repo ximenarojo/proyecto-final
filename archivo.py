@@ -59,9 +59,9 @@ if selected == 'Inicio':
     download_data()
     st.dataframe(download_data())
     st.caption('Para mayor información acceder a: https://www.datosabiertos.gob.pe/dataset/sunedu-licenciamiento-institucional')
-    
+    #---------------------------------------------------------------------------------------------------------------------------
     st.header("Descripción del Dataset:")
-    st.caption('A continuación, se proporciona una descripción de las características del Dataset.')
+    st.caption('A continuación, se proporciona una descripción de las variables incluidas en el Dataset.')
     @st.experimental_memo
     def download_data():
         url ="https://raw.githubusercontent.com/ximenarojo/prueba/main/variables.csv"
