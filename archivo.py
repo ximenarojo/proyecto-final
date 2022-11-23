@@ -15,7 +15,7 @@ from PIL import Image
 
 #---------------------------------------------------------
 with st.sidebar:
-    st.sidebar.header('Programación Avanzada Proyecto Final `2022-2`')
+    st.sidebar.header('Programación Avanzada Proyecto Final 2022-2')
     selected = option_menu(
         menu_title = 'Menú',
         options = ['Inicio', 'Localización','Reportes','Equipo'],
