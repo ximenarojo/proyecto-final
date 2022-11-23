@@ -120,7 +120,7 @@ if selected == 'Inicio':
     st.pyplot(fig1)
     
     st.markdown("###")
-    bar_chart = df_DISTRITO.TIPO_GESTION.value_counts(x='Cantidad de Universidades registradas', y='Tipo de gestión')
+    bar_chart = df_DISTRITO.TIPO_GESTION.value_counts()
     bar_chart = pd.DataFrame(bar_chart)
     bar_chart.columns = ['Tipo de gestión']
     st.write('**Gráfico 2. Tipo de gestión de las universidades según zona geográfica seleccionada.**')
