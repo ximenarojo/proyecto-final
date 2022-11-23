@@ -72,7 +72,7 @@ if selected == 'Inicio':
     download_data()
     st.dataframe(download_data())        
     
-    st.markdown("###")
+    st.markdown("###") 
     st.header('¡Comienza el análisis exploratorio!')
     st.write('**A continuación, seleccione una zona geográfica para visualizar el registro de universidades.**')
     st.markdown("###")
