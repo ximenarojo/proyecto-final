@@ -119,6 +119,11 @@ if selected == 'Inicio':
     st.bar_chart(bar_chart)
     
 #--------------------------------------------------
+#df_otorgada = 
+#df_denegada =
+#df_io =
+#df_ninguno =
+
 if selected == 'Localización':
     st.markdown("<h1 style ='text-align: center'>Mapa interactivo: Localización</h1>", unsafe_allow_html=True)
     st.markdown("---")
@@ -135,17 +140,19 @@ if selected == 'Localización':
         url ="https://raw.githubusercontent.com/ximenarojo/prueba/main/Licenciadas.csv"
         filename ="Licenciadas.csv"
         urllib.request.urlretrieve(url,filename)
-        datos1 = pd.read_csv('Licenciadas.csv')
-        return datos1
+        df_otorgada = pd.read_csv('Licenciadas.csv')
+        return df_otorgada
     download_data()
-    datos1['LATITUD'],datos1['LONGITUD']=np.where(datos1['LATITUD']<-74,(datos1['LONGITUD'],datos1['LATITUD']),(datos1['LATITUD'],datos1['LONGITUD']))
-#df_denegada =
-#df_io =
-#df_ninguno =
+    #st.dataframe(download_data)
+    
+    df = pd.DataFrame(download_data; columns=['lat', 'lon'])
+    st.map(df)
+ 
+
     df_map = None
     opcion = '-'
     if dataset == 'Licencia otorgada':
-        df_map = datos1
+        df_map = df_otorgada
         opcion = 'licencia otorgada'
     
     #elif dataset == 'Licencia denegada':
@@ -165,7 +172,7 @@ if selected == 'Localización':
         
 
         #st.subheader('En base al mapa interactivo, podemos visualizar '+str(len(df_map.index))+' universidades '+opcion+' '')
-        st.dataframe(df_map)
+        #st.dataframe(df_otorgada)
 
     
     
