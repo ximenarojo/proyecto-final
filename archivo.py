@@ -188,7 +188,7 @@ if selected == 'Equipo':
     <input type="text" name="name" placeholder="Nombre" requiered>
     <input type="email" name="email" placeholder="Correo electrónico" requiered>
     <textarea name="message" placeholder="¡Escríbenos un mensaje!"></textarea>
-    <button type= "submit" style='text-align: center>Enviar</button>
+    <button type= "submit" text-align: "center">Enviar</button>
     </form>
     """
     st.markdown(contact_form, unsafe_allow_html=True)
