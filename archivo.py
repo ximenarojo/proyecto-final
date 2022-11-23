@@ -150,6 +150,11 @@ if selected == 'Localización':
     if dataset == 'Licencia otorgada':
         df_map = df_otorgada
         opcion = 'licencia otorgada'
+        st.write('**Gráfico 3. Universidades con '+opcion+' localizadas en un mapa interactivo mundial.**')
+        st.markdown("###")
+        df_map = df_map.rename(columns = {'LATITUD':'lat', 'LONGITUD':'lon'})
+        st.dataframe(df_map)
+        st.write('**Lista de universidades con '+opcion+' localizadas en un mapa interactivo mundial.**')
         st.dataframe(df_otorgada)
     elif dataset == 'Licencia denegada':
         df_map = df_denegada
@@ -163,14 +168,9 @@ if selected == 'Localización':
         df_map = df_ninguno
         opcion = 'ningún estado de licenciamiento'
         st.dataframe(df_ninguno)
-    #-------------------------------------------------------------------
-    st.write('**Gráfico 3. Universidades con '+opcion+' localizadas en un mapa interactivo mundial.**')
-    st.markdown("###")
-    df_map = df_map.rename(columns = {'LATITUD':'lat', 'LONGITUD':'lon'})
+#-------------------------------------------------------------------
     
-    #st.subheader('En base al mapa interactivo, podemos visualizar '+str(len(df_map.index))+' universidades '+opcion+' '')
-    #st.dataframe(df_otorgada)
-
+   
     
     
 #--------------------------------------------------
