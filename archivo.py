@@ -181,7 +181,7 @@ if selected == 'Equipo':
     image = Image.open('integrantes.jpg')
     st.image(image)
     st.markdown("###")
-    st.header('Contáctanos:')
+    st.header('Contáctanos :pencil::')
     contact_form = """
     <form action = "https://formsubmit.co/ximena.rojo@upch.pe" method="POST">
     <input type="hidden" name="_captcha" value="false" requiered>
