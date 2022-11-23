@@ -18,8 +18,7 @@ st.set_page_config(layout='wide', initial_sidebar_state='expanded')
 with open('upch.css') as f:
     st.markdown(f'<style>{f.read()}</upch>', unsafe_allow_html=True)
 with st.sidebar: 
-    #st.sidebar.header('Programación Avanzada - Proyecto Final 2022-2')
-    st.sidebar.header("<h1 style ='text-align: center'>Programación Avanzada - Proyecto Final 2022-2:</h1>", unsafe_allow_html=True)
+    st.sidebar.header('Programación Avanzada - Proyecto Final 2022-2')
     st.write('Análisis y exploración de datos sobre el avance y estatus del Licenciamiento Institucional de las universidades peruanas.')
     selected = option_menu(
         menu_title = 'Menú',
