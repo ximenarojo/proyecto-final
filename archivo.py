@@ -181,6 +181,18 @@ if selected == 'Equipo':
     image = Image.open('integrantes.jpg')
     st.image(image)
     st.write('**Contáctanos:**')
+    contact_form = """
+    <form action = "https://formsubmit.co/ximena.rojo@upch.pe" method="POST">
+    <input type="hidden" name="_captcha" value="false" requiered>
+    <input type="text" name="name" placeholder="Your name" requiered>
+    <input type="email" name="email" placeholder="Your email" requiered>
+    <textarea name="message" placeholder="Your message here"></textarea>
+    <button type= "submit">Send</button>
+    </form>
+    """
+    st.markdown(contact_form, unsafe_allow_html=True)
+
+    
     st.write('- richerd.chavez@upch.pe')
     st.write('- isai.damazo@upch.pe')
     st.write('- ximena.rojo@upch.pe')
