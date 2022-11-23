@@ -60,6 +60,18 @@ if selected == 'Inicio':
     st.dataframe(download_data())
     st.caption('Para mayor información acceder a: https://www.datosabiertos.gob.pe/dataset/sunedu-licenciamiento-institucional')
     
+    st.header("Descripción del Dataset:")
+    st.caption('A continuación, se proporciona una descripción de las características del Dataset.')
+    @st.experimental_memo
+    def download_data():
+        url ="https://raw.githubusercontent.com/ximenarojo/prueba/main/Descripcion.csv"
+        filename ="Descripcion.csv"
+        urllib.request.urlretrieve(url,filename)
+        df = pd.read_csv('Descripcion.csv')
+        return df
+    download_data()
+    st.dataframe(download_data())        
+    
     st.markdown("###")
     st.header('¡Comienza el análisis exploratorio!')
     st.write('**A continuación, seleccione una zona geográfica para visualizar el registro de universidades.**')
