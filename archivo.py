@@ -145,7 +145,9 @@ if selected == 'Localización':
     download_data()
     #st.dataframe(download_data)
     
-    df = pd.DataFrame(download_data; columns=['lat', 'lon'])
+    df = pd.DataFrame(
+        download_data
+        columns=['lat', 'lon'])
     st.map(df)
  
 
