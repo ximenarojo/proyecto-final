@@ -15,6 +15,7 @@ from PIL import Image
 
 #---------------------------------------------------------
 with st.sidebar:
+    st.sidebar.header('Dashboard')
     selected = option_menu(
         menu_title = 'Menú',
         options = ['Inicio', 'Localización','Reportes','Equipo'],
