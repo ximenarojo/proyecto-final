@@ -180,18 +180,19 @@ if selected == 'Equipo':
     st.markdown("###")
     image = Image.open('integrantes.jpg')
     st.image(image)
-    st.write('**Contáctanos:**')
+    st.markdown("###")
+    st.subheader('Contáctanos:')
     contact_form = """
     <form action = "https://formsubmit.co/ximena.rojo@upch.pe" method="POST">
     <input type="hidden" name="_captcha" value="false" requiered>
-    <input type="text" name="name" placeholder="Your name" requiered>
-    <input type="email" name="email" placeholder="Your email" requiered>
-    <textarea name="message" placeholder="Your message here"></textarea>
-    <button type= "submit">Send</button>
+    <input type="text" name="name" placeholder="Nombre" requiered>
+    <input type="email" name="email" placeholder="Correo electrónico" requiered>
+    <textarea name="message" placeholder="¡Escríbenos un mensaje!"></textarea>
+    <button type= "submit" style='text-align: center>Enviar</button>
     </form>
     """
     st.markdown(contact_form, unsafe_allow_html=True)
-    
+    #Para dar formato:
     with open('message.css') as f:
         st.markdown(f'<style>{f.read()}</message>', unsafe_allow_html=True)
     
