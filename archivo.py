@@ -15,8 +15,7 @@ from PIL import Image
 
 #---------------------------------------------------------
 with st.sidebar:
-    st.sidebar.markdown("<h1 style ='text-align: center'>Proyecto Final 2022-2:</h1>", unsafe_allow_html=True)
-    selected = option_menu(
+    st.sidebar.header('Proyecto Final 2022-2')
         menu_title = 'Menú',
         options = ['Inicio', 'Localización','Reportes','Equipo'],
         icons = ['house', 'map', 'book','people'],
