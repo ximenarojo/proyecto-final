@@ -14,6 +14,8 @@ from PIL import Image
 #st.line_chart(data=datos, x='NOMBRE', y='ESTADO_LICENCIAMIENTO')
 
 #---------------------------------------------------------
+with open('style.css') as f:
+    st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
 with st.sidebar:
     st.sidebar.header('Dashboard')
     selected = option_menu(
