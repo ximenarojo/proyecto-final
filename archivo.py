@@ -135,18 +135,16 @@ if selected == 'Localización':
         url ="https://raw.githubusercontent.com/ximenarojo/prueba/main/Licenciadas.csv"
         filename ="Licenciadas.csv"
         urllib.request.urlretrieve(url,filename)
-        df_otorgada = pd.read_csv('Licenciadas.csv')
+        datos1 = pd.read_csv('Licenciadas.csv')
         return df_otorgada
     download_data()
-
 #df_denegada =
 #df_io =
 #df_ninguno =
-
     df_map = None
     opcion = '-'
     if dataset == 'Licencia otorgada':
-        df_map = df_otorgada
+        df_map = datos1
         opcion = 'licencia otorgada'
     
     #elif dataset == 'Licencia denegada':
@@ -166,7 +164,7 @@ if selected == 'Localización':
         
 
         #st.subheader('En base al mapa interactivo, podemos visualizar '+str(len(df_map.index))+' universidades '+opcion+' '')
-        #st.dataframe(df_map)
+        st.dataframe(df_map)
 
     
     
