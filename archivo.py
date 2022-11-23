@@ -17,7 +17,6 @@ from PIL import Image
 st.set_page_config(layout='wide', initial_sidebar_state='expanded')
 with open('style.css') as f:
     st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
-    
 with st.sidebar: 
     st.sidebar.header('Proyecto Final 2022-2')
     st.write('Análisis y exploración de datos sobre el avance y estatus del Licenciamiento Institucional de las universidades peruanas.')
@@ -28,6 +27,10 @@ with st.sidebar:
         menu_icon='cast',
         default_index = 0,
     )
+    st.sidebar.markdown('''
+    ---
+    Creado por Ximena Rojo
+    ''')
 #--------------------------------------------------------- 
 if selected == 'Inicio':
     st.markdown("<h1 style ='text-align: center'>SUNEDU:</h1>", unsafe_allow_html=True)
