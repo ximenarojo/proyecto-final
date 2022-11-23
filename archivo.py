@@ -116,6 +116,7 @@ if selected == 'Inicio':
     st.write('**Gráfico 2. Tipo de gestión de las universidades según zona geográfica seleccionada.**')
     st.markdown("###")
     st.bar_chart(bar_chart)
+    st.caption('Donde "value" hace referencia a la cantidad de universidades registradas para el tipo de gestión')
 #-------------------------------------------------- 
 if selected == 'Localización':
     st.markdown("<h1 style ='text-align: center'>Localización: Mapa interactivo</h1>", unsafe_allow_html=True)
