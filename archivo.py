@@ -15,8 +15,8 @@ from PIL import Image
 
 #---------------------------------------------------------
 st.set_page_config(layout='wide', initial_sidebar_state='expanded')
-with open('style.css') as f:
-    st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
+with open('upch.css') as f:
+    st.markdown(f'<style>{f.read()}</upch>', unsafe_allow_html=True)
 with st.sidebar: 
     st.sidebar.header('Proyecto Final 2022-2')
     st.write('Análisis y exploración de datos sobre el avance y estatus del Licenciamiento Institucional de las universidades peruanas.')
