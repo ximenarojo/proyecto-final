@@ -153,7 +153,6 @@ if selected == 'Localización':
         st.write('**Gráfico 3. Universidades con '+opcion+' localizadas en un mapa interactivo mundial.**')
         st.markdown("###")
         df_map = df_map.rename(columns = {'LATITUD':'lat', 'LONGITUD':'lon'})
-        st.dataframe(df_map)
         st.write('**Lista de universidades con '+opcion+' localizadas en un mapa interactivo mundial.**')
         st.dataframe(df_otorgada)
     elif dataset == 'Licencia denegada':
