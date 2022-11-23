@@ -95,7 +95,7 @@ if selected == 'Inicio':
     df_DISTRITO = df_DEPARTAMENTO[df_DEPARTAMENTO['DISTRITO'] == sel3]
     n = len(df_DISTRITO.axes[0])
     st.write('Se encontraron', n,'registros de universidades para su búsqueda.')
-    st.markdown("###")
+    st.markdown("###") 
     
     st.markdown("###")
     pie_chart = df_DISTRITO.ESTADO_LICENCIAMIENTO.value_counts()
