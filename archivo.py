@@ -154,18 +154,30 @@ if selected == 'Localización':
         df_map = df_map.rename(columns = {'LATITUD':'lat', 'LONGITUD':'lon'})
         st.write('**Lista de universidades con '+opcion+' localizadas en un mapa interactivo mundial.**')
         st.dataframe(df_otorgada)
+        n = len(df_otorgada.axes[0])
+        st.write('Se encontraron', n,'registros de universidades para su búsqueda.')
     elif dataset == 'Licencia denegada':
         df_map = df_denegada
         opcion = 'licencia denegada'
+        st.write('**Lista de universidades con '+opcion+' localizadas en un mapa interactivo mundial.**')
         st.dataframe(df_denegada)
+        num = len(df_denegada.axes[0])
+        st.write('Se encontraron', n,'registros de universidades para su búsqueda.')
     elif dataset == 'Con informe de observaciones (IO) notificado':
         df_map = df_io
         opcion = 'informe de observaciones (IO) notificado'
+        st.write('**Lista de universidades con '+opcion+' localizadas en un mapa interactivo mundial.**')
         st.dataframe(df_io)
+        num = len(df_io.axes[0])
+        st.write('Se encontraron', n,'registros de universidades para su búsqueda.')
     elif dataset == 'Ninguno':
         df_map = df_ninguno
         opcion = 'ningún estado de licenciamiento'
+        st.write('**Lista de universidades con '+opcion+' localizadas en un mapa interactivo mundial.**')
         st.dataframe(df_ninguno)
+        num = len(df_ninguno.axes[0])
+        st.write('Se encontraron', n,'registros de universidades para su búsqueda.')
+        
         
     #st.write('**Gráfico 3. Universidades con '+opcion+' localizadas en un mapa interactivo mundial.**')
     
