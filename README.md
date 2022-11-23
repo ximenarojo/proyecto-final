@@ -19,9 +19,6 @@ Damazo Minaya, Isai Calep
 Rojo Sánchez, Ximena Lucía
 - correo: ximena.rojo@upch.pe
 
-Yalli Espinoza, Milena Nicol
-- correo: milena.yalli@upch.pe
-
 ### Bibliotecas utilizadas
 ```
 plotly
