@@ -15,7 +15,8 @@ from PIL import Image
 
 #---------------------------------------------------------
 with st.sidebar:
-    st.sidebar.header('Dashboard')
+    st.sidebar.header('Programación Avanzada')
+    st.sidebar.header('`Proyecto Final 2022-2`')
     selected = option_menu(
         menu_title = 'Menú',
         options = ['Inicio', 'Localización','Reportes','Equipo'],
@@ -120,18 +121,10 @@ if selected == 'Inicio':
     st.bar_chart(bar_chart)
     
 #--------------------------------------------------
-@st.experimental_memo
-def download_data():
-    url ="https://raw.githubusercontent.com/ximenarojo/prueba/main/Licenciadas.csv"
-    filename ="Licenciadas.csv"
-    urllib.request.urlretrieve(url,filename)
-    df_otorgada = pd.read_csv('Licenciadas.csv')
-    return df_otorgada
-download_data()
-    
-#df_denegada =
-#df_io =
-#df_ninguno =
+df_otorgada = pd.read_csv('https://raw.githubusercontent.com/ximenarojo/prueba/main/Licenciadas.csv')
+df_denegada = pd.read_csv('https://raw.githubusercontent.com/ximenarojo/prueba/main/no%20licenciadas.csv')
+df_io = pd.read_csv('https://raw.githubusercontent.com/ximenarojo/prueba/main/io.csv')
+df_ninguno = pd.read_csv('https://raw.githubusercontent.com/ximenarojo/prueba/main/ninguno.csv')
 
 if selected == 'Localización':
     st.markdown("<h1 style ='text-align: center'>Mapa interactivo: Localización</h1>", unsafe_allow_html=True)
@@ -150,33 +143,25 @@ if selected == 'Localización':
     if dataset == 'Licencia otorgada':
         df_map = df_otorgada
         opcion = 'licencia otorgada'
-        st.dataframe(download_data)
-
+    elif dataset == 'Licencia denegada':
+        df_map = df_denegada
+        opcion = 'licencia denegada'
+    elif dataset == 'Con informe de observaciones (IO) notificado':
+        df_map = df_io
+        opcion = 'informe de observaciones (IO) notificado'
+    elif dataset == 'Ninguno':
+        df_map = df_ninguno
+        opcion = 'ningún estado de licenciamiento'
+    #-------------------------------------------------------------------
+    st.write('**Gráfico 3. Universidades con '+opcion+' localizadas en un mapa interactivo mundial.**')
+    st.markdown("###")
+    df_map = df_map.rename(columns = {'LATITUD':'lat', 'LONGITUD':'lon'})
     
-    #elif dataset == 'Licencia denegada':
-    #df_map = df_denegada
-    #opcion = 'licencia denegada'
-    #elif dataset == 'Con informe de observaciones (IO) notificado':
-    #df_map = df_io
-    #opcion = 'informe de observaciones (IO) notificado'
-    #elif dataset == 'Ninguno':
-    #df_map = df_ninguno
-    #opcion = 'ningún estado de licenciamiento'
-    
-        st.write('**Gráfico 3. Universidades con '+opcion+' localizadas en un mapa interactivo mundial.**')
-        st.markdown("###")
-        #df_map = df_map.rename(columns = {'LATITUD':'lat', 'LONGITUD':'lon'})
-      
-
-        #st.subheader('En base al mapa interactivo, podemos visualizar '+str(len(df_map.index))+' universidades '+opcion+' '')
-        #st.dataframe(df_otorgada)
+    st.subheader('En base al mapa interactivo, podemos visualizar '+str(len(df_map.index))+' universidades '+opcion+' '')
+    st.dataframe(df_otorgada)
 
     
     
-    
-    #url ='https://raw.githubusercontent.com/ximenarojo/prueba/main/Licenciamiento%20Institucional_2.csv'
-    #datos = pd.read_csv(url, sep=',')
-    #st.line_chart(data=datos, x='NOMBRE', y=['FECHA_INICIO_LICENCIAMIENTO','FECHA_FIN_LICENCIAMIENTO'])
 #--------------------------------------------------
 #if selected == 'Reportes':
     
