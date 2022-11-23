@@ -17,7 +17,7 @@ from PIL import Image
 st.set_page_config(layout='wide', initial_sidebar_state='expanded')
 with open('upch.css') as f:
     st.markdown(f'<style>{f.read()}</upch>', unsafe_allow_html=True)
-#with st.sidebar: 
+with st.sidebar: 
     st.markdown("###")
     st.sidebar.header('Programación Avanzada - Proyecto Final 2022-2')
     st.write('Análisis y exploración de datos sobre el avance y estatus del Licenciamiento Institucional de las universidades peruanas.')
@@ -27,7 +27,6 @@ with open('upch.css') as f:
         icons = ['house', 'map', 'book','people'],
         menu_icon='cast',
         default_index = 0,
-        orientation = "horizontal",
     )
 #--------------------------------------------------------- 
 if selected == 'Inicio':
