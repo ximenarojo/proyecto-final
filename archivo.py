@@ -5,6 +5,7 @@ import numpy as np
 from streamlit_option_menu import option_menu
 import urllib.request
 import matplotlib.pyplot as plt
+import plotly.express as px
 from PIL import Image
 
 #URL del archivo en formato raw
@@ -121,9 +122,9 @@ if selected == 'Inicio':
     st.markdown("###")
     bar_chart = df_DISTRITO.TIPO_GESTION.value_counts()
     bar_chart = pd.DataFrame(bar_chart)
-    bar_chart.columns = ['Tipo de gestión']
+    bar_chart.columns = [x='Cantidad de universidades registradas',y='Tipo de gestión']
     st.write('**Gráfico 2. Tipo de gestión de las universidades según zona geográfica seleccionada.**')
-    st.caption('Value hace referencia a la cantidad de universidades registradas para el tipo de gestión.')
+    #st.caption('Value hace referencia a la cantidad de universidades registradas para el tipo de gestión.')
     st.markdown("###")
     st.bar_chart(bar_chart)
     
