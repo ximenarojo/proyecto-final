@@ -21,7 +21,6 @@ with open('upch.css') as f:
 with st.sidebar: 
     st.markdown("###")
     st.sidebar.header('Programación Avanzada - Proyecto Final 2022-2')
-    st.write('Análisis y exploración de datos sobre el avance y estatus del Licenciamiento Institucional de las universidades peruanas.')
     selected = option_menu(
         menu_title = 'Menú',
         options = ['Inicio', 'Localización','Reportes','Equipo'],
@@ -33,7 +32,10 @@ with st.sidebar:
         },
     )
     st.sidebar.header("Acerca de")
-    st.sidebar.info('Análisis y exploración de datos sobre el avance y estatus del Licenciamiento Institucional de las universidades peruanas.')
+    st.sidebar.info(
+        'Análisis y exploración de datos sobre el avance y estatus del Licenciamiento Institucional de las universidades peruanas.'
+    )
+    st.markdown("###")
 #--------------------------------------------------------- 
 if selected == 'Inicio':
     st.markdown("<h1 style ='text-align: center'>SUNEDU:</h1>", unsafe_allow_html=True)
