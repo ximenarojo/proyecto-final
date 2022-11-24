@@ -154,18 +154,18 @@ if selected == 'Localización':
         opcion = 'licencia otorgada'
         st.markdown("###")
         st.write('**Gráfico 3. Universidades con '+opcion+' localizadas en un mapa interactivo mundial.**')
-        map = folium.Map(
+        my_map = folium.Map(
             location=[-9.19, -74], 
             zoom_start=4
         )
-        map
+        my_map
         Licenciadas = pd.read_csv('Licenciadas.csv')
         Licenciadas.head(5)
         Lic = Licenciadas.loc[0]
         folium.Marker(
             location=[Lic.rename(columns={'LATITUD':'lat', 'LONGITUD':'lon'})]
-        )add_to(map)
-        map
+        )add_to(my_map)
+        my_map
         
         st_map = st_folium(map, width=800, height=450)
         st.markdown("###")
