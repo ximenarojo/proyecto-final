@@ -164,7 +164,7 @@ if selected == 'Localización':
         Lic = Licenciadas.loc[0]
         folium.Marker(
             location=[Lic.rename(columns={'LATITUD':'lat', 'LONGITUD':'lon'})]
-        )add_to(my_map)
+        ).add_to(my_map)
         my_map
         
         st_map = st_folium(map, width=800, height=450)
