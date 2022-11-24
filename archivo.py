@@ -133,7 +133,7 @@ if selected == 'Inicio':
 df_otorgada = pd.read_csv('https://raw.githubusercontent.com/ximenarojo/prueba/main/Licenciadas.csv')
 df_denegada = pd.read_csv('https://raw.githubusercontent.com/ximenarojo/prueba/main/no%20licenciadas.csv')
 df_io = pd.read_csv('https://raw.githubusercontent.com/ximenarojo/prueba/main/io.csv')
-df_ninguno = pd.read_csv('https://raw.githubusercontent.com/ximenarojo/prueba/main/Ninguno.csv')
+df_ninguno = pd.read_csv('https://raw.githubusercontent.com/ximenarojo/prueba/main/ninguno.csv')
 
 if selected == 'Localización':
     st.markdown("<h1 style ='text-align: center'>Mapa interactivo: Localización</h1>", unsafe_allow_html=True)
@@ -181,19 +181,30 @@ if selected == 'Localización':
         st.markdown("###")
         st.write('**Lista de universidades con '+opcion+' localizadas en un mapa interactivo mundial.**')
         
-        my_map = folium.Map(
-            location=[-9.19, -74], 
-            zoom_start=4
-        )
-        Ninguno = pd.read_csv('Ninguno.csv')
-        Ninguno.head(1)
-        Nin = Ninguno.loc[0]
+        
+        locations = df_ninguno[['latitude', 'longitude']]
+        locationlist = locations.values.tolist()
+        len(locationlist)
+        locationlist[7]
+        
+        map = folium.Map(location=[-9.19, -75.01], zoom_start=4)
+        for point in range(0, len(locationlist)):
+            folium.Marker(locationlist[point], popup=df_ninguno['Name'][point]).add_to(map)
+            map
+        
+        
+        #map = folium.Map(location=[-9.19, -75.01], zoom_start=4)
+        #Ninguno = pd.read_csv('ninguno.csv')
+        #Ninguno.head(1)
+        #Nin = Ninguno.loc[0]
         #Ninguno['LATITUD'],Ninguno['LONGITUD']=np.where(Ninguno['LATITUD']<-74,(Ninguno['LONGITUD'],Ninguno['LATITUD']),(Ninguno['LATITUD'],Licenciadas['LONGITUD']))
 
-        folium.Marker(
-            location=[Nin['LATITUD'], Nin['LONGITUD']]
-        ).add_to(my_map)
-        my_map
+        #folium.Marker(
+        #    location=[Nin['latitude'], Nin['longitud']]
+        #).add_to(my_map)
+        #my_map
+        
+        
         
         st_map = st_folium(map, width=800, height=450)
         st.dataframe(df_ninguno)
