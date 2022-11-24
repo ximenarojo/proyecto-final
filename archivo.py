@@ -6,8 +6,7 @@ from streamlit_option_menu import option_menu
 import urllib.request
 import matplotlib.pyplot as plt
 import plotly.express as px
-import folium
-from streamlit_folium import st_folium
+import pydeck as pdk
 from PIL import Image
 
 #URL del archivo en formato raw
@@ -180,34 +179,8 @@ if selected == 'Localización':
         opcion = 'ningún estado de licenciamiento'
         st.markdown("###")
         st.write('**Lista de universidades con '+opcion+' localizadas en un mapa interactivo mundial.**')
-        
-        
-        #locations = df_ninguno[['latitude', 'longitude']]
-        #locationlist = locations.values.tolist()
-        #len(locationlist)
-        #locationlist[7]
-        
-        #map = folium.Map(location=[-9.19, -75.01], zoom_start=4)
-        #for point in range(0, len(locationlist)):
-            #folium.Marker(locationlist[point], popup=df_ninguno['Name'][point]).add_to(map)
-            #map
-        
-        
-        my_map = folium.Map(location=[-9.19, -75.01], zoom_start=4)
-        
-        Ninguno = pd.read_csv('ninguno.csv')
-        Ninguno.head(1)
-        
-        Nin = Ninguno.loc[0]
-        for _, Nin in Ninguno.iterrows():
-            folium.Marker(
-                location=[Nin['latitude'], Nin['longitude']],
-                popup=Nin['NOMBRE'],
-                tooltip=Nin['NOMBRE']
-            ).add_to(my_map)
-            my_map
-        
-        
+               
+
         
         st_map = st_folium(map, width=800, height=450)
         st.dataframe(df_ninguno)
