@@ -182,27 +182,31 @@ if selected == 'Localización':
         st.write('**Lista de universidades con '+opcion+' localizadas en un mapa interactivo mundial.**')
         
         
-        locations = df_ninguno[['latitude', 'longitude']]
-        locationlist = locations.values.tolist()
-        len(locationlist)
-        locationlist[7]
-        
-        map = folium.Map(location=[-9.19, -75.01], zoom_start=4)
-        for point in range(0, len(locationlist)):
-            folium.Marker(locationlist[point], popup=df_ninguno['Name'][point]).add_to(map)
-            map
-        
+        #locations = df_ninguno[['latitude', 'longitude']]
+        #locationlist = locations.values.tolist()
+        #len(locationlist)
+        #locationlist[7]
         
         #map = folium.Map(location=[-9.19, -75.01], zoom_start=4)
-        #Ninguno = pd.read_csv('ninguno.csv')
-        #Ninguno.head(1)
-        #Nin = Ninguno.loc[0]
-        #Ninguno['LATITUD'],Ninguno['LONGITUD']=np.where(Ninguno['LATITUD']<-74,(Ninguno['LONGITUD'],Ninguno['LATITUD']),(Ninguno['LATITUD'],Licenciadas['LONGITUD']))
-
-        #folium.Marker(
-        #    location=[Nin['latitude'], Nin['longitud']]
-        #).add_to(my_map)
-        #my_map
+        #for point in range(0, len(locationlist)):
+            #folium.Marker(locationlist[point], popup=df_ninguno['Name'][point]).add_to(map)
+            #map
+        
+        
+        my_map = folium.Map(
+            location=[-9.19, -75.01], 
+            zoom_start=4
+        )
+        my_map
+        
+        Ninguno = pd.read_csv('ninguno.csv')
+        Ninguno.head(1)
+        
+        Nin = Ninguno.loc[0]
+        folium.Marker(
+            location=[Nin['latitude'], Nin['longitude']],
+        ).add_to(my_map)
+        my_map
         
         
         
