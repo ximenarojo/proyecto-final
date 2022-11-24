@@ -6,7 +6,8 @@ from streamlit_option_menu import option_menu
 import urllib.request
 import matplotlib.pyplot as plt
 import plotly.express as px
-import pydeck as pdk
+import folium
+from streamlit_folium import st_folium
 from PIL import Image
 
 #URL del archivo en formato raw
@@ -132,7 +133,7 @@ if selected == 'Inicio':
 df_otorgada = pd.read_csv('https://raw.githubusercontent.com/ximenarojo/prueba/main/Licenciadas.csv')
 df_denegada = pd.read_csv('https://raw.githubusercontent.com/ximenarojo/prueba/main/no%20licenciadas.csv')
 df_io = pd.read_csv('https://raw.githubusercontent.com/ximenarojo/prueba/main/io.csv')
-df_ninguno = pd.read_csv('https://raw.githubusercontent.com/ximenarojo/prueba/main/ninguno.csv')
+df_ninguno = pd.read_csv('https://raw.githubusercontent.com/ximenarojo/prueba/main/Ninguno.csv')
 
 if selected == 'Localización':
     st.markdown("<h1 style ='text-align: center'>Mapa interactivo: Localización</h1>", unsafe_allow_html=True)
@@ -153,6 +154,15 @@ if selected == 'Localización':
         opcion = 'licencia otorgada'
         st.markdown("###")
         #st.write('**Gráfico 3. Universidades con '+opcion+' localizadas en un mapa interactivo mundial.**')
+        map = folium.Map(
+            location=[-9.19, -74], 
+            zoom_start=4
+        )
+        Licenciada = pd.read_csv('Licenciadas.csv')
+        Licenciada.head(5)
+        Lic = Licenciada.loc[0]
+        
+        st_map = st_folium(map, width=800, height=450)
         
         st.markdown("###")
         st.write('**Lista de universidades con '+opcion+' localizadas en un mapa interactivo mundial.**')
@@ -179,10 +189,6 @@ if selected == 'Localización':
         opcion = 'ningún estado de licenciamiento'
         st.markdown("###")
         st.write('**Lista de universidades con '+opcion+' localizadas en un mapa interactivo mundial.**')
-               
-
-        
-        st_map = st_folium(map, width=800, height=450)
         st.dataframe(df_ninguno)
         n = len(df_ninguno.axes[0])
      
