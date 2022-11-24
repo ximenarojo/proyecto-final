@@ -199,7 +199,7 @@ if selected == 'Localización':
         Ninguno.head(1)
         
         Nin = Ninguno.loc[0]
-        for_, Nin in Ninguno.iterrows():
+        for _, Nin in Ninguno.iterrows():
             folium.Marker(
                 location=[Nin['latitude'], Nin['longitude']],
                 popup=Nin['NOMBRE'],
