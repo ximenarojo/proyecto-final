@@ -202,9 +202,12 @@ if selected == 'Localización':
         Ninguno.head(1)
         
         Nin = Ninguno.loc[0]
-        folium.Marker(
-            location=[Nin['latitude'], Nin['longitude']],
-        ).add_to(my_map)
+        for_, Nin in Ninguno.iterrows():
+            folium.Marker(
+                location=[Nin['latitude'], Nin['longitude']],
+                popup=Nin['NOMBRE'],
+                tooltip=Nin['NOMBRE']
+            ).add_to(my_map)
         my_map
         
         
