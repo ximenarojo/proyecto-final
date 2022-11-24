@@ -161,6 +161,8 @@ if selected == 'Localización':
         Licenciadas = pd.read_csv('Licenciadas.csv')
         Licenciadas.head(5)
         Lic = Licenciadas.loc[0]
+        Licenciadas['LATITUD'],Licenciadas['LONGITUD']=np.where(Licenciadas['LATITUD']<-74,(Licenciadas['LONGITUD'],Licenciadas['LATITUD']),(Licenciadas['LATITUD'],Licenciadas['LONGITUD']))
+
         folium.Marker(
             location=[Lic['LATITUD'], Lic['LONGITUD']]
         ).add_to(my_map)
