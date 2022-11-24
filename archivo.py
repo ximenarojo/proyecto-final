@@ -154,7 +154,11 @@ if selected == 'Localización':
         opcion = 'licencia otorgada'
         st.markdown("###")
         st.write('**Gráfico 3. Universidades con '+opcion+' localizadas en un mapa interactivo mundial.**')
-        map = folium.Map(location=[-9.19, -74], zoom_start=4)
+        map = folium.Map(
+            #location=[-9.19, -74], 
+            location=[-120.560.257, -770.844.226],
+            location=[-131.612.654, -742.257.339],
+            zoom_start=4)
         st_map = st_folium(map, width=800, height=450)
         st.markdown("###")
         st.write('**Lista de universidades con '+opcion+' localizadas en un mapa interactivo mundial.**')
