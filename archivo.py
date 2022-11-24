@@ -197,7 +197,6 @@ if selected == 'Localización':
             location=[-9.19, -75.01], 
             zoom_start=4
         )
-        my_map
         
         Ninguno = pd.read_csv('ninguno.csv')
         Ninguno.head(1)
