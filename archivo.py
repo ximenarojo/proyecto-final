@@ -193,10 +193,7 @@ if selected == 'Localización':
             #map
         
         
-        my_map = folium.Map(
-            location=[-9.19, -75.01], 
-            zoom_start=4
-        )
+        my_map = folium.Map(location=[-9.19, -75.01], zoom_start=4)
         
         Ninguno = pd.read_csv('ninguno.csv')
         Ninguno.head(1)
@@ -208,7 +205,7 @@ if selected == 'Localización':
                 popup=Nin['NOMBRE'],
                 tooltip=Nin['NOMBRE']
             ).add_to(my_map)
-        my_map
+            my_map
         
         
         
