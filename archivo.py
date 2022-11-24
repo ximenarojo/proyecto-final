@@ -158,12 +158,11 @@ if selected == 'Localización':
             location=[-9.19, -74], 
             zoom_start=4
         )
-        my_map
         Licenciadas = pd.read_csv('Licenciadas.csv')
         Licenciadas.head(5)
         Lic = Licenciadas.loc[0]
         folium.Marker(
-            location=[Lic.rename(columns={'LATITUD':'lat', 'LONGITUD':'lon'})]
+            location=[Lic['LATITUD'], Lic['LONGITUD']]
         ).add_to(my_map)
         my_map
         
