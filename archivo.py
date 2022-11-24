@@ -133,7 +133,7 @@ if selected == 'Inicio':
 df_otorgada = pd.read_csv('https://raw.githubusercontent.com/ximenarojo/prueba/main/Licenciadas.csv')
 df_denegada = pd.read_csv('https://raw.githubusercontent.com/ximenarojo/prueba/main/no%20licenciadas.csv')
 df_io = pd.read_csv('https://raw.githubusercontent.com/ximenarojo/prueba/main/io.csv')
-df_ninguno = pd.read_csv('https://raw.githubusercontent.com/ximenarojo/prueba/main/ninguno.csv')
+df_ninguno = pd.read_csv('https://raw.githubusercontent.com/ximenarojo/prueba/main/Ninguno.csv')
 
 if selected == 'Localización':
     st.markdown("<h1 style ='text-align: center'>Mapa interactivo: Localización</h1>", unsafe_allow_html=True)
@@ -153,22 +153,8 @@ if selected == 'Localización':
         df_map = df_otorgada
         opcion = 'licencia otorgada'
         st.markdown("###")
-        st.write('**Gráfico 3. Universidades con '+opcion+' localizadas en un mapa interactivo mundial.**')
-        my_map = folium.Map(
-            location=[-9.19, -74], 
-            zoom_start=4
-        )
-        Licenciadas = pd.read_csv('Licenciadas.csv')
-        Licenciadas.head(5)
-        Lic = Licenciadas.loc[0]
-        Licenciadas['LATITUD'],Licenciadas['LONGITUD']=np.where(Licenciadas['LATITUD']<-74,(Licenciadas['LONGITUD'],Licenciadas['LATITUD']),(Licenciadas['LATITUD'],Licenciadas['LONGITUD']))
-
-        folium.Marker(
-            location=[Lic['LATITUD'], Lic['LONGITUD']]
-        ).add_to(my_map)
-        my_map
+        #st.write('**Gráfico 3. Universidades con '+opcion+' localizadas en un mapa interactivo mundial.**')
         
-        st_map = st_folium(map, width=800, height=450)
         st.markdown("###")
         st.write('**Lista de universidades con '+opcion+' localizadas en un mapa interactivo mundial.**')
         st.dataframe(df_otorgada)
@@ -188,14 +174,31 @@ if selected == 'Localización':
         st.write('**Lista de universidades con '+opcion+' localizadas en un mapa interactivo mundial.**')
         st.dataframe(df_io)
         n = len(df_io.axes[0])
+        
     elif dataset == 'Ninguno':
         df_map = df_ninguno
         opcion = 'ningún estado de licenciamiento'
         st.markdown("###")
         st.write('**Lista de universidades con '+opcion+' localizadas en un mapa interactivo mundial.**')
+        
+        my_map = folium.Map(
+            location=[-9.19, -74], 
+            zoom_start=4
+        )
+        Ninguno = pd.read_csv('Ninguno.csv')
+        Ninguno.head(1)
+        Nin = Ninguno.loc[0]
+        #Ninguno['LATITUD'],Ninguno['LONGITUD']=np.where(Ninguno['LATITUD']<-74,(Ninguno['LONGITUD'],Ninguno['LATITUD']),(Ninguno['LATITUD'],Licenciadas['LONGITUD']))
+
+        folium.Marker(
+            location=[Nin['LATITUD'], Nin['LONGITUD']]
+        ).add_to(my_map)
+        my_map
+        
+        st_map = st_folium(map, width=800, height=450)
         st.dataframe(df_ninguno)
         n = len(df_ninguno.axes[0])
-       
+     
     
     st.write('Se encontraron', n,'registros de universidades para su búsqueda.')    
     
