@@ -162,7 +162,7 @@ if selected == 'Localización':
         )
         Licenciada = pd.read_csv('Licenciadas.csv')
         Licenciada.head(5)
-        Lic = Licenciada.loc[0]
+        Lic = Licenciada.iloc[0]
         
         st_map = st_folium(map, width=800, height=450)
         
@@ -196,7 +196,7 @@ if selected == 'Localización':
         Lic = Licenciada.iloc[0]
         #--
         folium.Marker(
-            location=[city['LATITUD'], city['LONGITUD']],
+            location=[Lic['LATITUD'], Lic['LONGITUD']],
         ).add_to(map)
                   
                      
