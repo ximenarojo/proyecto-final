@@ -158,7 +158,7 @@ if selected == 'Localización':
         
         map = folium.Map(
             location=[-9.19, -74], 
-            zoom_start=10
+            zoom_start=5
         )
         Licenciada = pd.read_csv('Licenciadas.csv')
         Licenciada.head(5)
