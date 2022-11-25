@@ -186,20 +186,6 @@ if selected == 'Localización':
         st.markdown("###")
         
         
-        
-        map = folium.Map(
-            location=[-9.19, -74], 
-            zoom_start=5
-        )
-        Licenciada = pd.read_csv('Licenciadas.csv')
-        Licenciada.head(5)
-        Lic = Licenciada.iloc[0]
-        #--
-        folium.Marker(
-            location=[Lic['LATITUD'], Lic['LONGITUD']],
-        ).add_to(map)
-                  
-                     
         st_map = st_folium(map, width=800, height=450)
         
         
