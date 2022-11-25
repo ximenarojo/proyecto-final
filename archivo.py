@@ -66,8 +66,8 @@ if selected == 'Inicio':
         url ="https://raw.githubusercontent.com/ximenarojo/prueba/main/Licenciamiento%20Institucional_2.csv"
         filename ="Licenciamiento%20Institucional_2.csv"
         urllib.request.urlretrieve(url,filename)
-        df_LI = pd.read_csv('Licenciamiento%20Institucional_2.csv')
-        return df_LI
+        df = pd.read_csv('Licenciamiento%20Institucional_2.csv')
+        return df
     download_data()
     st.dataframe(download_data())
     st.caption('Para mayor información acceder a: https://www.datosabiertos.gob.pe/dataset/sunedu-licenciamiento-institucional')
@@ -184,6 +184,26 @@ if selected == 'Localización':
         df_map = df_io
         opcion = 'informe de observaciones (IO) notificado'
         st.markdown("###")
+        
+        
+        
+        map = folium.Map(
+            location=[-9.19, -74], 
+            zoom_start=5
+        )
+        Licenciada = pd.read_csv('Licenciadas.csv')
+        Licenciada.head(5)
+        Lic = Licenciada.iloc[0]
+        #--
+        folium.Marker(
+            location=[city['LATITUD'], city['LONGITUD']],
+        ).add_to(map)
+                  
+                     
+        st_map = st_folium(map, width=800, height=450)
+        
+        
+        
         st.write('**Lista de universidades con '+opcion+' localizadas en un mapa interactivo mundial.**')
         st.dataframe(df_io)
         n = len(df_io.axes[0])
