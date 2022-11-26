@@ -140,55 +140,58 @@ if selected == 'Localización':
          'Ninguno')
         )
     df_map = None
-    opcion = '-'
+    option = '-'
     if dataset == 'Licencia otorgada':
         df_map = df_otorgada
-        opcion = 'licencia otorgada'
+        option = 'licencia otorgada'
         st.markdown("###")
-        st.write('**Gráfico 3. Universidades con '+opcion+' localizadas en un mapa interactivo mundial.**')
-
-        map = folium.Map(
-            location=[-9.19, -74], 
-            zoom_start=5
-        )
-        Licenciada = pd.read_csv('Licenciadas.csv')
-        Licenciada.head(5)
-        Lic = Licenciada.iloc[0]
-        st_map = st_folium(map, width=800, height=450)
+        st.write('**Gráfico 3. Universidades con '+option+' localizadas en un mapa interactivo mundial.**')
+        
+        @st.cache
+        def ninguno_data():
+            df_ninguno = pd.read_csv('https://raw.githubusercontent.com/ximenarojo/prueba/main/Ninguno.csv')
+            df_ninguno = df_ninguno.rename(columns={
+                'LATITUD':'lat',
+                'LONGITUD':'lon',
+            })
+            return df_ninguno
+        data = ninguno_data()
+        
+        st.map(data, width=800, height=450)
         
         st.markdown("###")
-        st.write('**Lista de universidades con '+opcion+' localizadas en un mapa interactivo mundial.**')
+        st.write('**Lista de universidades con '+option+' localizadas en un mapa interactivo mundial.**')
         st.dataframe(df_otorgada)
         n = len(df_otorgada.axes[0]) 
         
     elif dataset == 'Licencia denegada':
         df_map = df_denegada
-        opcion = 'licencia denegada'
+        option = 'licencia denegada'
         st.markdown("###")
-        st.write('**Gráfico 3. Universidades con '+opcion+' localizadas en un mapa interactivo mundial.**')
+        st.write('**Gráfico 3. Universidades con '+option+' localizadas en un mapa interactivo mundial.**')
         
-        st.write('**Lista de universidades con '+opcion+' localizadas en un mapa interactivo mundial.**')
+        st.write('**Lista de universidades con '+option+' localizadas en un mapa interactivo mundial.**')
         st.dataframe(df_denegada)
         n = len(df_denegada.axes[0])
     elif dataset == 'Con informe de observaciones (IO) notificado':
         df_map = df_io
-        opcion = 'informe de observaciones (IO) notificado'
+        option = 'informe de observaciones (IO) notificado'
         st.markdown("###")
-        st.write('**Gráfico 3. Universidades con '+opcion+' localizadas en un mapa interactivo mundial.**')
+        st.write('**Gráfico 3. Universidades con '+option+' localizadas en un mapa interactivo mundial.**')
                
         
-        st.write('**Lista de universidades con '+opcion+' localizadas en un mapa interactivo mundial.**')
+        st.write('**Lista de universidades con '+option+' localizadas en un mapa interactivo mundial.**')
         st.dataframe(df_io)
         n = len(df_io.axes[0])
         
     elif dataset == 'Ninguno':
         data = df_ninguno
-        opcion = 'ningún estado de licenciamiento'
+        option = 'ningún estado de licenciamiento'
         st.markdown("###")
-        st.write('**Gráfico 3. Universidades con '+opcion+' localizadas en un mapa interactivo mundial.**')
+        st.write('**Gráfico 3. Universidades con '+option+' localizadas en un mapa interactivo mundial.**')
         
         
-        st.write('**Lista de universidades con '+opcion+' localizadas en un mapa interactivo mundial.**')
+        st.write('**Lista de universidades con '+option+' localizadas en un mapa interactivo mundial.**')
         st.dataframe(df_ninguno)
         n = len(df_ninguno.axes[0])
      
@@ -200,13 +203,13 @@ if selected == 'Reportes':
     st.markdown("<h1 style ='text-align: center'>Períodos de Licenciamiento</h1>", unsafe_allow_html=True)
     st.markdown("---")
     
-
+    
     
 
     
 #--------------------------------------------------------------------------------------------
 if selected == 'Equipo':
-    st.markdown("<h1 style='text-align: center, color:Blue'>¿Quiénes somos?</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 style='text-align: center'>¿Quiénes somos?</h1>", unsafe_allow_html=True)
     st.markdown("---")
     st.write('Somos un grupo de estudiantes de 5to ciclo de la carrera de Ingeniería Ambiental de la Universidad Peruana Cayetano Heredia, que motivados por los conocimientos adquiridos por el curso de Programación Avanzada y junto a la asesoría de los profesores, hemos desarrollado una app interactiva para la visualización y exploración práctica de los datos recopilados sobre el avance y estatus actual del Licenciamiento Institucional de las Universidades tanto públicas como privadas del Perú.')
     st.markdown("###")
