@@ -124,7 +124,7 @@ if selected == 'Inicio':
     
 #-----------------------------------------------------------------------------------------------------
 df_otorgada = pd.read_csv('https://raw.githubusercontent.com/ximenarojo/prueba/main/Licenciadas.csv')
-df_denegada = pd.read_csv('https://raw.githubusercontent.com/ximenarojo/prueba/main/no%20licenciadas.csv')
+df_denegada = pd.read_csv('https://raw.githubusercontent.com/ximenarojo/prueba/main/No%20licenciadas.csv')
 df_io = pd.read_csv('https://raw.githubusercontent.com/ximenarojo/prueba/main/IO.csv')
 df_ninguno = pd.read_csv('https://raw.githubusercontent.com/ximenarojo/prueba/main/Ninguno.csv')
 
@@ -155,11 +155,19 @@ if selected == 'Localización':
         n = len(df_otorgada.axes[0]) 
         
     elif dataset == 'Licencia denegada':
-        df_map = df_denegada
         option = 'licencia denegada'
         st.markdown("###")
         st.write('**Gráfico 3. Universidades con '+option+' localizadas en un mapa interactivo mundial.**')
-        
+        @st.cache
+        def denegada_data():
+            df_denegada = pd.read_csv('No%20licenciadas.csv')
+            df_denegada = df_ninguno.rename(columns={
+                'LATITUD':'lat',
+                'LONGITUD':'lon',
+            })
+            return df_denegada
+        data = denegada_data()
+        st.map(data)
         st.write('**Lista de universidades con '+option+' localizadas en un mapa interactivo mundial.**')
         st.dataframe(df_denegada)
         n = len(df_denegada.axes[0])
@@ -178,7 +186,6 @@ if selected == 'Localización':
             return df_io
         data = io_data()
         st.map(data)
-        
         st.write('**Lista de universidades con '+option+' localizadas en un mapa interactivo mundial.**')
         st.dataframe(df_io)
         n = len(df_io.axes[0])
@@ -197,7 +204,6 @@ if selected == 'Localización':
             return df_ninguno
         data = ninguno_data()
         st.map(data)
-        
         st.write('**Lista de universidades con '+option+' localizadas en un mapa interactivo mundial.**')
         st.dataframe(df_ninguno)
         n = len(df_ninguno.axes[0])
