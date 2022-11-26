@@ -17,7 +17,7 @@ from PIL import Image
 #st.line_chart(data=datos, x='NOMBRE', y='ESTADO_LICENCIAMIENTO')
 
 #-----------------------------------------------------------
-st.set_page_config(layout='wide', initial_sidebar_state='static')
+st.set_page_config(layout='wide', initial_sidebar_state='expanded')
 with open('upch.css') as f:
     st.markdown(f'<style>{f.read()}</upch>', unsafe_allow_html=True)
 with st.sidebar: 
