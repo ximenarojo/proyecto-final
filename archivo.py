@@ -206,10 +206,8 @@ if selected == 'Localización':
         m = folium.Map(location=[-9.1900, -75.0152], tiles='Mapbox', zoom_start=5)
         m
         folium.Marker(location=[-12.0003522, -77.0833903],popup='Lima',icon=folium.Icon(icon='cloud')).add_to(m)
-        iconuniversity = folium.features.CustomIcon('./images/univ_ninguno.jpg', icon_size=(100,100))
-        popupuniversity = "<strong>UNIVERSIDAD AUTÓNOMA MUNICIPAL DE LOS OLIVOS</strong><br>Dirección: Av. Universitaria Norte 2202, Los Olivos, Lima, Perú.<br>Teléfono: (01)613-8282"
-        folium.Marker([-12.0003522, -77.0833903], tooltip="Universidad", popup=popupuniversity, icon=iconuniversity).add_to(m)
-        m.save('index.html')
+        #popupuniversity = "<strong>UNIVERSIDAD AUTÓNOMA MUNICIPAL DE LOS OLIVOS</strong><br>Dirección: Av. Universitaria Norte 2202, Los Olivos, Lima, Perú.<br>Teléfono: (01)613-8282"
+        #m.save('index.html')
 
         
       
