@@ -204,15 +204,7 @@ if selected == 'Localización':
         st.markdown("###")
         
         df = pd.read_csv('Ninguno.csv')
-        df.columns= df.columns.str.strip()
-        df.head()
         
-        subset_of_df= df.sample(n=200)
-        some_map= folium.Map(location=[subset_of_df['Y'].mean(),subset_of_df['X'].mean()],
-                             zoom_start=10)
-        for row in subset_of_df.itertuples():
-            some_map.add_child(folium.Marker(location=[row.Y,row.X],popup=row.ID))
-        some_map
         
         
        
