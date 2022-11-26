@@ -202,7 +202,7 @@ if selected == 'Localización':
         df_map = df_ninguno
         opcion = 'ningún estado de licenciamiento'
         st.markdown("###")
-        midpoint=(np.average(data['LATITUD']), np.average(data['LONGITUD']))
+         midpoint=(np.average(data['LATITUD']), np.average(data['LONGITUD']))
         st.write(pdk.Deck(
             map_style="mapbox://styles/mapbox/light-v9",
             initial_view_state={
@@ -223,9 +223,9 @@ if selected == 'Localización':
                     elevation_range=[0,1000],
                 ),
             ]
-            st.write('**Lista de universidades con '+opcion+' localizadas en un mapa interactivo mundial.**')
-            st.dataframe(df_ninguno)
-            n = len(df_ninguno.axes[0])
+        st.write('**Lista de universidades con '+opcion+' localizadas en un mapa interactivo mundial.**')
+        st.dataframe(df_ninguno)
+        n = len(df_ninguno.axes[0])
      
     
     st.write('Se encontraron', n,'registros de universidades para su búsqueda.')    
