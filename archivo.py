@@ -207,7 +207,7 @@ if selected == 'Localización':
             map_style="mapbox://styles/mapbox/light-v9",
             initial_view_state={
                 'LATITUD':midpoint[0],
-                'LONGITUD':MIDPOINT[1],
+                'LONGITUD':midpoint[1],
                 'zoom': 5,
                 'pitch': 50,
             },
