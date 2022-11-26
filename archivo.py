@@ -212,12 +212,9 @@ if selected == 'Localización':
 if selected == 'Reportes':
     st.markdown("<h1 style ='text-align: center'>Períodos de Licenciamiento</h1>", unsafe_allow_html=True)
     st.markdown("---")
-    from datetime import datetime
-    start_time = st.slider(
-        "Escoge un período de licenciamiento:",
-        value = datetime(2020, 1, 1,),
-        format="DD/MM/YY")
-    st.write("Fecha seleccionada:", start_time)
+    n = st.slider("Período de licenciamiento", 0,10, step=2)
+    chart_data = pd.DataFrame(np.random.randn(n),columns=['Período'])
+    st.line_chart(chart_data)
     
 
     
