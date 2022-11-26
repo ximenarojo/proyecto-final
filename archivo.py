@@ -211,7 +211,7 @@ if selected == 'Localización':
                 'LONGITUD':MIDPOINT[1],
                 'zoom': 5,
                 'pitch': 50,
-            }
+            },
             layers = [
                 pdk.Layer(
                     "HexagonLayer",
