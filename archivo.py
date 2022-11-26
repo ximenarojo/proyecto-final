@@ -214,8 +214,8 @@ if selected == 'Localización':
         st.pydeck_chart(pdk.Deck(
             map_style= None, #"mapbox://styles/mapbox/light-v9"
             initial_view_state=pdk.ViewState(
-                latitude= -12.0003522,
-                longitude= -77.0833903,
+                lat= -12.0003522,
+                lon= -77.0833903,
                 zoom= 5,
                 pitch= 50,
             ),
@@ -225,7 +225,7 @@ if selected == 'Localización':
                     #data=data[['LATITUD','LONGITUD']],
                     data=chart_data,
                     get_position='[lon, lat]',
-                    #get_position=['LONGITUD', 'LATITUD'],
+                    #get_position=['longitude', 'latitude'],
                     radius=100,
                     extruded=True,
                     pickable=True,
