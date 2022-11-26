@@ -157,7 +157,7 @@ if selected == 'Localización':
             return df_ninguno
         data = ninguno_data()
         
-        st.map(data, width=800, height=450)
+        st.map(data)
         
         st.markdown("###")
         st.write('**Lista de universidades con '+option+' localizadas en un mapa interactivo mundial.**')
