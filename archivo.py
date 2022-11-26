@@ -209,7 +209,7 @@ if selected == 'Localización':
             initial_view_state={
                 'LATITUD':midpoint[0],
                 'LONGITUD':MIDPOINT[1],
-                'zoom': 5
+                'zoom': 5,
                 'pitch': 50,
             }
             layers =[
