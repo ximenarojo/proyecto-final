@@ -228,7 +228,7 @@ if selected == 'Localización':
         #n = len(df_ninguno.axes[0])
      
     
-    st.write('Se encontraron', n,'registros de universidades para su búsqueda.')    
+   # st.write('Se encontraron', n,'registros de universidades para su búsqueda.')    
     
    
     
