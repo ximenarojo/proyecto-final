@@ -202,47 +202,33 @@ if selected == 'Localización':
         data = df_ninguno
         opcion = 'ningún estado de licenciamiento'
         st.markdown("###")
-        
-        #midpoint=(np.average(data['LATITUD']), np.average(data['LONGITUD']))
+      
 
-        #chart_data = pd.DataFrame(
-            #np.random.randn(1000, 2) / [50, 50] + [37.76, -122.4],
-            #columns=['lat', 'lon'])
+        DATA = 'https://raw.githubusercontent.com/ximenarojo/prueba/main/Ninguno.csv'
+        layer = pdk.Layer(
+            'HexagonLayer',
+            DATA,
+            get_position=['lng', 'lat'],
+            auto_highlight=True,
+            elevation_scale=50,
+            pickable=True,
+            elevation_range=[0, 3000],
+            extruded=True,
+            coverage=1)
         
-        chart_data= pd.read_csv('https://raw.githubusercontent.com/ximenarojo/prueba/main/Ninguno.csv')
-        #np.random.randn(1000, 2) / [50, 50] + [-12.0004, -77.083],
-        #columns=['latitude', 'longitude']
-            
-        st.pydeck_chart(pdk.Deck(
-            map_style= None, #"mapbox://styles/mapbox/light-v9"
-            initial_view_state=pdk.ViewState(
-                latitude= -12.0004,
-                longitude= -77.083,
-                zoom= 11,
-                pitch= 50,
-            ),
-            layers=[
-                pdk.Layer(
-                    'HexagonLayer',
-                    #data=data[['LATITUD','LONGITUD']],
-                    data=chart_data,
-                    #get_position='[lon, lat]',
-                    get_position=['longitude', 'latitude'],
-                    radius=200,
-                    extruded=True,
-                    pickable=True,
-                    elevation_scale = 4,
-                    elevation_range=[0,1000],
-                ),
-                pdk.Layer(
-                    'ScatterplotLayer',
-                    data=chart_data,
-                    get_position='[lon, lat]',
-                    get_color='[200, 30, 0, 160]',
-                    get_radius=200,
-                ),
-            ],
-        ))
+        view_state = pdk.ViewState(
+            longitude=-77.0834,
+            latitude=12.00034,
+            zoom=6,
+            min_zoom=5,
+            max_zoom=15,
+            pitch=50)
+        
+        r = pdk.Deck(layers=[layer], initial_view_state=view_state)
+        r.to_html('hexagon-example.html')
+        
+        
+       
   
        
         st.write('**Lista de universidades con '+opcion+' localizadas en un mapa interactivo mundial.**')
