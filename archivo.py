@@ -199,7 +199,7 @@ if selected == 'Localización':
         n = len(df_io.axes[0])
         
     elif dataset == 'Ninguno':
-        df_map = df_ninguno
+        data = df_ninguno
         opcion = 'ningún estado de licenciamiento'
         st.markdown("###")
         midpoint=(np.average(data['LATITUD']), np.average(data['LONGITUD']))
