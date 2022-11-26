@@ -202,30 +202,19 @@ if selected == 'Localización':
         data = df_ninguno
         opcion = 'ningún estado de licenciamiento'
         st.markdown("###")
+        
+        m = folium.Map(location=[-9.1900, -75.0152], tiles='Mapbox', zoom_start=5)
+        m
+        folium.Marker(location=[-12.0003522, -77.0833903],popup='Lima',icon=folium.Icon(icon='cloud')).add_to(m)
+        iconuniversity = folium.features.CustomIcon('./images/univ_ninguno.jpg', icon_size=(100,100))
+        popupuniversity = "<strong>UNIVERSIDAD AUTÓNOMA MUNICIPAL DE LOS OLIVOS</strong><br>Dirección: Av. Universitaria Norte 2202, Los Olivos, Lima, Perú.<br>Teléfono: (01)613-8282"
+        folium.Marker([-12.0003522, -77.0833903], tooltip="Universidad", popup=popupuniversity, icon=iconuniversity).add_to(m)
+        m.save('index.html')
+
+        
       
 
-        DATA = 'https://raw.githubusercontent.com/ximenarojo/prueba/main/Ninguno.csv'
-        layer = pdk.Layer(
-            'HexagonLayer',
-            DATA,
-            get_position=['lng', 'lat'],
-            auto_highlight=True,
-            elevation_scale=50,
-            pickable=True,
-            elevation_range=[0, 3000],
-            extruded=True,
-            coverage=1)
         
-        view_state = pdk.ViewState(
-            longitude=-77.0834,
-            latitude=12.00034,
-            zoom=6,
-            min_zoom=5,
-            max_zoom=15,
-            pitch=50)
-        
-        r = pdk.Deck(layers=[layer], initial_view_state=view_state)
-        r.to_html('hexagon-example.html')
         
         
        
