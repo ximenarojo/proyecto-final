@@ -16,7 +16,7 @@ from PIL import Image
 #datos = pd.read_csv(url, sep=',')
 #st.line_chart(data=datos, x='NOMBRE', y='ESTADO_LICENCIAMIENTO')
 
-#---------------------------------------------------------
+#-----------------------------------------------------------
 st.set_page_config(layout='wide', initial_sidebar_state='expanded')
 with open('upch.css') as f:
     st.markdown(f'<style>{f.read()}</upch>', unsafe_allow_html=True)
@@ -34,7 +34,7 @@ with st.sidebar:
             "nav-link-selected":{"background-color":"skyblue"}
         },
     )
-#--------------------------------------------------------- 
+#----------------------------------------------------------- 
 if selected == 'Inicio':
     st.markdown("<h1 style ='text-align: center'>SUNEDU:</h1>", unsafe_allow_html=True)
     st.markdown("<h1 style ='text-align: center'>Licenciamiento Institucional</h1>", unsafe_allow_html=True)
@@ -212,11 +212,13 @@ if selected == 'Localización':
 if selected == 'Reportes':
     st.markdown("<h1 style ='text-align: center'>Períodos de Licenciamiento</h1>", unsafe_allow_html=True)
     st.markdown("---")
-    periodo = df['PERIODO_LICENCIAMIENTO'].unique().tolist()
-    periodo_selection = st.slider('PERIODO_LICENCIAMIENTO:',
-                                  min_value= min(periodo),
-                                  max_value= max(periodo),
-                                  value=(min(periodo),max(periodo)))
+    from datetime import datetime
+    start_time = st.slider(
+        "Escoge un período de licenciamiento:",
+        value = datetime(2020, 1, 1,),
+        format="DD/MM/YY")
+    st.write("Fecha seleccionada:", start_time)
+    
 
     
 #--------------------------------------------------
