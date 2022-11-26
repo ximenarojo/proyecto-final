@@ -6,22 +6,18 @@ from streamlit_option_menu import option_menu
 import urllib.request
 import matplotlib.pyplot as plt
 import plotly.express as px
-
-import plotly.graph_objects as go
-import pydeck as pdk
-
+#import pydeck as pdk
 import folium
 from streamlit_folium import st_folium
 from PIL import Image
 
 #URL del archivo en formato raw
 #url ='https://raw.githubusercontent.com/ximenarojo/prueba/main/Licenciamiento%20Institucional_2.csv'
-#Descargar y leer el archivo y considerar las comas como separadores
 #datos = pd.read_csv(url, sep=',')
 #st.line_chart(data=datos, x='NOMBRE', y='ESTADO_LICENCIAMIENTO')
 
 #-----------------------------------------------------------
-st.set_page_config(layout='wide', initial_sidebar_state='expanded')
+st.set_page_config(layout='wide', initial_sidebar_state='static')
 with open('upch.css') as f:
     st.markdown(f'<style>{f.read()}</upch>', unsafe_allow_html=True)
 with st.sidebar: 
