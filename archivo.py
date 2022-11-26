@@ -214,8 +214,8 @@ if selected == 'Localización':
             layers = [
                 pdk.Layer(
                     "HexagonLayer",
-                    data=data[['LATITUD','LONGITUD']],
-                    get_position=['LONGITUD', 'LATITUD'],
+                    data=data[['latitude','longitude']],
+                    get_position=['longitude', 'latitude'],
                     radius=100,
                     extruded=True,
                     pickable=True,
