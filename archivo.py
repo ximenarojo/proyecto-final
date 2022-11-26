@@ -196,8 +196,8 @@ if selected == 'Localización':
         st.map(data)
         
         st.write('**Lista de universidades con '+option+' localizadas en un mapa interactivo mundial.**')
-        st.dataframe(df_ninguno)
-        n = len(df_ninguno.axes[0])
+        st.dataframe(ninguno_data)
+        n = len(ninguno_data.axes[0])
      
     
     st.write('Se encontraron', n,'registros de universidades para su búsqueda.')    
