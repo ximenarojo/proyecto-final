@@ -125,6 +125,9 @@ if selected == 'Inicio':
 #-----------------------------------------------------------------------------------------------------
 df_otorgada = pd.read_csv('https://raw.githubusercontent.com/ximenarojo/prueba/main/Licenciadas.csv')
 df_denegada = pd.read_csv('https://raw.githubusercontent.com/ximenarojo/prueba/main/no%20licenciadas.csv')
+df_io = pd.read_csv('https://raw.githubusercontent.com/ximenarojo/prueba/main/IO.csv')
+df_ninguno = pd.read_csv('https://raw.githubusercontent.com/ximenarojo/prueba/main/Ninguno.csv')
+
 
 if selected == 'Localización':
     st.markdown("<h1 style ='text-align: center'>Mapa interactivo: Localización</h1>", unsafe_allow_html=True)
@@ -167,7 +170,7 @@ if selected == 'Localización':
         st.write('**Gráfico 3. Universidades con '+option+' localizadas en un mapa interactivo mundial.**')
         @st.cache
         def io_data():
-            df_io = pd.read_csv('https://raw.githubusercontent.com/ximenarojo/prueba/main/IO.csv')
+            df_io = pd.read_csv('IO.csv')
             df_io = df_io.rename(columns={
                 'LATITUD':'lat',
                 'LONGITUD':'lon',
@@ -186,7 +189,7 @@ if selected == 'Localización':
         st.write('**Gráfico 3. Universidades con '+option+' localizadas en un mapa interactivo mundial.**')
         @st.cache
         def ninguno_data():
-            df_ninguno = pd.read_csv('https://raw.githubusercontent.com/ximenarojo/prueba/main/Ninguno.csv')
+            df_ninguno = pd.read_csv('Ninguno.csv')
             df_ninguno = df_ninguno.rename(columns={
                 'LATITUD':'lat',
                 'LONGITUD':'lon',
