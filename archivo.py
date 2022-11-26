@@ -223,12 +223,13 @@ if selected == 'Localización':
                     elevation_range=[0,1000],
                 ),
             ]
-       # st.write('**Lista de universidades con '+opcion+' localizadas en un mapa interactivo mundial.**')
-        #st.dataframe(df_ninguno)
-        #n = len(df_ninguno.axes[0])
+        ))
+        st.write('**Lista de universidades con '+opcion+' localizadas en un mapa interactivo mundial.**')
+        st.dataframe(df_ninguno)
+        n = len(df_ninguno.axes[0])
      
     
-   # st.write('Se encontraron', n,'registros de universidades para su búsqueda.')    
+    st.write('Se encontraron', n,'registros de universidades para su búsqueda.')    
     
    
     
