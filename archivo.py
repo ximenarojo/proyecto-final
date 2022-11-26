@@ -6,6 +6,10 @@ from streamlit_option_menu import option_menu
 import urllib.request
 import matplotlib.pyplot as plt
 import plotly.express as px
+
+import plotly.graph_objects as go
+import pydeck as pdk
+
 import folium
 from streamlit_folium import st_folium
 from PIL import Image
@@ -198,6 +202,39 @@ if selected == 'Localización':
         df_map = df_ninguno
         opcion = 'ningún estado de licenciamiento'
         st.markdown("###")
+        
+        midpoint=(np.average(data['LATITUD']), np.average(data['LONGITUD']))
+        st.write(pdk.Deck(
+            map_style="mapbox://styles/mapbox/light-v9",
+            initial_view_state={
+                'LATITUD':midpoint[0],
+                'LONGITUD':MIDPOINT[1],
+                'zoom': 5
+                'pitch': 50,
+            }
+            layers =[
+                pdk.Layer(
+                    "HexagonLayer",
+                    data=data[['LATITUD','LONGITUD']],
+                    get_position=['LONGITUD', 'LATITUD']
+                    radius=100,
+                    extruded=True,
+                    pickable=True,
+                    elevation_scale = 4,
+                    elevation_range=[0,1000],
+                ),
+            ]
+                
+                
+        
+            
+           
+            
+        
+        
+        
+        
+        
         st.write('**Lista de universidades con '+opcion+' localizadas en un mapa interactivo mundial.**')
         st.dataframe(df_ninguno)
         n = len(df_ninguno.axes[0])
@@ -212,9 +249,7 @@ if selected == 'Localización':
 if selected == 'Reportes':
     st.markdown("<h1 style ='text-align: center'>Períodos de Licenciamiento</h1>", unsafe_allow_html=True)
     st.markdown("---")
-    df = pd.DataFrame(
-        np.random.randn(1000, 2) / [50, 50] + [-9.19, -74],
-        columns=['lat', 'lon'])
+    
 
     
 
