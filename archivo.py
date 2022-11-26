@@ -210,8 +210,8 @@ if selected == 'Localización':
             #columns=['lat', 'lon'])
         
         chart_data= pd.read_csv('https://raw.githubusercontent.com/ximenarojo/prueba/main/Ninguno.csv')
-        np.random.randn(1000, 2) / [50, 50] + [-12.0004, -77.083],
-        columns=['latitude', 'longitude']
+        #np.random.randn(1000, 2) / [50, 50] + [-12.0004, -77.083],
+        #columns=['latitude', 'longitude']
             
         st.pydeck_chart(pdk.Deck(
             map_style= None, #"mapbox://styles/mapbox/light-v9"
