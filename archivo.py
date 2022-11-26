@@ -212,6 +212,11 @@ if selected == 'Localización':
 if selected == 'Reportes':
     st.markdown("<h1 style ='text-align: center'>Períodos de Licenciamiento</h1>", unsafe_allow_html=True)
     st.markdown("---")
+    periodo = df['PERIODO_LICENCIAMIENTO'].unique().tolist()
+    periodo_selection = st.slider('PERIODO_LICENCIAMIENTO:',
+                                  min_value= min(periodo),
+                                  max_value= max(periodo),
+                                  value=(min(periodo),max(periodo)))
 
     
 #--------------------------------------------------
