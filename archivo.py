@@ -125,8 +125,6 @@ if selected == 'Inicio':
 #-----------------------------------------------------------------------------------------------------
 df_otorgada = pd.read_csv('https://raw.githubusercontent.com/ximenarojo/prueba/main/Licenciadas.csv')
 df_denegada = pd.read_csv('https://raw.githubusercontent.com/ximenarojo/prueba/main/no%20licenciadas.csv')
-df_io = pd.read_csv('https://raw.githubusercontent.com/ximenarojo/prueba/main/io.csv')
-df_ninguno = pd.read_csv('https://raw.githubusercontent.com/ximenarojo/prueba/main/Ninguno.csv')
 
 if selected == 'Localización':
     st.markdown("<h1 style ='text-align: center'>Mapa interactivo: Localización</h1>", unsafe_allow_html=True)
@@ -162,19 +160,27 @@ if selected == 'Localización':
         st.write('**Lista de universidades con '+option+' localizadas en un mapa interactivo mundial.**')
         st.dataframe(df_denegada)
         n = len(df_denegada.axes[0])
+    
     elif dataset == 'Con informe de observaciones (IO) notificado':
-        df_map = df_io
         option = 'informe de observaciones (IO) notificado'
         st.markdown("###")
         st.write('**Gráfico 3. Universidades con '+option+' localizadas en un mapa interactivo mundial.**')
-               
+        @st.cache
+        def io_data():
+            df_io = pd.read_csv('https://raw.githubusercontent.com/ximenarojo/prueba/main/io.csv')
+            df_io = df_io.rename(columns={
+                'LATITUD':'lat',
+                'LONGITUD':'lon',
+            })
+            return df_io
+        data = io_data()
+        st.map(data)
         
         st.write('**Lista de universidades con '+option+' localizadas en un mapa interactivo mundial.**')
         st.dataframe(df_io)
         n = len(df_io.axes[0])
         
     elif dataset == 'Ninguno':
-        #data = df_ninguno
         option = 'ningún estado de licenciamiento'
         st.markdown("###")
         st.write('**Gráfico 3. Universidades con '+option+' localizadas en un mapa interactivo mundial.**')
@@ -187,9 +193,7 @@ if selected == 'Localización':
             })
             return df_ninguno
         data = ninguno_data()
-        
         st.map(data)
-        
         
         st.write('**Lista de universidades con '+option+' localizadas en un mapa interactivo mundial.**')
         st.dataframe(df_ninguno)
