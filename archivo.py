@@ -190,7 +190,7 @@ if selected == 'Localización':
         st.markdown("###")
         
         
-        st_map = st_folium(map, width=800, height=450)
+        #st_map = st_folium(map, width=800, height=450)
         
         
         
