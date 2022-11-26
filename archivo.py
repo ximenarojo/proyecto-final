@@ -212,9 +212,10 @@ if selected == 'Localización':
 if selected == 'Reportes':
     st.markdown("<h1 style ='text-align: center'>Períodos de Licenciamiento</h1>", unsafe_allow_html=True)
     st.markdown("---")
-    n = st.slider("Período de licenciamiento", 0,10, step=2)
-    chart_data = pd.DataFrame(np.random.randn(n),columns=['Período'])
-    st.line_chart(chart_data)
+    df = pd.DataFrame(
+        np.random.randn(1000, 2) / [50, 50] + [-9.19, -74],
+        columns=['lat', 'lon'])
+
     
 
     
