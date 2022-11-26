@@ -203,18 +203,21 @@ if selected == 'Localización':
         opcion = 'ningún estado de licenciamiento'
         st.markdown("###")
         
+        df = pd.read_csv('Ninguno.csv')}
+        df.columns= df.columns.str.strip()
+        df.head()
+        
+        subset_of_df= df.sample(n=200)
+        some_map= folium.Map(location=[subset_of_df['Y'].mean(),subset_of_df['X'].mean()],
+                             zoom_start=10)
+        for row in subset_of_df.itertuples():
+            some_map.add_child(folium.Marker(location=[row.Y,row.X],popup=row.ID))
+        some_map
         
         
-        
-        m = folium.Map(location=[-9.1900, -75.0152], tiles='Mapbox', zoom_start=5)
-        m
-        logoIcon = folium.features.CustomIcon('univ_ninguno.jpg', icon_size=(50, 50))
-        folium.Marker([-12.0003522, -77.0833903],
-              popup='Lima',
-              icon=folium.Icon(icon='cloud')).add_to(m)
        
-        
-      
+       
+    
 
         
         
