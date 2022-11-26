@@ -203,7 +203,7 @@ if selected == 'Localización':
         opcion = 'ningún estado de licenciamiento'
         st.markdown("###")
         
-        df = pd.read_csv('Ninguno.csv')}
+        df = pd.read_csv('Ninguno.csv')
         df.columns= df.columns.str.strip()
         df.head()
         
