@@ -124,7 +124,7 @@ if selected == 'Inicio':
     
 #-----------------------------------------------------------------------------------------------------
 df_otorgada = pd.read_csv('https://raw.githubusercontent.com/ximenarojo/prueba/main/Licenciadas.csv')
-df_denegada = pd.read_csv('https://raw.githubusercontent.com/ximenarojo/prueba/main/No%20licenciadas.csv')
+df_denegada = pd.read_csv('https://raw.githubusercontent.com/ximenarojo/prueba/main/nolicenciadas.csv')
 df_io = pd.read_csv('https://raw.githubusercontent.com/ximenarojo/prueba/main/IO.csv')
 df_ninguno = pd.read_csv('https://raw.githubusercontent.com/ximenarojo/prueba/main/Ninguno.csv')
 
@@ -160,7 +160,7 @@ if selected == 'Localización':
         st.write('**Gráfico 3. Universidades con '+option+' localizadas en un mapa interactivo mundial.**')
         @st.cache
         def denegada_data():
-            df_denegada = pd.read_csv('No%20licenciadas.csv')
+            df_denegada = pd.read_csv('nolicenciadas.csv')
             df_denegada = df_ninguno.rename(columns={
                 'LATITUD':'lat',
                 'LONGITUD':'lon',
