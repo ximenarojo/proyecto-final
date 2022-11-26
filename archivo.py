@@ -202,37 +202,53 @@ if selected == 'Localización':
         data = df_ninguno
         opcion = 'ningún estado de licenciamiento'
         st.markdown("###")
-        midpoint=(np.average(data['LATITUD']), np.average(data['LONGITUD']))
-        st.write(pdk.Deck(
-            map_style="mapbox://styles/mapbox/light-v9",
-            initial_view_state={
-                'LATITUD':midpoint[0],
-                'LONGITUD':midpoint[1],
-                'zoom': 5,
-                'pitch': 50,
-            },
-            layers = [
+        
+        #midpoint=(np.average(data['LATITUD']), np.average(data['LONGITUD']))
+
+        #chart_data = pd.DataFrame(
+            #np.random.randn(1000, 2) / [50, 50] + [37.76, -122.4],
+            #columns=['lat', 'lon'])
+        
+        chart_data= pd.read_csv('https://raw.githubusercontent.com/ximenarojo/prueba/main/Ninguno.csv')
+            
+        st.pydeck_chart(pdk.Deck(
+            map_style= None, #"mapbox://styles/mapbox/light-v9"
+            initial_view_state=pdk.ViewState(
+                latitude= -12.0003522,
+                longitude= -77.0833903,
+                zoom= 5,
+                pitch= 50,
+            ),
+            layers=[
                 pdk.Layer(
-                    "HexagonLayer",
-                    data=data[['latitude','longitude']],
-                    get_position=['longitude', 'latitude'],
+                    'HexagonLayer',
+                    #data=data[['LATITUD','LONGITUD']],
+                    data=chart_data,
+                    get_position='[lon, lat]',
+                    #get_position=['LONGITUD', 'LATITUD'],
                     radius=100,
                     extruded=True,
                     pickable=True,
                     elevation_scale = 4,
                     elevation_range=[0,1000],
                 ),
-            ]
+                pdk.Layer(
+                    'ScatterplotLayer',
+                    data=chart_data,
+                    get_position='[lon, lat]',
+                    get_color='[200, 30, 0, 160]',
+                    get_radius=200,
+                ),
+            ],
         ))
+  
+       
         st.write('**Lista de universidades con '+opcion+' localizadas en un mapa interactivo mundial.**')
         st.dataframe(df_ninguno)
         n = len(df_ninguno.axes[0])
      
     
     st.write('Se encontraron', n,'registros de universidades para su búsqueda.')    
-    
-   
-    
     
 #--------------------------------------------------
 if selected == 'Reportes':
