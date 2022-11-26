@@ -212,7 +212,7 @@ if selected == 'Localización':
                 'zoom': 5,
                 'pitch': 50,
             }
-            layers =[
+            layers = [
                 pdk.Layer(
                     "HexagonLayer",
                     data=data[['LATITUD','LONGITUD']],
