@@ -216,7 +216,7 @@ if selected == 'Localización':
             initial_view_state=pdk.ViewState(
                 latitude= -12.0004,
                 longitude= -77.083,
-                zoom= 5,
+                zoom= 11,
                 pitch= 50,
             ),
             layers=[
@@ -226,7 +226,7 @@ if selected == 'Localización':
                     data=chart_data,
                     #get_position='[lon, lat]',
                     get_position=['longitude', 'latitude'],
-                    radius=100,
+                    radius=200,
                     extruded=True,
                     pickable=True,
                     elevation_scale = 4,
