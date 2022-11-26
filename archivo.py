@@ -11,11 +11,6 @@ import folium
 from streamlit_folium import st_folium
 from PIL import Image
 
-#URL del archivo en formato raw
-#url ='https://raw.githubusercontent.com/ximenarojo/prueba/main/Licenciamiento%20Institucional_2.csv'
-#datos = pd.read_csv(url, sep=',')
-#st.line_chart(data=datos, x='NOMBRE', y='ESTADO_LICENCIAMIENTO')
-
 #-----------------------------------------------------------
 st.set_page_config(layout='wide', initial_sidebar_state='expanded')
 with open('upch.css') as f:
@@ -34,7 +29,7 @@ with st.sidebar:
             "nav-link-selected":{"background-color":"skyblue"}
         },
     )
-#----------------------------------------------------------- 
+#------------------------------------------------------------------------------------------------------------
 if selected == 'Inicio':
     st.markdown("<h1 style ='text-align: center'>SUNEDU:</h1>", unsafe_allow_html=True)
     st.markdown("<h1 style ='text-align: center'>Licenciamiento Institucional</h1>", unsafe_allow_html=True)
@@ -71,7 +66,7 @@ if selected == 'Inicio':
     download_data()
     st.dataframe(download_data())
     st.caption('Para mayor información acceder a: https://www.datosabiertos.gob.pe/dataset/sunedu-licenciamiento-institucional')
-    #---------------------------------------------------------------------------------------------------------------------------
+    
     st.header("Descripción del Dataset:")
     st.caption('A continuación, se proporciona una descripción de las variables incluidas en el Dataset.')
     @st.experimental_memo
@@ -89,25 +84,23 @@ if selected == 'Inicio':
     st.write('**A continuación, seleccione una zona geográfica para visualizar el registro de universidades.**')
     st.markdown("###")
     df = pd.read_csv('Licenciamiento%20Institucional_2.csv')
-    # Para minimizar el Dataset
-    df = df.drop(columns =  ["CODIGO_ENTIDAD","NOMBRE","FECHA_INICIO_LICENCIAMIENTO","FECHA_FIN_LICENCIAMIENTO","LATITUD","LONGITUD","UBIGEO","FECHA_CORTE"])
-    # -----------------------------------------------------
+    df = df.drop(columns = ["CODIGO_ENTIDAD","NOMBRE","FECHA_INICIO_LICENCIAMIENTO","FECHA_FIN_LICENCIAMIENTO","LATITUD","LONGITUD","UBIGEO","FECHA_CORTE"])
+    
     set1 = np.sort(df['DEPARTAMENTO'].dropna().unique())
     sel1 = st.selectbox('Seleccione un departamento:', set1)
     df_DEPARTAMENTO = df[df['DEPARTAMENTO'] == sel1]
     n = len(df_DEPARTAMENTO.axes[0])
-    # ----------------------------------------------------
+    
     set2 = np.sort(df_DEPARTAMENTO['PROVINCIA'].dropna().unique())
     sel2 = st.selectbox('Seleccione una provincia:', set2)
     df_PROVINCIA = df_DEPARTAMENTO[df_DEPARTAMENTO['PROVINCIA'] == sel2]
     n = len(df_PROVINCIA.axes[0]) 
-    # ---------------------------------------------------
+    
     set3 = np.sort(df_DEPARTAMENTO['DISTRITO'].dropna().unique())
     sel3 = st.selectbox('Seleccione un distrito:', set3)
     df_DISTRITO = df_DEPARTAMENTO[df_DEPARTAMENTO['DISTRITO'] == sel3]
     n = len(df_DISTRITO.axes[0])
     st.write('Se encontraron', n,'registros de universidades para su búsqueda.')
-    st.markdown("###") 
     
     st.markdown("###")
     pie_chart = df_DISTRITO.ESTADO_LICENCIAMIENTO.value_counts()
@@ -129,7 +122,7 @@ if selected == 'Inicio':
     st.markdown("###")
     st.bar_chart(bar_chart)
     
-#--------------------------------------------------
+#-----------------------------------------------------------------------------------------------------
 df_otorgada = pd.read_csv('https://raw.githubusercontent.com/ximenarojo/prueba/main/Licenciadas.csv')
 df_denegada = pd.read_csv('https://raw.githubusercontent.com/ximenarojo/prueba/main/no%20licenciadas.csv')
 df_io = pd.read_csv('https://raw.githubusercontent.com/ximenarojo/prueba/main/io.csv')
@@ -146,16 +139,14 @@ if selected == 'Localización':
          'Con informe de observaciones (IO) notificado',
          'Ninguno')
         )
-    
     df_map = None
     opcion = '-'
     if dataset == 'Licencia otorgada':
         df_map = df_otorgada
         opcion = 'licencia otorgada'
         st.markdown("###")
-        #st.write('**Gráfico 3. Universidades con '+opcion+' localizadas en un mapa interactivo mundial.**')
-        
-        
+        st.write('**Gráfico 3. Universidades con '+opcion+' localizadas en un mapa interactivo mundial.**')
+
         map = folium.Map(
             location=[-9.19, -74], 
             zoom_start=5
@@ -163,10 +154,7 @@ if selected == 'Localización':
         Licenciada = pd.read_csv('Licenciadas.csv')
         Licenciada.head(5)
         Lic = Licenciada.iloc[0]
-        
         st_map = st_folium(map, width=800, height=450)
-        
-        
         
         st.markdown("###")
         st.write('**Lista de universidades con '+opcion+' localizadas en un mapa interactivo mundial.**')
@@ -177,6 +165,8 @@ if selected == 'Localización':
         df_map = df_denegada
         opcion = 'licencia denegada'
         st.markdown("###")
+        st.write('**Gráfico 3. Universidades con '+opcion+' localizadas en un mapa interactivo mundial.**')
+        
         st.write('**Lista de universidades con '+opcion+' localizadas en un mapa interactivo mundial.**')
         st.dataframe(df_denegada)
         n = len(df_denegada.axes[0])
@@ -184,11 +174,8 @@ if selected == 'Localización':
         df_map = df_io
         opcion = 'informe de observaciones (IO) notificado'
         st.markdown("###")
-        
-        
-        #st_map = st_folium(map, width=800, height=450)
-        
-        
+        st.write('**Gráfico 3. Universidades con '+opcion+' localizadas en un mapa interactivo mundial.**')
+               
         
         st.write('**Lista de universidades con '+opcion+' localizadas en un mapa interactivo mundial.**')
         st.dataframe(df_io)
@@ -198,21 +185,9 @@ if selected == 'Localización':
         data = df_ninguno
         opcion = 'ningún estado de licenciamiento'
         st.markdown("###")
-        
-        df = pd.read_csv('Ninguno.csv')
-        
+        st.write('**Gráfico 3. Universidades con '+opcion+' localizadas en un mapa interactivo mundial.**')
         
         
-       
-       
-    
-
-        
-        
-        
-       
-  
-       
         st.write('**Lista de universidades con '+opcion+' localizadas en un mapa interactivo mundial.**')
         st.dataframe(df_ninguno)
         n = len(df_ninguno.axes[0])
@@ -220,7 +195,7 @@ if selected == 'Localización':
     
     st.write('Se encontraron', n,'registros de universidades para su búsqueda.')    
     
-#--------------------------------------------------
+#--------------------------------------------------------------------------------------------
 if selected == 'Reportes':
     st.markdown("<h1 style ='text-align: center'>Períodos de Licenciamiento</h1>", unsafe_allow_html=True)
     st.markdown("---")
@@ -229,9 +204,9 @@ if selected == 'Reportes':
     
 
     
-#--------------------------------------------------
+#--------------------------------------------------------------------------------------------
 if selected == 'Equipo':
-    st.markdown("<h1 style='text-align: center'>¿Quiénes somos?</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 style='text-align: center, color:Blue'>¿Quiénes somos?</h1>", unsafe_allow_html=True)
     st.markdown("---")
     st.write('Somos un grupo de estudiantes de 5to ciclo de la carrera de Ingeniería Ambiental de la Universidad Peruana Cayetano Heredia, que motivados por los conocimientos adquiridos por el curso de Programación Avanzada y junto a la asesoría de los profesores, hemos desarrollado una app interactiva para la visualización y exploración práctica de los datos recopilados sobre el avance y estatus actual del Licenciamiento Institucional de las Universidades tanto públicas como privadas del Perú.')
     st.markdown("###")
@@ -249,7 +224,5 @@ if selected == 'Equipo':
     </form>
     """ 
     st.markdown(contact_form, unsafe_allow_html=True)
-    #Para dar formato:
     with open('message.css') as f:
-        st.markdown(f'<style>{f.read()}</message>', unsafe_allow_html=True) 
-#---------------------------------------------------
+        st.markdown(f'<style>{f.read()}</message>', unsafe_allow_html=True)
