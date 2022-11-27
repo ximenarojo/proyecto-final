@@ -221,15 +221,8 @@ if selected == 'Localización':
 if selected == 'Reportes':
     st.markdown("<h1 style ='text-align: center'>Períodos de Licenciamiento</h1>", unsafe_allow_html=True)
     st.markdown("---")
-    @st.experimental_memo
-    def download_data():
-        url ="https://raw.githubusercontent.com/ximenarojo/prueba/main/Licenciamiento%20Institucional_2.csv"
-        filename ="Licenciamiento%20Institucional_2.csv"
-        urllib.request.urlretrieve(url,filename)
-        df = pd.read_csv('Licenciamiento%20Institucional_2.csv')
-        return df
-    download_data()
     
+    df = pd.read_csv('Licenciamiento%20Institucional_2.csv')    
     df = df.dropna()
     df = df.reset_index(drop=True)
     #df
