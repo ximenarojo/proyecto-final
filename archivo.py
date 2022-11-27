@@ -155,7 +155,6 @@ if selected == 'Localización':
             return df_otorgada
         data = otorgada_data()
         st.map(data)        
-        
         st.markdown("###")
         st.write('**Lista de universidades con '+option+' localizadas en un mapa interactivo mundial.**')
         st.dataframe(df_otorgada)
@@ -222,11 +221,32 @@ if selected == 'Localización':
 if selected == 'Reportes':
     st.markdown("<h1 style ='text-align: center'>Períodos de Licenciamiento</h1>", unsafe_allow_html=True)
     st.markdown("---")
+    @st.experimental_memo
+    def download_data():
+        url ="https://raw.githubusercontent.com/ximenarojo/prueba/main/Licenciamiento%20Institucional_2.csv"
+        filename ="Licenciamiento%20Institucional_2.csv"
+        urllib.request.urlretrieve(url,filename)
+        df = pd.read_csv('Licenciamiento%20Institucional_2.csv')
+        return df
+    download_data()
     
-    
-    
+    df = df.dropna()
+    df = df.reset_index(drop=True)
+    #df
+    import datetime
+    #import matplotlib.pyplot as plt 
+    fechas = df["FECHA_INICIO_LICENCIAMIENTO"]
+    periodo = df["PERIODO_LICENCIAMIENTO"]
+    x=[datetime.datetime.strptime(str(date), '%Y-%m-%d %H:%M:%S').date() for date in fechas]
+    y=periodo
+    plt.barh(x,y)
+    plt.gcf().set_size_inches(15, 5)
+    plt.title("FECHA_INICIO_LICENCIAMIENTO vs PERIODO_LICENCIAMIENTO")
+    plt.xlabel("FECHA_INICIO_LICENCIAMIENTO")
+    plt.ylabel("PERIODO_LICENCIAMIENTO")
+    plt.grid(axis = 'x')
+    plt.show()
 
-    
 #--------------------------------------------------------------------------------------------
 if selected == 'Equipo':
     st.markdown("<h1 style='text-align: center'>¿Quiénes somos?</h1>", unsafe_allow_html=True)
