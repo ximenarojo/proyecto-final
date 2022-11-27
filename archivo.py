@@ -222,23 +222,7 @@ if selected == 'Reportes':
     st.markdown("<h1 style ='text-align: center'>Períodos de Licenciamiento</h1>", unsafe_allow_html=True)
     st.markdown("---")
     
-    df = pd.read_csv('Licenciamiento%20Institucional_2.csv')    
-    df = df.dropna()
-    df = df.reset_index(drop=True)
-    #df
-    import datetime
-    #import matplotlib.pyplot as plt 
-    fechas = df["FECHA_INICIO_LICENCIAMIENTO"]
-    periodo = df["PERIODO_LICENCIAMIENTO"]
-    x=[datetime.datetime.strptime(str(date), '%Y-%m-%d %H:%M:%S').date() for date in fechas]
-    y=periodo
-    plt.barh(x,y)
-    plt.gcf().set_size_inches(15, 5)
-    plt.title("FECHA_INICIO_LICENCIAMIENTO vs PERIODO_LICENCIAMIENTO")
-    plt.xlabel("FECHA_INICIO_LICENCIAMIENTO")
-    plt.ylabel("PERIODO_LICENCIAMIENTO")
-    plt.grid(axis = 'x')
-    plt.show()
+    
 
 #--------------------------------------------------------------------------------------------
 if selected == 'Equipo':
