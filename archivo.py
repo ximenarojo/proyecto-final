@@ -6,9 +6,6 @@ from streamlit_option_menu import option_menu
 import urllib.request
 import matplotlib.pyplot as plt
 import plotly.express as px
-#import pydeck as pdk
-import folium
-from streamlit_folium import st_folium
 from PIL import Image
 
 #-----------------------------------------------------------
@@ -81,6 +78,11 @@ if selected == 'Inicio':
     
     st.markdown("###") 
     st.header('¡Comienza el análisis exploratorio!')
+    st.write('Gráfico 1. Registros de universidades por departamento en Perú.')
+    df = pd.read_csv('Licenciamiento%20Institucional_2.csv')
+    df_dep = pd.DataFrame(df["DEPARTAMENTO"].value_counts())
+    st.bar_chart(df_dep)
+    
     st.write('**A continuación, seleccione una zona geográfica para visualizar el registro de universidades.**')
     st.markdown("###")
     df = pd.read_csv('Licenciamiento%20Institucional_2.csv')
@@ -110,7 +112,7 @@ if selected == 'Inicio':
     fig1, ax1 = plt.subplots()
     ax1.pie(pie_chart['TOTAL'], labels = pie_chart['ESTADO_LICENCIAMIENTO'], autopct='%1.1f%%')
     ax1.axis('equal')
-    st.write('**Gráfico 1. Estado de Licenciamiento (en %) de las universidades según zona geográfica seleccionada.**')
+    st.write('**Gráfico 2. Estado de Licenciamiento (en %) de las universidades según zona geográfica seleccionada.**')
     st.markdown("###")
     st.pyplot(fig1)
     
@@ -118,7 +120,7 @@ if selected == 'Inicio':
     bar_chart = df_DISTRITO.TIPO_GESTION.value_counts()
     bar_chart = pd.DataFrame(bar_chart)
     bar_chart.columns = ['Tipo de gestión']
-    st.write('**Gráfico 2. Tipo de gestión de las universidades según zona geográfica seleccionada.**')
+    st.write('**Gráfico 3. Tipo de gestión de las universidades según zona geográfica seleccionada.**')
     st.markdown("###")
     st.bar_chart(bar_chart)
     
@@ -127,7 +129,6 @@ df_otorgada = pd.read_csv('https://raw.githubusercontent.com/ximenarojo/prueba/m
 df_denegada = pd.read_csv('https://raw.githubusercontent.com/ximenarojo/prueba/main/nolicenciadas.csv')
 df_io = pd.read_csv('https://raw.githubusercontent.com/ximenarojo/prueba/main/IO.csv')
 df_ninguno = pd.read_csv('https://raw.githubusercontent.com/ximenarojo/prueba/main/Ninguno.csv')
-
 
 if selected == 'Localización':
     st.markdown("<h1 style ='text-align: center'>Mapa interactivo: Localización</h1>", unsafe_allow_html=True)
@@ -214,7 +215,6 @@ if selected == 'Localización':
         st.dataframe(df_ninguno)
         n = len(df_ninguno.axes[0])
      
-    
     st.write('Se encontraron', n,'registros de universidades para su búsqueda.')    
     
 #--------------------------------------------------------------------------------------------
@@ -222,21 +222,10 @@ if selected == 'Reportes':
     st.markdown("<h1 style ='text-align: center'>Períodos de Licenciamiento</h1>", unsafe_allow_html=True)
     st.markdown("---")
     
-    @st.experimental_memo
-    def download_data():
-        url ="https://raw.githubusercontent.com/ximenarojo/prueba/main/Licenciamiento%20Institucional_2.csv"
-        filename ="Licenciamiento%20Institucional_2.csv"
-        urllib.request.urlretrieve(url,filename)
-        Licenciamiento = pd.read_csv('Licenciamiento%20Institucional_2.csv')
-        return Licenciamiento
-    download_data()
     
-    st.markdown("Cantidad de universidades en el peru")   
-    #codigo de graficos 
-    Licenciamiento = pd.read_csv('Licenciamiento%20Institucional_2.csv')
-    df_anho_freq = pd.DataFrame(Licenciamiento["DEPARTAMENTO"].value_counts())
-    st.bar_chart(df_anho_freq)
-    #Mostrar datos de la licenciatura 
+    
+    
+    
     
     
 
