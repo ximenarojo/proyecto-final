@@ -222,6 +222,22 @@ if selected == 'Reportes':
     st.markdown("<h1 style ='text-align: center'>Períodos de Licenciamiento</h1>", unsafe_allow_html=True)
     st.markdown("---")
     
+    @st.experimental_memo
+    def download_data():
+        url ="https://raw.githubusercontent.com/ximenarojo/prueba/main/Licenciamiento%20Institucional_2.csv"
+        filename ="Licenciamiento%20Institucional_2.csv"
+        urllib.request.urlretrieve(url,filename)
+        Licenciamiento = pd.read_csv('Licenciamiento%20Institucional_2.csv')
+        return Licenciamiento
+    download_data()
+    
+    st.markdown("Cantidad de universidades en el peru")   
+    #codigo de graficos 
+    Licenciamiento = pd.read_csv('Licenciamiento%20Institucional_2.csv')
+    df_anho_freq = pd.DataFrame(Licenciamiento["DEPARTAMENTO"].value_counts())
+    st.bar_chart(df_anho_freq)
+    #Mostrar datos de la licenciatura 
+    
     
 
 #--------------------------------------------------------------------------------------------
