@@ -241,7 +241,7 @@ if selected == 'Reportes':
         st.pyplot(fig1)
     
     with col2:
-        image = Image.open('vigencia(5).jpg')
+        image = Image.open('vigencia.png')
         st.image(image) 
         st.write("**Fuente**: Elaboración propia.")
         
