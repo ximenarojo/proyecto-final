@@ -239,8 +239,8 @@ if selected == 'Reportes':
         st.markdown("###")
         st.pyplot(fig1)
     with col2:
-        st.write('Hasta la fecha (31/08/2022), **de las 93 licenciadas, solo 5** universidades han sido beneficiadas con el tiempo máximo de licenciamiento.')
-        image = Image.open('vigencia.png')
+        st.write('Hasta la fecha (31/08/2022), **de las 93** universidades licenciadas, **solo 5** han sido beneficiadas con el tiempo máximo de licenciamiento.')
+        image = Image.open('Vigencia.png')
         st.image(image) 
         st.write("**Fuente**: Elaboración propia.")
         
