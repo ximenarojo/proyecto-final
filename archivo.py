@@ -242,10 +242,9 @@ if selected == 'Reportes':
         image = Image.open('vigencia.png')
         st.image(image) 
         st.write("**Fuente**: Elaboración propia.")
+        st.write('Hasta la fecha (31/08/2022), e las 93 licenciadas, solo 5 universidades han sido beneficiadas con el tiempo máximo de licenciamiento: Universidad Nacional Mayor de San Marcos, Universidad Nacional de Ingeniería, Universidad Peruana Cayetano Heredia, Pontificia Universidad Católica del Perú y Universidad Nacional San Agustín de Arequipa.')
+
         
-    st.markdown("###")
-    st.subheader('A la fecha  (31/08/2022)...')
-    st.write('De las 93 licenciadas, solo 5 universidades han sido beneficiadas con el tiempo máximo de licenciamiento: Universidad Nacional Mayor de San Marcos, Universidad Nacional de Ingeniería, Universidad Peruana Cayetano Heredia, Pontificia Universidad Católica del Perú y Universidad Nacional San Agustín de Arequipa.')
     st.markdown("###")
     df = pd.read_csv('Licenciamiento%20Institucional_2.csv')
     periodo = df['PERIODO_LICENCIAMIENTO'].unique().tolist()
