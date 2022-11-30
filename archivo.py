@@ -211,7 +211,7 @@ if selected == 'Localización':
             return df_ninguno
         data = ninguno_data()
         st.map(data)
-        const marker = L.marker([-12.0003522, -77.0833903]).addTo(st.map(data))
+
         st.write('**Lista de universidades con '+option+' localizadas en un mapa interactivo mundial.**')
         st.dataframe(df_ninguno)
         n = len(df_ninguno.axes[0])
