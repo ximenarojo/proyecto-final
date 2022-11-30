@@ -227,8 +227,10 @@ if selected == 'Reportes':
     periodo_selec = st.multiselect('A continuación, seleccione un período de licenciamiento:',
                                    periodo,
                                    default = periodo)
-    n = len(periodo_selec.axes[0])
-    st.write('Se encontraron', n,'registros de universidades para su búsqueda.')
+    
+    mask = (df['PERIODO_LICENCIAMIENTO'].isin(periodo_selec))
+    number_of_result = df[mask].shape[0]
+    st.markdown(f'*Available Results: {number_of_result}*')
     
 
 
