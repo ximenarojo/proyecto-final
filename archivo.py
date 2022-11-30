@@ -125,7 +125,7 @@ if selected == 'Inicio':
     st.bar_chart(bar_chart)
     
 #-----------------------------------------------------------------------------------------------------
-df_otorgada = pd.read_csv('https://raw.githubusercontent.com/ximenarojo/prueba/main/licenciadas.csv')
+df_otorgada = pd.read_csv('https://raw.githubusercontent.com/ximenarojo/prueba/main/Licenciadas.csv')
 df_denegada = pd.read_csv('https://raw.githubusercontent.com/ximenarojo/prueba/main/nolicenciadas.csv')
 df_io = pd.read_csv('https://raw.githubusercontent.com/ximenarojo/prueba/main/IO.csv')
 df_ninguno = pd.read_csv('https://raw.githubusercontent.com/ximenarojo/prueba/main/Ninguno.csv')
@@ -148,7 +148,7 @@ if selected == 'Localización':
         st.write('**Gráfico 3. Universidades con '+option+' localizadas en un mapa interactivo mundial.**')
         @st.cache
         def otorgada_data():
-            df_otorgada = pd.read_csv('licenciadas.csv')
+            df_otorgada = pd.read_csv('Licenciadas.csv')
             df_otorgada = df_otorgada.rename(columns={
                 'LATITUD':'lat',
                 'LONGITUD':'lon',
