@@ -117,7 +117,13 @@ if selected == 'Inicio':
     st.pyplot(fig1)
     
     st.markdown("###")
-    bar_chart = df_DISTRITO.TIPO_GESTION.value_counts()
+    bar_chart = px.bar(df_DISTRITO.TIPO_GESTION.value_counts(),
+                       x='Nro. Universidades',
+                       y='Tipo de gestión',
+                       text ='Votos',
+                       color_discrete_sequence = ['#f5b632']*len(df_DISTRITO),
+                       template = 'plotly_white')
+    
     bar_chart = pd.DataFrame(bar_chart)
     bar_chart.columns = ['Tipo de gestión']
     st.write('**Gráfico 3. Tipo de gestión de las universidades según zona geográfica seleccionada.**')
