@@ -149,7 +149,7 @@ if selected == 'Localización':
         @st.cache
         def otorgada_data():
             df_otorgada = pd.read_csv('licenciadas.csv')
-            df_otorgada = df_ninguno.rename(columns={
+            df_otorgada = df_otorgada.rename(columns={
                 'LATITUD':'lat',
                 'LONGITUD':'lon',
             })
