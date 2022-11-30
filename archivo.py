@@ -230,7 +230,7 @@ if selected == 'Reportes':
     
     mask = (df['PERIODO_LICENCIAMIENTO'].isin(periodo_selec))
     num = df[mask].shape[0]
-    st.write(f'Se encontraron {num} resultados para su búsqueda.')
+    st.caption(f'Se encontraron {num} resultados para su búsqueda.')
     
         
     
