@@ -253,11 +253,12 @@ if selected == 'Vigencia':
     mask = (df['PERIODO_LICENCIAMIENTO'].isin(periodo_selec))
     n = df[mask].shape[0]
     st.write(f'Se encontraron {n} resultados para su búsqueda.')
-    
+    st.markdown("###")
+
+    st.write('**Gráfico 5. Nombre de universidades licenciadas vs. período de licenciamiento.**')
     url = 'https://raw.githubusercontent.com/ximenarojo/prueba/main/Licenciadas.csv'
     datos = pd.read_csv(url, sep=',')
     st.line_chart(data=datos, x='NOMBRE', y='PERIODO_LICENCIAMIENTO')
-    
     
     
     
