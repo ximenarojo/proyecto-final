@@ -240,10 +240,11 @@ if selected == 'Reportes':
         st.markdown("###")
         st.pyplot(fig1)
     
-    df_otorgada = pd.read_csv('https://raw.githubusercontent.com/ximenarojo/prueba/main/Licenciadas.csv')
     with col2:
-        df_otorgada = pd.read_csv('Licenciadas.csv')
-        st.line_chart(df_otorgada=datos, x='NOMBRE', y='PERIODO_LICENCIAMIENTO')
+        url = 'https://raw.githubusercontent.com/ximenarojo/prueba/main/Licenciadas.csv'
+        datos = pd.read_csv(url, sep=',')
+        st.line_chart(data=datos, x='NOMBRE', y='PERIODO_LICENCIAMIENTO')
+
         
         
         
