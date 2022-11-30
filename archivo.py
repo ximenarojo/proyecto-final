@@ -227,6 +227,11 @@ if selected == 'Vigencia':
     df = pd.read_csv('Licenciadas.csv')
     col1, col2 = st.columns(2)
     with col1:
+        st.write('Hasta la fecha (31/08/2022), **de las 93** universidades licenciadas, **solo 5** han sido beneficiadas con el tiempo máximo de licenciamiento.')
+        image = Image.open('Vigencia.png')
+        st.image(image) 
+        st.write("**Fuente**: Elaboración propia.")
+    with col2:
         pie_chart = df.PERIODO_LICENCIAMIENTO.value_counts()
         pie_chart = pd.DataFrame(pie_chart)
         pie_chart = pie_chart.reset_index()
@@ -237,11 +242,6 @@ if selected == 'Vigencia':
         st.write('**Gráfico 4. Período de licenciamiento en años.**')
         st.markdown("###")
         st.pyplot(fig1)
-    with col2:
-        st.write('Hasta la fecha (31/08/2022), **de las 93** universidades licenciadas, **solo 5** han sido beneficiadas con el tiempo máximo de licenciamiento.')
-        image = Image.open('Vigencia.png')
-        st.image(image) 
-        st.write("**Fuente**: Elaboración propia.")
         
     st.markdown("###")
     df = pd.read_csv('Licenciadas.csv')
