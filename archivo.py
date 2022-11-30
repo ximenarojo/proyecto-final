@@ -224,13 +224,13 @@ if selected == 'Reportes':
     st.markdown("---")
     df = pd.read_csv('Licenciamiento%20Institucional_2.csv')
     periodo = df['PERIODO_LICENCIAMIENTO'].unique().tolist()
-    periodo_selec = st.multiselect('A continuación, seleccione un período de licenciamiento:',
+    periodo_selec = st.multiselect('A continuación, seleccione solo un período de licenciamiento:',
                                    periodo,
                                    default = periodo)
     
     mask = (df['PERIODO_LICENCIAMIENTO'].isin(periodo_selec))
     num = df[mask].shape[0]
-    st.write(f'*Se encontraron {num} resultados para su búsqueda.*')
+    st.write('*Se encontraron {num} resultados para su búsqueda.*')
     
         
     
