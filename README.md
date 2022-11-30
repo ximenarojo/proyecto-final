@@ -18,10 +18,3 @@ Damazo Minaya, Isai Calep
 
 Rojo Sánchez, Ximena Lucía
 - correo: ximena.rojo@upch.pe
-
-### Bibliotecas utilizadas
-```
-plotly
-matplotlib
-
-```
