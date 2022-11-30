@@ -223,12 +223,11 @@ if selected == 'Reportes':
     st.markdown("---")
     st.write('De acuerdo a la SUNEDU, la vigencia del licenciamiento institucional para las universidades públicas o privadas es renovable y se determina en base a una serie de factores, entre los que destaca la promoción de la investigación y los hallazgos que dicha universidad pueda exponer ante la comunidad internacional.')
     st.write('*La Ley Universitaria estableció un periodo mínimo de vigencia de 6 años, al que se suma otro de 8 años y de 10 años.*')
-    st.write('Hasta la fecha (31/08/2022), de las 93 licenciadas, solo 5 universidades han sido beneficiadas con el tiempo máximo de licenciamiento: Universidad Nacional Mayor de San Marcos, Universidad Nacional de Ingeniería, Universidad Peruana Cayetano Heredia, Pontificia Universidad Católica del Perú y Universidad Nacional San Agustín de Arequipa.')
     st.markdown("###")
     
     df = pd.read_csv('Licenciamiento%20Institucional_2.csv')
     col1, col2 = st.columns(2)
-    with col1:
+    with col:
         pie_chart = df.PERIODO_LICENCIAMIENTO.value_counts()
         pie_chart = pd.DataFrame(pie_chart)
         pie_chart = pie_chart.reset_index()
@@ -236,19 +235,21 @@ if selected == 'Reportes':
         fig1, ax1 = plt.subplots()
         ax1.pie(pie_chart['TOTAL'], labels = pie_chart['PERIODO_LICENCIAMIENTO'], autopct='%1.1f%%')
         ax1.axis('equal')
-        st.write('**Gráfico 4. Vigencia de licenciamiento de universidades (en %) en 2022.**')
+        st.write('**Gráfico 4. Período de licenciamiento de universidades en 2022.**')
         st.markdown("###")
         st.pyplot(fig1)
     
     with col2:
-        #df = pd.read_csv('Licenciamiento%20Institucional_2.csv')
-        periodo = df['PERIODO_LICENCIAMIENTO'].unique().tolist()
-        periodo_selec = st.multiselect('A continuación, seleccione solamente un período de licenciamiento:', 
-                                       periodo,
-                                       default = periodo)
-        mask = (df['PERIODO_LICENCIAMIENTO'].isin(periodo_selec))
-        n = df[mask].shape[0]
-        st.write(f'Se encontraron {n} resultados para su búsqueda.')
+            st.write('Hasta la fecha (31/08/2022), de las 93 licenciadas, solo 5 universidades han sido beneficiadas con el tiempo máximo de licenciamiento: Universidad Nacional Mayor de San Marcos, Universidad Nacional de Ingeniería, Universidad Peruana Cayetano Heredia, Pontificia Universidad Católica del Perú y Universidad Nacional San Agustín de Arequipa.')
+        
+    #df = pd.read_csv('Licenciamiento%20Institucional_2.csv')
+    periodo = df['PERIODO_LICENCIAMIENTO'].unique().tolist()
+    periodo_selec = st.multiselect('A continuación, seleccione solamente un período de licenciamiento:', 
+                                   periodo,
+                                   default = periodo)
+    mask = (df['PERIODO_LICENCIAMIENTO'].isin(periodo_selec))
+    n = df[mask].shape[0]
+    st.write(f'Se encontraron {n} resultados para su búsqueda.')
     
     
     
