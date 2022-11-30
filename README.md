@@ -9,7 +9,7 @@ El Dataset utilizado está disponible en el siguiente enlace: https://www.datosa
 ## ¿Quienes somos?
 Somos un grupo de estudiantes del 5to ciclo de la carrera de Ingeniería Ambiental de la Universidad Peruana Cayetano Heredia, que motivados por los conocimientos adquiridos por el curso de Programación Avanzada y junto a la asesoría de los profesores, hemos creado un dashboard para el análisis, visualización y exploración práctica de un conjunto de datos publicado en Streamlit Community Cloud sobre el estatus actual del Licenciamiento Institucional de las universidades peruanas.
 
-## Integrantes
+## Equipo
 Chávez Escudero, Richerd Joacin
 - correo: richerd.chavez@upch.pe
 
