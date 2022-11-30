@@ -227,7 +227,7 @@ if selected == 'Reportes':
     
     df = pd.read_csv('Licenciamiento%20Institucional_2.csv')
     col1, col2 = st.columns(2)
-    with col:
+    with col1:
         pie_chart = df.PERIODO_LICENCIAMIENTO.value_counts()
         pie_chart = pd.DataFrame(pie_chart)
         pie_chart = pie_chart.reset_index()
