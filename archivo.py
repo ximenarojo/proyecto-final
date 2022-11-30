@@ -18,7 +18,7 @@ with st.sidebar:
     selected = option_menu(
         menu_title = 'Menú',
         options = ['Inicio', 'Localización','Vigencia','Equipo'],
-        icons = ['house', 'map', 'calendar','people'],
+        icons = ['house', 'map', 'time','people'],
         menu_icon='cast',
         default_index = 0,
         styles={
