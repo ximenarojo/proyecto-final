@@ -218,7 +218,7 @@ if selected == 'Localización':
     st.write('Se encontraron', n,'registros de universidades para su búsqueda.')    
     
 #--------------------------------------------------------------------------------------------
-if selected == 'Reportes':
+if selected == 'Vigencia':
     st.markdown("<h1 style ='text-align: center'>Licenciamiento Institucional: Vigencia</h1>", unsafe_allow_html=True)
     st.markdown("---")
     st.write('De acuerdo a la SUNEDU, la vigencia del licenciamiento institucional para las universidades públicas o privadas es renovable y se determina en base a una serie de factores, entre los que destaca la promoción de la investigación y los hallazgos que dicha universidad pueda exponer ante la comunidad internacional.')
