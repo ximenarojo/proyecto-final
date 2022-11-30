@@ -115,7 +115,7 @@ if selected == 'Inicio':
     st.write('**Gráfico 2. Estado de Licenciamiento (en %) de las universidades según zona geográfica seleccionada.**')
     st.markdown("###")
     st.pyplot(fig1)
-    
+    import plotly.express as 
     st.markdown("###")
     bar_chart = px.bar(df_DISTRITO.TIPO_GESTION.value_counts(),
                        x='Nro. Universidades',
@@ -128,7 +128,7 @@ if selected == 'Inicio':
     bar_chart.columns = ['Tipo de gestión']
     st.write('**Gráfico 3. Tipo de gestión de las universidades según zona geográfica seleccionada.**')
     st.markdown("###")
-    st.bar_chart(bar_chart)
+    st.plotly_chart(bar_chart)
     
 #-----------------------------------------------------------------------------------------------------
 df_otorgada = pd.read_csv('https://raw.githubusercontent.com/ximenarojo/prueba/main/Licenciadas.csv')
