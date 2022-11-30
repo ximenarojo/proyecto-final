@@ -234,7 +234,7 @@ if selected == 'Reportes':
     fig1, ax1 = plt.subplots()
     ax1.pie(pie_chart['TOTAL'], labels = pie_chart['PERIODO_LICENCIAMIENTO'], autopct='%1.1f%%')
     ax1.axis('equal')
-    st.write('**Gráfico 4. Universidades licenciadas en el 2022.**')
+    g1='**Gráfico 4. Vigencia de licenciamiento de universidades (en %) en 2022.**')
     st.markdown("###")
     st.pyplot(fig1)
 
