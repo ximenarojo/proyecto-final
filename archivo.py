@@ -229,6 +229,7 @@ if selected == 'Reportes':
                                    default = periodo
                                    styles={
                                        "nav-link-selected":{"background-color":"skyblue"}
+                                   },
                                   )
     
     x = (df['PERIODO_LICENCIAMIENTO'].isin(periodo_selec))
