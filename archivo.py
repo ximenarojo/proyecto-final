@@ -5,7 +5,6 @@ import numpy as np
 from streamlit_option_menu import option_menu
 import urllib.request
 import matplotlib.pyplot as plt
-import plotly.express as px
 from PIL import Image
 
 #-----------------------------------------------------------
@@ -117,6 +116,7 @@ if selected == 'Inicio':
     st.pyplot(fig1)
 
     st.markdown("###")
+    import plotly.express as px
     bar_chart = px.bar(df_DISTRITO.TIPO_GESTION.value_counts(),
                        x='Nro. Universidades',
                        y='Tipo de gestión',
