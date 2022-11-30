@@ -245,7 +245,7 @@ if selected == 'Vigencia':
         st.write("**Fuente**: Elaboración propia.")
         
     st.markdown("###")
-    df = pd.read_csv('Licenciamiento%20Institucional_2.csv')
+    df = pd.read_csv('Licenciadas.csv')
     periodo = df['PERIODO_LICENCIAMIENTO'].unique().tolist()
     periodo_selec = st.multiselect('A continuación, seleccione solamente un período de licenciamiento:', 
                                    periodo,
