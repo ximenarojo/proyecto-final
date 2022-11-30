@@ -226,7 +226,7 @@ if selected == 'Reportes':
     st.write('Hasta la fecha (31/08/2022), de las 93 licenciadas, solo 5 universidades han sido beneficiadas con el tiempo máximo de licenciamiento: Universidad Nacional Mayor de San Marcos, Universidad Nacional de Ingeniería, Universidad Peruana Cayetano Heredia, Pontificia Universidad Católica del Perú y Universidad Nacional San Agustín de Arequipa.')
     st.markdown("###")
     
-    df = pd.read_csv('Licenciamiento%20Institucional_2.csv')
+    df = pd.read_csv('Licenciadas.csv')
     col1, col2 = st.columns(2)
     with col1:
         pie_chart = df.PERIODO_LICENCIAMIENTO.value_counts()
@@ -241,16 +241,7 @@ if selected == 'Reportes':
         st.pyplot(fig1)
     
     with col2:
-        pie_chart = df.TIPO_GESTION.value_counts()
-        pie_chart = pd.DataFrame(pie_chart)
-        pie_chart = pie_chart.reset_index()
-        pie_chart.columns = ['TIPO_GESTION','TOTAL']
-        fig1, ax1 = plt.subplots()
-        ax1.pie(pie_chart['TOTAL'], labels = pie_chart['TIPO_GESTION'], autopct='%1.1f%%')
-        ax1.axis('equal')
-        st.write('**Gráfico 5. Período de licenciamiento por gestión.**')
-        st.markdown("###")
-        st.pyplot(fig1)
+        
         
 
         
