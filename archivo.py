@@ -239,16 +239,12 @@ if selected == 'Reportes':
         st.write('**Gráfico 4. Período de licenciamiento en años.**')
         st.markdown("###")
         st.pyplot(fig1)
-    
     with col2:
         image = Image.open('vigencia.png')
         st.image(image) 
         st.write("**Fuente**: Elaboración propia.")
         
-
-        
-        
-        
+    st.markdown("###")   
     df = pd.read_csv('Licenciamiento%20Institucional_2.csv')
     periodo = df['PERIODO_LICENCIAMIENTO'].unique().tolist()
     periodo_selec = st.multiselect('A continuación, seleccione solamente un período de licenciamiento:', 
