@@ -226,11 +226,7 @@ if selected == 'Reportes':
     st.write('A continuación, seleccione **solamente** un período de licenciamiento:')
     periodo_selec = st.multiselect('', 
                                    periodo,
-                                   default = periodo,
-                                   styles={
-                                       "nav-link-selected":{"background-color":"skyblue"}
-                                   },
-                                  )
+                                   default = periodo)
     
     x = (df['PERIODO_LICENCIAMIENTO'].isin(periodo_selec))
     num = df[x].shape[0]
