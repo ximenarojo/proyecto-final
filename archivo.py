@@ -228,9 +228,9 @@ if selected == 'Reportes':
                                    periodo,
                                    default = periodo)
     
-    mask = (df['PERIODO_LICENCIAMIENTO'].isin(periodo_selec))
-    num = df[mask].shape[0]
-    st.caption(f'Se encontraron {num} resultados para su búsqueda.')
+    x = (df['PERIODO_LICENCIAMIENTO'].isin(periodo_selec))
+    num = df[x].shape[0]
+    st.write(f'Se encontraron {num} resultados para su búsqueda.')
     
         
     
