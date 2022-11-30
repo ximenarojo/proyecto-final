@@ -227,28 +227,28 @@ if selected == 'Reportes':
     st.markdown("###")
     
     df = pd.read_csv('Licenciamiento%20Institucional_2.csv')
-    pie_chart = df.PERIODO_LICENCIAMIENTO.value_counts()
-    pie_chart = pd.DataFrame(pie_chart)
-    pie_chart = pie_chart.reset_index()
-    pie_chart.columns = ['PERIODO_LICENCIAMIENTO','TOTAL']
-    fig1, ax1 = plt.subplots()
-    ax1.pie(pie_chart['TOTAL'], labels = pie_chart['PERIODO_LICENCIAMIENTO'], autopct='%1.1f%%')
-    ax1.axis('equal')
-    st.subheader('**Gráfico 4. Vigencia de licenciamiento de universidades (en %) en 2022.**')
-    st.markdown("###")
-    st.pyplot(fig1)
-
+    col1, col2 = st.columns(2)
+    with col1:
+        pie_chart = df.PERIODO_LICENCIAMIENTO.value_counts()
+        pie_chart = pd.DataFrame(pie_chart)
+        pie_chart = pie_chart.reset_index()
+        pie_chart.columns = ['PERIODO_LICENCIAMIENTO','TOTAL']
+        fig1, ax1 = plt.subplots()
+        ax1.pie(pie_chart['TOTAL'], labels = pie_chart['PERIODO_LICENCIAMIENTO'], autopct='%1.1f%%')
+        ax1.axis('equal')
+        st.write('**Gráfico 4. Vigencia de licenciamiento de universidades (en %) en 2022.**')
+        st.markdown("###")
+        st.pyplot(fig1)
     
-    
-    df = pd.read_csv('Licenciamiento%20Institucional_2.csv')
-    periodo = df['PERIODO_LICENCIAMIENTO'].unique().tolist()
-    periodo_selec = st.multiselect('A continuación, seleccione solamente un período de licenciamiento:', 
-                                   periodo,
-                                   default = periodo)
-    
-    x = (df['PERIODO_LICENCIAMIENTO'].isin(periodo_selec))
-    num = df[x].shape[0]
-    st.write(f'Se encontraron {num} resultados para su búsqueda.')
+    with col2:
+        #df = pd.read_csv('Licenciamiento%20Institucional_2.csv')
+        periodo = df['PERIODO_LICENCIAMIENTO'].unique().tolist()
+        periodo_selec = st.multiselect('A continuación, seleccione solamente un período de licenciamiento:', 
+                                       periodo,
+                                       default = periodo)
+        mask = (df['PERIODO_LICENCIAMIENTO'].isin(periodo_selec))
+        n = df[mask].shape[0]
+        st.write(f'Se encontraron {n} resultados para su búsqueda.')
     
     
     
