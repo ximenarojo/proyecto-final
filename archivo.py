@@ -229,20 +229,10 @@ if selected == 'Reportes':
                                    default = periodo)
     
     mask = (df['PERIODO_LICENCIAMIENTO'].isin(periodo_selec))
-    number_of_result = df[mask].shape[0]
-    st.markdown(f'*Available Results: {number_of_result}*')
+    num = df[mask].shape[0]
+    st.markdown(f'*Se encontraron', {num}', registros para su búsqueda.*')
     
-
-
-
-    
-    
-    
-    
-    
-    
-    
-    
+        
     
     
 
