@@ -228,10 +228,9 @@ if selected == 'Reportes':
                                    periodo,
                                    default = periodo)
     
-    n = (df['Department'].isin(periodo_selec))
-    reg = df[n].shape[0]
-    #st.markdown(f'*Resultados encontrados: {number_of_result}*')
-    st.write('Se encontraron', reg,'registros de universidades para su búsqueda.')
+    n = len(periodo.axes[0])
+    st.write('Se encontraron', n,'registros de universidades para su búsqueda.')
+    
 
 
 
