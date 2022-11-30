@@ -225,6 +225,21 @@ if selected == 'Reportes':
     st.write('*La Ley Universitaria estableció un periodo mínimo de vigencia de 6 años, al que se suma otro de 8 años y de 10 años.*')
     st.write('Hasta la fecha (31/08/2022), de las 93 licenciadas, solo 5 universidades han sido beneficiadas con el tiempo máximo de licenciamiento: Universidad Nacional Mayor de San Marcos, Universidad Nacional de Ingeniería, Universidad Peruana Cayetano Heredia, Pontificia Universidad Católica del Perú y Universidad Nacional San Agustín de Arequipa.')
     st.markdown("###")
+    
+    df = pd.read_csv('Licenciamiento%20Institucional_2.csv')
+    pie_chart = df.PERIODO_LICENCIAMIENTO.value_counts()
+    pie_chart = pd.DataFrame(pie_chart)
+    pie_chart = pie_chart.reset_index()
+    pie_chart.columns = ['PERIODO_LICENCIAMIENTO','TOTAL']
+    fig1, ax1 = plt.subplots()
+    ax1.pie(pie_chart['TOTAL'], labels = pie_chart['PERIODO_LICENCIAMIENTO'], autopct='%1.1f%%')
+    ax1.axis('equal')
+    st.write('**Gráfico 4. Universidades licenciadas en el 2022.**')
+    st.markdown("###")
+    st.pyplot(fig1)
+
+    
+    
     df = pd.read_csv('Licenciamiento%20Institucional_2.csv')
     periodo = df['PERIODO_LICENCIAMIENTO'].unique().tolist()
     periodo_selec = st.multiselect('A continuación, seleccione solamente un período de licenciamiento:', 
@@ -235,18 +250,11 @@ if selected == 'Reportes':
     num = df[x].shape[0]
     st.write(f'Se encontraron {num} resultados para su búsqueda.')
     
-    import datetime
-    fechas = df["PERIODO_LICENCIAMIENTO"]
-    periodo = df["FECHA_INICIO_LICENCIAMIENTO"]
-    x=[datetime.datetime.strptime(str(date), '%Y-%m-%d %H:%M:%S').date() for date in fechas]
-    y=periodo
-    plt.barh(x,y)
-    plt.gcf().set_size_inches(15, 5)
-    plt.title("FECHA_INICIO_LICENCIAMIENTO vs PERIODO_LICENCIAMIENTO")
-    plt.xlabel("FECHA_INICIO_LICENCIAMIENTO")
-    plt.ylabel("PERIODO_LICENCIAMIENTO")
-    plt.grid(axis = 'x')
-    plt.show()
+    
+    
+    
+    
+    
     
     
 #--------------------------------------------------------------------------------------------
