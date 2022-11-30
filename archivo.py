@@ -222,6 +222,13 @@ if selected == 'Localización':
 if selected == 'Reportes':
     st.markdown("<h1 style ='text-align: center'>Períodos de Licenciamiento</h1>", unsafe_allow_html=True)
     st.markdown("---")
+    periodo = df['PERIODO_LICENCIAMIENTO'].unique().tolist()
+    periodo_selec = st.multiselect('Periodo:',
+                                    periodo,
+                                    default=periodo)
+
+    
+    
     
     
     
