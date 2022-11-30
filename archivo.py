@@ -227,8 +227,7 @@ if selected == 'Reportes':
     periodo_selec = st.multiselect('A continuación, seleccione un período de licenciamiento:',
                                    periodo,
                                    default = periodo)
-    
-    n = len(periodo.axes[0])
+    n = len(periodo_selec.axes[0])
     st.write('Se encontraron', n,'registros de universidades para su búsqueda.')
     
 
