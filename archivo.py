@@ -115,7 +115,7 @@ if selected == 'Inicio':
     st.write('**Gráfico 2. Estado de Licenciamiento (en %) de las universidades según zona geográfica seleccionada.**')
     st.markdown("###")
     st.pyplot(fig1)
-    import plotly.express as 
+
     st.markdown("###")
     bar_chart = px.bar(df_DISTRITO.TIPO_GESTION.value_counts(),
                        x='Nro. Universidades',
