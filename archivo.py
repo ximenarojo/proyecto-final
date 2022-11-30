@@ -223,6 +223,7 @@ if selected == 'Reportes':
     st.markdown("---")
     st.write('De acuerdo a la SUNEDU, la vigencia del licenciamiento institucional para las universidades públicas o privadas es renovable y se determina en base a una serie de factores, entre los que destaca la promoción de la investigación y los hallazgos que dicha universidad pueda exponer ante la comunidad internacional.')
     st.write('*La Ley Universitaria estableció un periodo mínimo de vigencia de 6 años, al que se suma otro de 8 años y de 10 años.*')
+    st.write('Hasta la fecha (31/08/2022), de las 93 licenciadas, solo 5 universidades han sido beneficiadas con el tiempo máximo de licenciamiento: Universidad Nacional Mayor de San Marcos, Universidad Nacional de Ingeniería, Universidad Peruana Cayetano Heredia, Pontificia Universidad Católica del Perú y Universidad Nacional San Agustín de Arequipa.')
     st.markdown("###")
     
     df = pd.read_csv('Licenciamiento%20Institucional_2.csv')
@@ -235,12 +236,16 @@ if selected == 'Reportes':
         fig1, ax1 = plt.subplots()
         ax1.pie(pie_chart['TOTAL'], labels = pie_chart['PERIODO_LICENCIAMIENTO'], autopct='%1.1f%%')
         ax1.axis('equal')
-        st.write('**Gráfico 4. Período de licenciamiento de universidades en 2022.**')
+        st.write('**Gráfico 4. Período de licenciamiento en 2022.**')
         st.markdown("###")
         st.pyplot(fig1)
     
+    df_otorgada = pd.read_csv('https://raw.githubusercontent.com/ximenarojo/prueba/main/Licenciadas.csv')
     with col2:
-            st.write('Hasta la fecha (31/08/2022), de las 93 licenciadas, solo 5 universidades han sido beneficiadas con el tiempo máximo de licenciamiento: Universidad Nacional Mayor de San Marcos, Universidad Nacional de Ingeniería, Universidad Peruana Cayetano Heredia, Pontificia Universidad Católica del Perú y Universidad Nacional San Agustín de Arequipa.')
+        df_otorgada = pd.read_csv('Licenciadas.csv')
+        st.line_chart(df_otorgada=datos, x='NOMBRE', y='PERIODO_LICENCIAMIENTO')
+        
+        
         
     #df = pd.read_csv('Licenciamiento%20Institucional_2.csv')
     periodo = df['PERIODO_LICENCIAMIENTO'].unique().tolist()
