@@ -224,8 +224,9 @@ if selected == 'Reportes':
     st.markdown("---")
     df = pd.read_csv('Licenciamiento%20Institucional_2.csv')
     periodo = df['PERIODO_LICENCIAMIENTO'].unique().tolist()
-    st.write('**A continuación, seleccione solo un período de licenciamiento:**')
-    periodo_selec = st.multiselect('', periodo,
+    st.write('A continuación, seleccione **solo** un período de licenciamiento:')
+    periodo_selec = st.multiselect('', 
+                                   periodo,
                                    default = periodo)
     
     x = (df['PERIODO_LICENCIAMIENTO'].isin(periodo_selec))
