@@ -226,7 +226,7 @@ if selected == 'Reportes':
     st.write('A continuación, seleccione **solamente** un período de licenciamiento:')
     periodo_selec = st.multiselect('', 
                                    periodo,
-                                   default = periodo
+                                   default = periodo,
                                    styles={
                                        "nav-link-selected":{"background-color":"skyblue"}
                                    },
@@ -236,6 +236,7 @@ if selected == 'Reportes':
     num = df[x].shape[0]
     st.write(f'Se encontraron {num} resultados para su búsqueda.')
     
+
    
     
    
