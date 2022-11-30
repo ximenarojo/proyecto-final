@@ -221,6 +221,9 @@ if selected == 'Localización':
 if selected == 'Reportes':
     st.markdown("<h1 style ='text-align: center'>Períodos de Licenciamiento</h1>", unsafe_allow_html=True)
     st.markdown("---")
+    st.write('De acuerdo a la SUNEDU, la vigencia del licenciamiento institucional para las universidades públicas o privadas es renovable y se determina en base a una serie de factores, entre los que destaca la promoción de la investigación y los hallazgos que dicha universidad pueda exponer ante la comunidad internacional.')
+    st.write('*La Ley Universitaria estableció un periodo mínimo de vigencia de 6 años, al que se suma otro de 8 años y de 10 años.*')
+    st.write('Hasta la fecha (31/08/2022), de las 93 licenciadas, solo 5 universidades han sido beneficiadas con el tiempo máximo de licenciamiento: Universidad Nacional Mayor de San Marcos, Universidad Nacional de Ingeniería, Universidad Peruana Cayetano Heredia, Pontificia Universidad Católica del Perú y Universidad Nacional San Agustín de Arequipa.')
     df = pd.read_csv('Licenciamiento%20Institucional_2.csv')
     periodo = df['PERIODO_LICENCIAMIENTO'].unique().tolist()
     st.write('A continuación, seleccione **solamente** un período de licenciamiento:')
@@ -232,10 +235,20 @@ if selected == 'Reportes':
     num = df[x].shape[0]
     st.write(f'Se encontraron {num} resultados para su búsqueda.')
     
-
-   
+    import datetime
+    fechas = df["PERIODO_LICENCIAMIENTO"]
+    periodo = df["FECHA_INICIO_LICENCIAMIENTO"]
+    x=[datetime.datetime.strptime(str(date), '%Y-%m-%d %H:%M:%S').date() for date in fechas]
+    y=periodo
+    plt.barh(x,y)
+    plt.gcf().set_size_inches(15, 5)
+    plt.title("FECHA_INICIO_LICENCIAMIENTO vs PERIODO_LICENCIAMIENTO")
+    plt.xlabel("FECHA_INICIO_LICENCIAMIENTO")
+    plt.ylabel("PERIODO_LICENCIAMIENTO")
+    plt.grid(axis = 'x')
+    plt.show()
     
-   
+    
 #--------------------------------------------------------------------------------------------
 if selected == 'Equipo':
     st.markdown("<h1 style='text-align: center'>¿Quiénes somos?</h1>", unsafe_allow_html=True)
