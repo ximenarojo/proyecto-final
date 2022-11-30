@@ -62,7 +62,6 @@ if selected == 'Inicio':
     download_data()
     st.dataframe(download_data())
     st.caption('Para mayor información acceder a: https://www.datosabiertos.gob.pe/dataset/sunedu-licenciamiento-institucional')
-    
     st.header("Descripción del Dataset:")
     st.caption('A continuación, se proporciona una descripción de las variables incluidas en el Dataset.')
     @st.experimental_memo
@@ -258,6 +257,8 @@ if selected == 'Vigencia':
     st.write('**Gráfico 5. Universidades licenciadas vs. período de licenciamiento.**')
     url = 'https://raw.githubusercontent.com/ximenarojo/prueba/main/Licenciadas.csv'
     datos = pd.read_csv(url, sep=',')
+    
+    #PENDIENTE
     st.line_chart(data=datos, x='NOMBRE', y='PERIODO_LICENCIAMIENTO')
     
     
