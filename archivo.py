@@ -226,8 +226,8 @@ if selected == 'Reportes':
     periodo = df['PERIODO_LICENCIAMIENTO'].unique().tolist()
     periodo_selec = st.slider('A continuación, seleccione un período de licenciamiento:',
                               min_value= min(periodo),
-                              max_value= max(periodo),
-                              value=(min(periodo),max(periodo)))
+                              max_value= max(periodo))
+                              #value=(min(periodo),max(periodo)))
     
     
 
