@@ -17,8 +17,8 @@ with st.sidebar:
     st.sidebar.info('Análisis y exploración de datos sobre el avance y estatus del Licenciamiento Institucional de las universidades peruanas.')
     selected = option_menu(
         menu_title = 'Menú',
-        options = ['Inicio', 'Localización','Reportes','Equipo'],
-        icons = ['house', 'map', 'book','people'],
+        options = ['Inicio', 'Localización','Vigencia','Equipo'],
+        icons = ['house', 'map', 'calendar','people'],
         menu_icon='cast',
         default_index = 0,
         styles={
