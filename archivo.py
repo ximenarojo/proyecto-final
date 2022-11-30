@@ -5,6 +5,7 @@ import numpy as np
 from streamlit_option_menu import option_menu
 import urllib.request
 import matplotlib.pyplot as plt
+import plotly.express as px
 from PIL import Image
 
 #-----------------------------------------------------------
@@ -116,19 +117,12 @@ if selected == 'Inicio':
     st.pyplot(fig1)
 
     st.markdown("###")
-    import plotly.express as px
-    bar_chart = px.bar(df_DISTRITO.TIPO_GESTION.value_counts(),
-                       x='Nro. Universidades',
-                       y='Tipo de gestión',
-                       text ='Votos',
-                       color_discrete_sequence = ['#f5b632']*len(df_DISTRITO),
-                       template = 'plotly_white')
-    
+    bar_chart = df_DISTRITO.TIPO_GESTION.value_counts()
     bar_chart = pd.DataFrame(bar_chart)
     bar_chart.columns = ['Tipo de gestión']
     st.write('**Gráfico 3. Tipo de gestión de las universidades según zona geográfica seleccionada.**')
     st.markdown("###")
-    st.plotly_chart(bar_chart)
+    st.bar_chart(bar_chart)
     
 #-----------------------------------------------------------------------------------------------------
 df_otorgada = pd.read_csv('https://raw.githubusercontent.com/ximenarojo/prueba/main/Licenciadas.csv')
