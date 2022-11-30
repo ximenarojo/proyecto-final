@@ -236,14 +236,22 @@ if selected == 'Reportes':
         fig1, ax1 = plt.subplots()
         ax1.pie(pie_chart['TOTAL'], labels = pie_chart['PERIODO_LICENCIAMIENTO'], autopct='%1.1f%%')
         ax1.axis('equal')
-        st.write('**Gráfico 4. Período de licenciamiento en 2022.**')
+        st.write('**Gráfico 4. Período de licenciamiento en años.**')
         st.markdown("###")
         st.pyplot(fig1)
     
     with col2:
-        url = 'https://raw.githubusercontent.com/ximenarojo/prueba/main/Licenciadas.csv'
-        datos = pd.read_csv(url, sep=',')
-        st.line_chart(data=datos, x='PERIODO_LICENCIAMIENTO', y='NOMBRE')
+        pie_chart = df.TIPO_GESTION.value_counts()
+        pie_chart = pd.DataFrame(pie_chart)
+        pie_chart = pie_chart.reset_index()
+        pie_chart.columns = ['TIPO_GESTION','TOTAL']
+        fig1, ax1 = plt.subplots()
+        ax1.pie(pie_chart['TOTAL'], labels = pie_chart['TIPO_GESTION'], autopct='%1.1f%%')
+        ax1.axis('equal')
+        st.write('**Gráfico 5. Período de licenciamiento por gestión.**')
+        st.markdown("###")
+        st.pyplot(fig1)
+        
 
         
         
@@ -257,7 +265,9 @@ if selected == 'Reportes':
     n = df[mask].shape[0]
     st.write(f'Se encontraron {n} resultados para su búsqueda.')
     
-    
+    url = 'https://raw.githubusercontent.com/ximenarojo/prueba/main/Licenciadas.csv'
+    datos = pd.read_csv(url, sep=',')
+    st.line_chart(data=datos, x='NOMBRE', y='PERIODO_LICENCIAMIENTO')
     
     
     
