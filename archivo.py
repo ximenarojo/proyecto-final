@@ -5,7 +5,6 @@ import numpy as np
 from streamlit_option_menu import option_menu
 import urllib.request
 import matplotlib.pyplot as plt
-import plotly.express as px
 from PIL import Image
 
 #-----------------------------------------------------------
@@ -227,17 +226,18 @@ if selected == 'Reportes':
     st.write('A continuación, seleccione **solamente** un período de licenciamiento:')
     periodo_selec = st.multiselect('', 
                                    periodo,
-                                   default = periodo)
+                                   default = periodo
+                                   styles={
+                                       "nav-link-selected":{"background-color":"skyblue"}
+                                  )
     
     x = (df['PERIODO_LICENCIAMIENTO'].isin(periodo_selec))
     num = df[x].shape[0]
     st.write(f'Se encontraron {num} resultados para su búsqueda.')
     
+   
     
-        
-    
-    
-
+   
 #--------------------------------------------------------------------------------------------
 if selected == 'Equipo':
     st.markdown("<h1 style='text-align: center'>¿Quiénes somos?</h1>", unsafe_allow_html=True)
