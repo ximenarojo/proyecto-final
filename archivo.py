@@ -209,7 +209,7 @@ if selected == 'Localización':
             return df_ninguno
         data = ninguno_data()
         st.map(data)
-
+        
         st.write('**Lista de universidades con '+option+' localizadas en un mapa interactivo mundial.**')
         st.dataframe(df_ninguno)
         n = len(df_ninguno.axes[0])
@@ -223,7 +223,6 @@ if selected == 'Vigencia':
     st.write('De acuerdo a la SUNEDU, la vigencia del licenciamiento institucional para las universidades públicas o privadas es renovable y se determina en base a una serie de factores, entre los que destaca la promoción de la investigación y los hallazgos que dicha universidad pueda exponer ante la comunidad internacional.')
     st.write('- La Ley Universitaria estableció un periodo mínimo de vigencia de 6 años, al que se suma otro de 8 años y de 10 años.')
     st.markdown("###")
-    
     df = pd.read_csv('Licenciadas.csv')
     col1, col2 = st.columns(2)
     with col1:
@@ -244,7 +243,6 @@ if selected == 'Vigencia':
         st.write("**Fuente**: Elaboración propia.")
         
     st.markdown("###")
-    
     st.write('**A continuación, seleccione una opción para visualizar la información.**')
     df = pd.read_csv('Licenciadas.csv')
     periodo = df['PERIODO_LICENCIAMIENTO'].unique().tolist()
@@ -259,18 +257,11 @@ if selected == 'Vigencia':
     url = 'https://raw.githubusercontent.com/ximenarojo/prueba/main/Licenciadas.csv'
     datos = pd.read_csv(url, sep=',')
     
-    option = '-'
-    if periodo == '10':
-        option = '10'
-        st.markdown("###")
-        st.write('**Gráfico 5. Universidades con '+option+' años de vigencia para licenciamiento.**')
-        
-
-#PENDIENTE
-    st.bar_chart(data=datos, x='NOMBRE', y='PERIODO_LICENCIAMIENTO')
     
     
+    #PENDIENTE GRAFICA DE LINEAS (RICHERD)
     
+    #st.line_chart(data=datos, x='NOMBRE', y='PERIODO_LICENCIAMIENTO')
     
     
 #--------------------------------------------------------------------------------------------
