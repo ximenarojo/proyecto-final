@@ -244,6 +244,8 @@ if selected == 'Vigencia':
         st.write("**Fuente**: Elaboración propia.")
         
     st.markdown("###")
+    
+    st.write('**A continuación, seleccione una opción para visualizar la información.**')
     df = pd.read_csv('Licenciadas.csv')
     periodo = df['PERIODO_LICENCIAMIENTO'].unique().tolist()
     periodo_selec = st.multiselect('A continuación, seleccione solamente un período de licenciamiento:', 
@@ -254,12 +256,18 @@ if selected == 'Vigencia':
     st.write(f'Se encontraron {n} resultados para su búsqueda.')
     st.markdown("###")
 
-    st.write('**Gráfico 5. Universidades licenciadas vs. período de licenciamiento.**')
     url = 'https://raw.githubusercontent.com/ximenarojo/prueba/main/Licenciadas.csv'
     datos = pd.read_csv(url, sep=',')
     
-    #PENDIENTE
-    st.line_chart(data=datos, x='NOMBRE', y='PERIODO_LICENCIAMIENTO')
+    option = '-'
+    if periodo == '10':
+        option = '10'
+        st.markdown("###")
+        st.write('**Gráfico 5. Universidades con '+option+' años de vigencia para licenciamiento.**')
+        
+
+#PENDIENTE
+    st.bar_chart(data=datos, x='NOMBRE', y='PERIODO_LICENCIAMIENTO')
     
     
     
