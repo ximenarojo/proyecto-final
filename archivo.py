@@ -257,10 +257,7 @@ if selected == 'Vigencia':
     url = 'https://raw.githubusercontent.com/ximenarojo/prueba/main/Licenciadas.csv'
     datos = pd.read_csv(url, sep=',')
     
-    
-    
-    #PENDIENTE GRAFICA DE LINEAS (RICHERD)
-    
+     
     #st.line_chart(data=datos, x='NOMBRE', y='PERIODO_LICENCIAMIENTO')
     
     
