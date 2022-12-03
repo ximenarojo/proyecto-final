@@ -257,7 +257,7 @@ if selected == 'Periodo':
     st.markdown("###")
     #df = pd.read_csv('Licenciadas.csv')
     option = {
-        series: [
+        'series': [
             {
                 type: 'pie',
                 data: [
