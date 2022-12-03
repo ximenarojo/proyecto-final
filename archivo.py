@@ -257,7 +257,7 @@ if selected == 'Periodo':
     st.write(f'Se encontraron {n} resultados para su búsqueda.')
     
     st.markdown("###")   
-    st.write('**Gráfico 4.** Proporción de la cantidad de universidades por períodos de vigencia.')
+    st.write('**Gráfico 4.** Cantidad de universidades por períodos de vigencia (en años).')
     option = {
         'title': {'text': " ", 'left': 'center'},
         'legend': {'orient': 'horizontal', 'left': 'left',},
@@ -286,7 +286,8 @@ if selected == 'Periodo':
     st_echarts(options=option, 
                height="500px",
               )
-    st.write('Hasta la fecha (31/08/2022), **de 93** universidades licenciadas, **solo 5** han sido beneficiadas con el tiempo máximo de licenciamiento.')
+    st.write('A la fecha, **de 93** universidades licenciadas, **solo 5** han sido beneficiadas con el tiempo máximo de licenciamiento.')
+    st.caption('Fecha de última actualización: 31/08/2022')
 
     
     
