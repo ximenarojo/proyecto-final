@@ -271,9 +271,9 @@ if selected == 'Periodo':
                 "type": "pie",
                 "radius": "50%",
                 "data": [
-                    {"value": int(a), "name": "10 años"},
-                    {"value": int(b), "name": "8 años"},
-                    {"value": int(c), "name": "6 años"},
+                    {"value": a, "name": "10 años"},
+                    {"value": b, "name": "8 años"},
+                    {"value": c, "name": "6 años"},
                 ],
                 "emphasis": {
                     "itemStyle": {
