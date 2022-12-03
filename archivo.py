@@ -259,8 +259,8 @@ if selected == 'Periodo':
     option = {
         'series': [
             {
-                type: 'pie',
-                data: [
+                'type': 'pie',
+                'data': [
                     {
                         value: 82,
                         name: '6 años'
