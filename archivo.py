@@ -248,14 +248,6 @@ if selected == 'Periodo':
     st.write('La Ley Universitaria estableció un periodo mínimo de vigencia de seis (6)años, al que se suma otro de ocho (8) y de diez(10).')
     st.markdown("###")
     #df = pd.read_csv('Licenciadas.csv')
-    #periodo = df['PERIODO_LICENCIAMIENTO'].unique().tolist()
-    #periodo_selec = st.multiselect('A continuación, seleccione una opción para visualizar la cantidad de universidades por períodos de vigencia:', 
-                                   periodo,
-                                   default = periodo)
-    #mask = (df['PERIODO_LICENCIAMIENTO'].isin(periodo_selec))
-    #n = df[mask].shape[0]
-    #st.write(f'Se encontraron {n} resultados para su búsqueda.')
-    st.markdown("###")   
     st.write('**Gráfico 4.** Cantidad de universidades por períodos de vigencia (en años).')
     option = {
         'title': {'text': " ", 'left': 'center'},
