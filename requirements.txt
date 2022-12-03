@@ -4,4 +4,4 @@ numpy==1.22.4
 streamlit-option-menu
 plotly
 matplotlib
-pyxlsb
+streamlit_echarts
