@@ -281,7 +281,7 @@ if selected == 'Periodo':
     st.caption('Fecha de última actualización: 31/08/2022')
     st.markdown("###")
     st.subheader('Universidades beneficiadas con el tiempo máximo de licenciamiento.')
-    image = Image.open('periodo.png')
+    image = Image.open('periodo.jpg')
     st.image(image) 
     st.write("**Fuente**: Elaboración propia.")
 
