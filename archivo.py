@@ -143,6 +143,8 @@ if selected == 'Inicio':
     st.write('Según este ranking, solo tres universidades peruanas figuran entre las 100 mejores de América Latina.')
     image = Image.open('ranking.jpg')
     st.image(image)
+    st.write("**Fuente**: Elaboración propia.")
+    
     
 #-----------------------------------------------------------------------------------------------------
 df_otorgada = pd.read_csv('https://raw.githubusercontent.com/ximenarojo/prueba/main/Licenciadas.csv')
