@@ -1,4 +1,4 @@
-$ pip install streamlit --upgrade
+#$ pip install streamlit --upgrade
 import streamlit as st
 import pandas as pd 
 import numpy as np
