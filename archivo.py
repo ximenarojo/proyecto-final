@@ -259,9 +259,9 @@ if selected == 'Periodo':
     st.markdown("###")   
     st.write('**Gráfico 4.** Proporción de la cantidad de universidades por períodos de vigencia.')
     option = {
-        'title': {'text': " ", 'left': 'center'},
-        #"tooltip": {"trigger": "item"},
-        'legend': {'orient': 'horizontal', 'left': 'left',},
+        'title': {'text': " ", 'right': 'center'},
+        'legend': {'orient': 'horizontal', 'right': 'right',},
+        'tooltip': {"trigger": "item"}, #mostrar value
         'series': [
             {
                 'name': 'Vigencia',
