@@ -256,6 +256,27 @@ if selected == 'Periodo':
     st.write(f'Se encontraron {n} resultados para su búsqueda.')
     st.markdown("###")
     #df = pd.read_csv('Licenciadas.csv')
+    option = {
+        series: [
+            {
+                type: 'pie',
+                data: [
+                    {
+                        value: 82,
+                        name: '6 años'
+                    },
+                    {
+                        value: 6,
+                        name: '8 años'
+                    },
+                    {
+                        value: 5,
+                        name: '10 años'
+                    }
+                ]
+            }
+        ]
+    };
     
    
     
