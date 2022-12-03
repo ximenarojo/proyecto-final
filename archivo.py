@@ -259,9 +259,9 @@ if selected == 'Periodo':
     st.markdown("###")   
     st.write('**Gráfico 4.** Proporción de la cantidad de universidades por períodos de vigencia.')
     option = {
-        'title': {'text': " ", 'right': 'center'},
-        'legend': {'orient': 'horizontal', 'right': 'right',},
-        'tooltip': {"trigger": "item"}, #mostrar value
+        'title': {'text': " ", 'left': 'center'},
+        'legend': {'orient': 'horizontal', 'left': 'left',},
+        'tooltip': {'trigger': 'item'},
         'series': [
             {
                 'name': 'Vigencia',
@@ -283,12 +283,9 @@ if selected == 'Periodo':
             }
         ]
     };
-    st_echarts(
-        options=option, height="500px",
+    st_echarts(options=option, 
+               height="500px",
               )
-    
-
-    
     st.write('Hasta la fecha (31/08/2022), **de 93** universidades licenciadas, **solo 5** han sido beneficiadas con el tiempo máximo de licenciamiento.')
 
     
