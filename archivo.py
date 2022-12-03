@@ -8,6 +8,7 @@ import matplotlib.pyplot as plt
 from streamlit_echarts import st_echarts
 from PIL import Image
 
+
 #-----------------------------------------------------------
 st.set_page_config(layout='wide', initial_sidebar_state='expanded')
 with open('upch.css') as f:
