@@ -17,7 +17,7 @@ with st.sidebar:
     st.sidebar.info('Análisis y exploración de datos sobre el avance y estatus del Licenciamiento Institucional de las universidades peruanas.')
     selected = option_menu(
         menu_title = 'Menú',
-        options = ['Inicio', 'Localización','Funcionamiento','Equipo'],
+        options = ['Inicio', 'Localización','Periodo','Equipo'],
         icons = ['house', 'map', 'book','people'],
         menu_icon='cast',
         default_index = 0,
@@ -145,7 +145,6 @@ if selected == 'Inicio':
     st.image(image)
     st.write("**Fuente**: Elaboración propia.")
     
-    
 #-----------------------------------------------------------------------------------------------------
 df_otorgada = pd.read_csv('https://raw.githubusercontent.com/ximenarojo/prueba/main/Licenciadas.csv')
 df_denegada = pd.read_csv('https://raw.githubusercontent.com/ximenarojo/prueba/main/nolicenciadas.csv')
@@ -241,7 +240,7 @@ if selected == 'Localización':
     st.write('Se encontraron', n,'registros de universidades para su búsqueda.')    
     
 #--------------------------------------------------------------------------------------------
-if selected == 'Funcionamiento':
+if selected == 'Periodo':
     st.markdown("<h1 style ='text-align: center'>Licencia de Funcionamiento Institucional</h1>", unsafe_allow_html=True)
     st.markdown("---")
     st.write('La Licencia de Funcionamiento Institucional es de carácter temporal y renovable, con una vigencia mínima de seis (6) años, y es otorgada o denegada por el Consejo Directivo de la SUNEDU. Esta se determina en base a una serie de factores, entre los que destaca la promoción de la investigación y los hallazgos que dicha universidad pueda exponer ante la comunidad internacional.')
