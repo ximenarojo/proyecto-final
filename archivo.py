@@ -259,9 +259,9 @@ if selected == 'Periodo':
     st.markdown("###")   
     st.write('**Gráfico 4.** Proporción de la cantidad de universidades por períodos de vigencia.')
     option = {
-        "title": {"text": " ", "left": "center"},
+        "title": {"text": " ", "right": "center"},
         "tooltip": {"trigger": "item"},
-        "legend": {"orient": "vertical", "left": "left",},
+        "legend": {"orient": "vertical", "right": "right",},
         'series': [
             {
                 'name': 'Vigencia',
@@ -288,20 +288,6 @@ if selected == 'Periodo':
               )
     
 
-    
-    pie_chart = df.PERIODO_LICENCIAMIENTO.value_counts()
-    pie_chart = pd.DataFrame(pie_chart)
-    pie_chart = pie_chart.reset_index()
-    pie_chart.columns = ['PERIODO_LICENCIAMIENTO','TOTAL']
-    fig1, ax1 = plt.subplots()
-    ax1.pie(pie_chart['TOTAL'], labels = pie_chart['PERIODO_LICENCIAMIENTO'], autopct='%1.1f%%')
-    ax1.axis('equal')
-    st.write('**Gráfico 4.** Cantidad de universidades (en %) por períodos de vigencia (en años).')
-    st.pyplot(fig1)
-    
-    
-    
-    
     
     st.write('Hasta la fecha (31/08/2022), **de 93** universidades licenciadas, **solo 5** han sido beneficiadas con el tiempo máximo de licenciamiento.')
 
