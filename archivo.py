@@ -256,7 +256,8 @@ if selected == 'Periodo':
     n = df[mask].shape[0]
     st.write(f'Se encontraron {n} resultados para su búsqueda.')
     
-    st.markdown("###")    
+    st.markdown("###")   
+    st.write('**Gráfico 4.** Proporción de la cantidad de universidades por períodos de vigencia.')
     option = {
         'series': [
             {
@@ -279,7 +280,7 @@ if selected == 'Periodo':
         ]
     };
     st_echarts(
-        options=option, height="800px",
+        options=option, height="400px",
               )
     
 
