@@ -150,7 +150,7 @@ df_denegada = pd.read_csv('https://raw.githubusercontent.com/ximenarojo/prueba/m
 df_io = pd.read_csv('https://raw.githubusercontent.com/ximenarojo/prueba/main/IO.csv')
 df_ninguno = pd.read_csv('https://raw.githubusercontent.com/ximenarojo/prueba/main/Ninguno.csv')
 
-if selected == 'Localización':
+if selected == 'Localización': 
     st.markdown("<h1 style ='text-align: center'>Mapa interactivo: Localización</h1>", unsafe_allow_html=True)
     st.markdown("---")
     st.write('**A continuación, seleccione una opción para visualizar la información.**')
