@@ -49,7 +49,7 @@ if selected == 'Inicio':
     video_bytes = video_file.read()
     st.video(video_bytes)
     st.write('**Fuente**: SUNEDU, 2016.')
-    st.markdown("---")
+    st.markdown("---") 
     st.header("Estatus del Licenciamiento Institucional:")
     st.caption('La información presentada a continuación permite acceder al Dataset “Licenciamiento Institucional” elaborado por la Superintendencia Nacional de Educación Superior Universitaria (SUNEDU) donde se ha registrado el avance y estatus del Licenciamiento Institucional de las universidades del Perú.')
     st.caption ('Última actualización: 31/08/2022.')
