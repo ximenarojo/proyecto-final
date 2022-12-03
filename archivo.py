@@ -241,10 +241,10 @@ if selected == 'Localización':
     
 #--------------------------------------------------------------------------------------------
 if selected == 'Periodo':
-    st.markdown("<h1 style ='text-align: center'>Licencia de Funcionamiento Institucional</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 style ='text-align: center'>Vigencia del Licenciamiento Institucional</h1>", unsafe_allow_html=True)
     st.markdown("---")
-    st.write('La Licencia de Funcionamiento Institucional es de carácter temporal y renovable, con una vigencia mínima de seis (6) años, y es otorgada o denegada por el Consejo Directivo de la SUNEDU. Esta se determina en base a una serie de factores, entre los que destaca la promoción de la investigación y los hallazgos que dicha universidad pueda exponer ante la comunidad internacional.')
-    st.write('- La Ley Universitaria estableció un periodo mínimo de vigencia de 6 años, al que se suma otro de 8 años y de 10 años.')
+    st.write('La Licencia Institucional es de carácter temporal y renovable, otorgada o denegada por el Consejo Directivo de la SUNEDU. Esta se determina en base a una serie de factores, entre los que destaca la promoción de la investigación y los hallazgos que dicha universidad pueda exponer ante la comunidad internacional.')
+    st.write('- La Ley Universitaria estableció un periodo mínimo de vigencia de seis (6)años, al que se suma otro de ocho (8) y de diez(10) años.')
     st.markdown("###")
     df = pd.read_csv('Licenciadas.csv')
     pie_chart = df.PERIODO_LICENCIAMIENTO.value_counts()
@@ -254,7 +254,7 @@ if selected == 'Periodo':
     fig1, ax1 = plt.subplots()
     ax1.pie(pie_chart['TOTAL'], labels = pie_chart['PERIODO_LICENCIAMIENTO'], autopct='%1.1f%%')
     ax1.axis('equal')
-    st.write('**Gráfico 4. Período de licenciamiento en años.**')
+    st.write('**Gráfico 4.** Porcentaje de universidades con respecto al período de licenciamiento (en años).')
     st.markdown("###")
     st.pyplot(fig1)
     
