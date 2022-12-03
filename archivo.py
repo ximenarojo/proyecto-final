@@ -254,7 +254,8 @@ if selected == 'Periodo':
     mask = (df['PERIODO_LICENCIAMIENTO'].isin(periodo_selec))
     n = df[mask].shape[0]
     st.write(f'Se encontraron {n} resultados para su búsqueda.')
-    df = pd.read_csv('Licenciadas.csv')
+    st.markdown("###")
+    #df = pd.read_csv('Licenciadas.csv')
     pie_chart = df.PERIODO_LICENCIAMIENTO.value_counts()
     pie_chart = pd.DataFrame(pie_chart)
     pie_chart = pie_chart.reset_index()
