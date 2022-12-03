@@ -254,10 +254,6 @@ if selected == 'Periodo':
     mask = (df['PERIODO_LICENCIAMIENTO'].isin(periodo_selec))
     n = df[mask].shape[0]
     st.write(f'Se encontraron {n} resultados para su búsqueda.')
-    st.markdown("###")
-    st.write('Hasta la fecha (31/08/2022), **de 93** universidades licenciadas, **solo 5** han sido beneficiadas con el tiempo máximo de licenciamiento.')
-
-        
     df = pd.read_csv('Licenciadas.csv')
     pie_chart = df.PERIODO_LICENCIAMIENTO.value_counts()
     pie_chart = pd.DataFrame(pie_chart)
@@ -266,9 +262,15 @@ if selected == 'Periodo':
     fig1, ax1 = plt.subplots()
     ax1.pie(pie_chart['TOTAL'], labels = pie_chart['PERIODO_LICENCIAMIENTO'], autopct='%1.1f%%')
     ax1.axis('equal')
-    st.write('**Gráfico 4.** Porcentaje de universidades con respecto al período de licenciamiento (en años).')
+    st.write('**Gráfico 4.** Cantidad de universidades (en %) por períodos de vigencia (en años).')
     st.pyplot(fig1)
     
+    
+    
+    
+    
+    st.write('Hasta la fecha (31/08/2022), **de 93** universidades licenciadas, **solo 5** han sido beneficiadas con el tiempo máximo de licenciamiento.')
+
     
     
     #image = Image.open('Vigencia.png')
