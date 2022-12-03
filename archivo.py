@@ -282,7 +282,7 @@ if selected == 'Periodo':
     st.markdown("###")
     st.subheader('Universidades beneficiadas con el tiempo máximo de licenciamiento.')
     image = Image.open('periodo.jpg')
-    st.image(image) 
+    st.image(image)  
     st.write("**Fuente**: Elaboración propia.")
 
 #--------------------------------------------------------------------------------------------
