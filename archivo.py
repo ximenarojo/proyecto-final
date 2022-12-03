@@ -247,23 +247,22 @@ if selected == 'Periodo':
     st.write('- La Ley Universitaria estableció un periodo mínimo de vigencia de 6 años, al que se suma otro de 8 años y de 10 años.')
     st.markdown("###")
     df = pd.read_csv('Licenciadas.csv')
-    col1, col2 = st.columns(2)
-    with col1:
-        pie_chart = df.PERIODO_LICENCIAMIENTO.value_counts()
-        pie_chart = pd.DataFrame(pie_chart)
-        pie_chart = pie_chart.reset_index()
-        pie_chart.columns = ['PERIODO_LICENCIAMIENTO','TOTAL']
-        fig1, ax1 = plt.subplots()
-        ax1.pie(pie_chart['TOTAL'], labels = pie_chart['PERIODO_LICENCIAMIENTO'], autopct='%1.1f%%')
-        ax1.axis('equal')
-        st.write('**Gráfico 4. Período de licenciamiento en años.**')
-        st.markdown("###")
-        st.pyplot(fig1)
-    with col2:
-        st.write('Hasta la fecha (31/08/2022), **de las 93** universidades licenciadas, **solo 5** han sido beneficiadas con el tiempo máximo de licenciamiento.')
-        image = Image.open('Vigencia.png')
-        st.image(image) 
-        st.write("**Fuente**: Elaboración propia.")
+    pie_chart = df.PERIODO_LICENCIAMIENTO.value_counts()
+    pie_chart = pd.DataFrame(pie_chart)
+    pie_chart = pie_chart.reset_index()
+    pie_chart.columns = ['PERIODO_LICENCIAMIENTO','TOTAL']
+    fig1, ax1 = plt.subplots()
+    ax1.pie(pie_chart['TOTAL'], labels = pie_chart['PERIODO_LICENCIAMIENTO'], autopct='%1.1f%%')
+    ax1.axis('equal')
+    st.write('**Gráfico 4. Período de licenciamiento en años.**')
+    st.markdown("###")
+    st.pyplot(fig1)
+    
+    
+    st.write('Hasta la fecha (31/08/2022), **de las 93** universidades licenciadas, **solo 5** han sido beneficiadas con el tiempo máximo de licenciamiento.')
+    image = Image.open('Vigencia.png')
+    st.image(image) 
+    st.write("**Fuente**: Elaboración propia.")
         
     st.markdown("###")
     st.write('**A continuación, seleccione una opción para visualizar la información.**')
@@ -299,7 +298,7 @@ if selected == 'Equipo':
     <input type="hidden" name="_captcha" value="false" requiered>
     <input type="text" name="name" placeholder="Nombre" requiered>
     <input type="email" name="email" placeholder="Correo electrónico" requiered>
-    <textarea name="message" placeholder="¡Escríbenos un mensaje!"></textarea>
+    <textarea name="message" placeholder="¡Escríbenos un mensaje o sugerencia!"></textarea>
     <button type= "submit">Enviar</button>
     </form>
     """ 
