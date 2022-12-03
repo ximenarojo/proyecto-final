@@ -5,6 +5,7 @@ import numpy as np
 from streamlit_option_menu import option_menu
 import urllib.request
 import matplotlib.pyplot as plt
+from streamlit_echarts import st_echarts
 from PIL import Image
 
 #-----------------------------------------------------------
@@ -241,7 +242,7 @@ if selected == 'Localización':
     
 #--------------------------------------------------------------------------------------------
 if selected == 'Periodo':
-    st.markdown("<h1 style ='text-align: center'>Vigencia del Licenciamiento Institucional</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 style ='text-align: center'>Licenciamiento Institucional:Vigencia</h1>", unsafe_allow_html=True)
     st.markdown("---")
     st.write('La Licencia Institucional es de carácter temporal y renovable, otorgada o denegada por el Consejo Directivo de la SUNEDU. Esta se determina en base a una serie de factores, entre los que destaca la promoción de la investigación y los hallazgos que dicha universidad pueda exponer ante la comunidad internacional.')
     st.write('La Ley Universitaria estableció un periodo mínimo de vigencia de seis (6)años, al que se suma otro de ocho (8) y de diez(10).')
@@ -254,11 +255,8 @@ if selected == 'Periodo':
     mask = (df['PERIODO_LICENCIAMIENTO'].isin(periodo_selec))
     n = df[mask].shape[0]
     st.write(f'Se encontraron {n} resultados para su búsqueda.')
-    st.markdown("###")
-    #df = pd.read_csv('Licenciadas.csv')
     
-    #from streamlit_echarts import st_pyecharts
-    from streamlit_echarts import st_echarts
+    st.markdown("###")    
     option = {
         'series': [
             {
@@ -281,8 +279,8 @@ if selected == 'Periodo':
         ]
     };
     st_echarts(
-        options=option, height="600px",
-    )
+        options=option, height="800px",
+              )
     
 
     
