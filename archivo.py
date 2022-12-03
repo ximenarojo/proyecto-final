@@ -257,6 +257,7 @@ if selected == 'Periodo':
     st.markdown("###")
     #df = pd.read_csv('Licenciadas.csv')
     
+    from streamlit_echarts import st_echarts
     a = df["PERIODO_LICENCIAMIENTO"].value_counts()
     b = df["PERIODO_LICENCIAMIENTO"].value_counts()
     c = df["PERIODO_LICENCIAMIENTO"].value_counts()
