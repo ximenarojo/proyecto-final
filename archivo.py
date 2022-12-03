@@ -243,9 +243,22 @@ if selected == 'Localización':
 if selected == 'Periodo':
     st.markdown("<h1 style ='text-align: center'>Vigencia del Licenciamiento Institucional</h1>", unsafe_allow_html=True)
     st.markdown("---")
-    st.write('La Licencia Institucional es de carácter temporal y renovable, otorgada o denegada por el Consejo Directivo de la SUNEDU. Esta se determina en base a una serie de factores, entre los que destaca la promoción de la investigación y los hallazgos que dicha universidad pueda exponer ante la comunidad internacional. Hasta la fecha (31/08/2022), **de las 93** universidades licenciadas, **solo 5** han sido beneficiadas con el tiempo máximo de licenciamiento.')
-    st.write('- La Ley Universitaria estableció un periodo mínimo de vigencia de seis (6)años, al que se suma otro de ocho (8) y de diez(10) años.')
+    st.write('La Licencia Institucional es de carácter temporal y renovable, otorgada o denegada por el Consejo Directivo de la SUNEDU. Esta se determina en base a una serie de factores, entre los que destaca la promoción de la investigación y los hallazgos que dicha universidad pueda exponer ante la comunidad internacional.')
+    st.write('La Ley Universitaria estableció un periodo mínimo de vigencia de seis (6)años, al que se suma otro de ocho (8) y de diez(10) años.')
     st.markdown("###")
+    df = pd.read_csv('Licenciadas.csv')
+    periodo = df['PERIODO_LICENCIAMIENTO'].unique().tolist()
+    periodo_selec = st.multiselect('A continuación, seleccione una opción para visualizar la cantidad de universidades por períodos de vigencia:', 
+                                   periodo,
+                                   default = periodo)
+    mask = (df['PERIODO_LICENCIAMIENTO'].isin(periodo_selec))
+    n = df[mask].shape[0]
+    st.write(f'Se encontraron {n} resultados para su búsqueda.')
+    st.markdown("###")
+    if selected == '10':
+        st.write('Hasta la fecha (31/08/2022), **de las 93** universidades licenciadas, **solo 5** han sido beneficiadas con el tiempo máximo de licenciamiento.')
+
+        
     df = pd.read_csv('Licenciadas.csv')
     pie_chart = df.PERIODO_LICENCIAMIENTO.value_counts()
     pie_chart = pd.DataFrame(pie_chart)
@@ -259,21 +272,11 @@ if selected == 'Periodo':
     
     
     
-    image = Image.open('Vigencia.png')
+    #image = Image.open('Vigencia.png')
     #st.image(image) 
-    st.write("**Fuente**: Elaboración propia.")
+    #st.write("**Fuente**: Elaboración propia.")
         
-    st.markdown("###")
-    st.write('**A continuación, seleccione una opción para visualizar la información.**')
-    df = pd.read_csv('Licenciadas.csv')
-    periodo = df['PERIODO_LICENCIAMIENTO'].unique().tolist()
-    periodo_selec = st.multiselect('A continuación, seleccione solamente un período de licenciamiento:', 
-                                   periodo,
-                                   default = periodo)
-    mask = (df['PERIODO_LICENCIAMIENTO'].isin(periodo_selec))
-    n = df[mask].shape[0]
-    st.write(f'Se encontraron {n} resultados para su búsqueda.')
-    st.markdown("###")
+
 
     url = 'https://raw.githubusercontent.com/ximenarojo/prueba/main/Licenciadas.csv'
     datos = pd.read_csv(url, sep=',')
