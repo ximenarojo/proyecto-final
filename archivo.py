@@ -8,7 +8,6 @@ import matplotlib.pyplot as plt
 from streamlit_echarts import st_echarts
 from PIL import Image
 
-
 #-----------------------------------------------------------
 st.set_page_config(layout='wide', initial_sidebar_state='expanded')
 with open('upch.css') as f:
@@ -166,7 +165,7 @@ if selected == 'Localización':
         )
     option = '-'
     if dataset == 'Licencia otorgada':
-        option = 'Licencia otorgada'
+        option = 'licencia otorgada'
         st.markdown("###")
         st.write('**Gráfico 3. Universidades con '+option+' localizadas en el mapa interactivo mundial.**')
         @st.cache
@@ -180,14 +179,14 @@ if selected == 'Localización':
         data = otorgada_data()
         st.map(data)        
         st.markdown("###")
-        st.write('**Lista de universidades con '+option+' localizadas en un mapa interactivo mundial.**')
+        st.write('**Lista de universidades con '+option+' localizadas en el mapa interactivo mundial.**')
         st.dataframe(df_otorgada)
         n = len(df_otorgada.axes[0]) 
         
     elif dataset == 'Licencia denegada':
         option = 'licencia denegada'
         st.markdown("###")
-        st.write('**Gráfico 3. Universidades con '+option+' localizadas en un mapa interactivo mundial.**')
+        st.write('**Gráfico 3. Universidades con '+option+' localizadas en el mapa interactivo mundial.**')
         @st.cache
         def denegada_data():
             df_denegada = pd.read_csv('nolicenciadas.csv')
@@ -198,14 +197,14 @@ if selected == 'Localización':
             return df_denegada
         data = denegada_data()
         st.map(data)
-        st.write('**Lista de universidades con '+option+' localizadas en un mapa interactivo mundial.**')
+        st.write('**Lista de universidades con '+option+' localizadas en el mapa interactivo mundial.**')
         st.dataframe(df_denegada)
         n = len(df_denegada.axes[0])
     
     elif dataset == 'Con informe de observaciones (IO) notificado':
         option = 'informe de observaciones (IO) notificado'
         st.markdown("###")
-        st.write('**Gráfico 3. Universidades con '+option+' localizadas en un mapa interactivo mundial.**')
+        st.write('**Gráfico 3. Universidades con '+option+' localizadas en el mapa interactivo mundial.**')
         @st.cache
         def io_data():
             df_io = pd.read_csv('IO.csv')
@@ -216,14 +215,14 @@ if selected == 'Localización':
             return df_io
         data = io_data()
         st.map(data)
-        st.write('**Lista de universidades con '+option+' localizadas en un mapa interactivo mundial.**')
+        st.write('**Lista de universidades con '+option+' localizadas en el mapa interactivo mundial.**')
         st.dataframe(df_io)
         n = len(df_io.axes[0])
         
     elif dataset == 'Ninguno':
         option = 'ningún estado de licenciamiento'
         st.markdown("###")
-        st.write('**Gráfico 3. Universidades con '+option+' localizadas en un mapa interactivo mundial.**')
+        st.write('**Gráfico 3. Universidades con '+option+' localizadas en el mapa interactivo mundial.**')
         @st.cache
         def ninguno_data():
             df_ninguno = pd.read_csv('Ninguno.csv')
@@ -235,7 +234,7 @@ if selected == 'Localización':
         data = ninguno_data()
         st.map(data)
         
-        st.write('**Lista de universidades con '+option+' localizadas en un mapa interactivo mundial.**')
+        st.write('**Lista de universidades con '+option+' localizadas en el mapa interactivo mundial.**')
         st.dataframe(df_ninguno)
         n = len(df_ninguno.axes[0])
      
