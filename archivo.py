@@ -277,8 +277,11 @@ if selected == 'Periodo':
             }
         ]
     };
+    st_echarts(
+        height="600px",
+    )
     
-   
+
     
     pie_chart = df.PERIODO_LICENCIAMIENTO.value_counts()
     pie_chart = pd.DataFrame(pie_chart)
