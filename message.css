@@ -10,7 +10,7 @@ input[type=text], input[type=email], textarea {
 }
 
 button[type=submit] {
-  background-color: blue;
+  background-color: green;
   color: white;
   padding: 12px 20px;
   border: none;
