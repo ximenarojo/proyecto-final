@@ -257,38 +257,7 @@ if selected == 'Periodo':
     st.markdown("###")
     #df = pd.read_csv('Licenciadas.csv')
     
-    from streamlit_echarts import st_echarts
-    a = df["PERIODO_LICENCIAMIENTO"].value_counts()
-    b = df["PERIODO_LICENCIAMIENTO"].value_counts()
-    c = df["PERIODO_LICENCIAMIENTO"].value_counts()
-    options = {
-        "title": {"text": " ", "left": "center"},
-        "tooltip": {"trigger": "item"},
-        "legend": {"orient": "vertical", "left": "left",},
-        "series": [
-            {
-                "name": "PERIODO_LICENCIAMIENTO",
-                "type": "pie",
-                "radius": "50%",
-                "data": [
-                    {"value": a, "name": "10 años"},
-                    {"value": b, "name": "8 años"},
-                    {"value": c, "name": "6 años"},
-                ],
-                "emphasis": {
-                    "itemStyle": {
-                        "shadowBlur": 10,
-                        "shadowOffsetX": 0,
-                        "shadowColor": "rgba(0, 0, 0, 0.5)",
-                    }
-                },
-            }
-        ],
-    }
-    st_echarts(
-        options=options, height="600px",
-    )
-    
+   
     
     pie_chart = df.PERIODO_LICENCIAMIENTO.value_counts()
     pie_chart = pd.DataFrame(pie_chart)
