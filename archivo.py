@@ -166,9 +166,9 @@ if selected == 'Localización':
         )
     option = '-'
     if dataset == 'Licencia otorgada':
-        option = 'licencia otorgada'
+        option = 'Licencia otorgada'
         st.markdown("###")
-        st.write('**Gráfico 3. Universidades con '+option+' localizadas en un mapa interactivo mundial.**')
+        st.write('**Gráfico 3. Universidades con '+option+' localizadas en el mapa interactivo mundial.**')
         @st.cache
         def otorgada_data():
             df_otorgada = pd.read_csv('Licenciadas.csv')
