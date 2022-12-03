@@ -262,16 +262,16 @@ if selected == 'Periodo':
                 'type': 'pie',
                 'data': [
                     {
-                        value: 82,
-                        name: '6 años'
+                        'value': 82,
+                        'name': '6 años'
                     },
                     {
-                        value: 6,
-                        name: '8 años'
+                        'value': 6,
+                        'name': '8 años'
                     },
                     {
-                        value: 5,
-                        name: '10 años'
+                        'value': 5,
+                        'name': '10 años'
                     }
                 ]
             }
