@@ -279,22 +279,12 @@ if selected == 'Periodo':
               )
     st.write('A la fecha, **de 93** universidades licenciadas, **solo 5** han sido beneficiadas con el tiempo máximo de licenciamiento.')
     st.caption('Fecha de última actualización: 31/08/2022')
+    st.markdown("###")
+    st.subheader('Universidades beneficiadas con el tiempo máximo de licenciamiento.')
+    image = Image.open('periodo.png')
+    st.image(image) 
+    st.write("**Fuente**: Elaboración propia.")
 
-    
-    
-    #image = Image.open('Vigencia.png')
-    #st.image(image) 
-    #st.write("**Fuente**: Elaboración propia.")
-        
-
-
-    url = 'https://raw.githubusercontent.com/ximenarojo/prueba/main/Licenciadas.csv'
-    datos = pd.read_csv(url, sep=',')
-    
-     
-    #st.line_chart(data=datos, x='NOMBRE', y='PERIODO_LICENCIAMIENTO')
-    
-    
 #--------------------------------------------------------------------------------------------
 if selected == 'Equipo':
     st.markdown("<h1 style='text-align: center'>¿Quiénes somos?</h1>", unsafe_allow_html=True)
