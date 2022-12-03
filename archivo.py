@@ -257,9 +257,9 @@ if selected == 'Periodo':
     st.markdown("###")
     #df = pd.read_csv('Licenciadas.csv')
     
-    a = df["PERIODO_LICENCIAMIENTO"].value_counts().10
-    b = df["PERIODO_LICENCIAMIENTO"].value_counts().8
-    c = df["PERIODO_LICENCIAMIENTO"].value_counts().6
+    a = df["PERIODO_LICENCIAMIENTO"].value_counts()
+    b = df["PERIODO_LICENCIAMIENTO"].value_counts()
+    c = df["PERIODO_LICENCIAMIENTO"].value_counts()
     options = {
         "title": {"text": " ", "left": "center"},
         "tooltip": {"trigger": "item"},
