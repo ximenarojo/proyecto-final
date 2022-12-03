@@ -17,7 +17,7 @@ with st.sidebar:
     st.sidebar.info('Análisis y exploración de datos sobre el avance y estatus del Licenciamiento Institucional de las universidades peruanas.')
     selected = option_menu(
         menu_title = 'Menú',
-        options = ['Inicio', 'Localización','Vigencia','Equipo'],
+        options = ['Inicio', 'Localización','Funcionamiento','Equipo'],
         icons = ['house', 'map', 'book','people'],
         menu_icon='cast',
         default_index = 0,
@@ -38,15 +38,17 @@ if selected == 'Inicio':
     st.subheader('¿Qué es el Licenciamiento Institucional?')
     st.write("El Licenciamiento Institucional es un procedimiento obligatorio cuyo objetivo es verificar que las universidades cumplan con las CBC a fin de obtener una licencia que autorice su funcionamiento legal y, de esta manera, poder ofrecer un servicio educativo superior universitario. Como resultado, existe un sistema universitario más ordenado y con una mayor orientación hacia la mejora continua.")
     st.subheader('¿Qué son las Condiciones Básicas de Calidad?')
-    st.write('Las Condiciones Básicas de Calidad (CBC) son un conjunto de estándares mínimos que constituyen un mecanismo de protección a los estudiantes, sus familias y la sociedad en conjunto, con los que una universidad debe contar para obtener el licenciamiento.')
+    st.write('Las Condiciones Básicas de Calidad (CBC) son estándares mínimos que sirven de pautas generales para la evaluación de la capacidad de la universidad para la prestación del servicio educativo superior universitario y autorización de su funcionamiento.')
     image = Image.open('CBC.jpeg')
     st.image(image)
     st.write("**Fuente**: SUNEDU, 2018.")
     st.subheader('Etapas del Licenciamiento Institucional:')
+    image = Image.open('Etapas.jpeg')
+    st.image(image)
     video_file = open('Etapas del Licenciamiento para las universidades.mp4', 'rb')
     video_bytes = video_file.read()
     st.video(video_bytes)
-    st.write('**Fuente**: SUNEDU, 2015.')
+    st.write('**Fuente**: SUNEDU, 2016.')
     st.markdown("---")
     st.header("Estatus del Licenciamiento Institucional:")
     st.caption('La información presentada a continuación permite acceder al Dataset “Licenciamiento Institucional” elaborado por la Superintendencia Nacional de Educación Superior Universitaria (SUNEDU) donde se ha registrado el avance y estatus del Licenciamiento Institucional de las universidades del Perú.')
@@ -121,6 +123,26 @@ if selected == 'Inicio':
     st.write('**Gráfico 3. Tipo de gestión de las universidades según zona geográfica seleccionada.**')
     st.markdown("###")
     st.bar_chart(bar_chart)
+    
+    st.markdown("---")
+    st.header('Un poco de historia:')
+    st.write('Hacia 1959, el Perú contaba con 9 universidades, de las cuales una era de gestión privada. En adelante, el número de universidades incrementó con el Decreto Legislativo Nº 882, Ley de Promoción de la Inversión en la Educación, que permitió la creación y el funcionamiento de universidades privadas con o sin fines de lucro, bajo cualquier forma de organización.')
+    st.write('Figura 3. La educación superior universitaria en Perú.')
+    image = Image.open('Historia.jpeg')
+    st.image(image) 
+    st.write("**Fuente**: SUNEDU, 2016.")
+    st.subheader('A nivel mundial')
+    st.write('A nivel internacional, la calidad de las universidades peruanas es percibida como baja. **Solo una universidad peruana figura entre las 500 mejores universidades del mundo en el QS World University Rankings 2015-2016**. ')
+    image = Image.open('ranking_1.jpg')
+    st.image(image)
+    st.caption('En junio del 2019 fueron publicados los resultados del ranking 2020, donde la PUCP figura nuevamente como líder nacional, posicionándose en el puesto 474 y 17 a nivel mundial y latinoamericano respectivamente.')
+    st.markdown("###")
+    st.subheader('A nivel de América Latina')
+    st.write('Según este ranking, solo tres universidades peruanas figuran entre las 100 mejores de América Latina.')
+    image = Image.open('ranking_2.jpeg')
+    st.image(image)
+    image = Image.open('ranking_3.jpeg')
+    st.image(image)
     
 #-----------------------------------------------------------------------------------------------------
 df_otorgada = pd.read_csv('https://raw.githubusercontent.com/ximenarojo/prueba/main/Licenciadas.csv')
@@ -217,10 +239,10 @@ if selected == 'Localización':
     st.write('Se encontraron', n,'registros de universidades para su búsqueda.')    
     
 #--------------------------------------------------------------------------------------------
-if selected == 'Vigencia':
-    st.markdown("<h1 style ='text-align: center'>Licenciamiento Institucional: Vigencia</h1>", unsafe_allow_html=True)
+if selected == 'Funcionamiento':
+    st.markdown("<h1 style ='text-align: center'>Licencia de Funcionamiento Institucional</h1>", unsafe_allow_html=True)
     st.markdown("---")
-    st.write('De acuerdo a la SUNEDU, la vigencia del licenciamiento institucional para las universidades públicas o privadas es renovable y se determina en base a una serie de factores, entre los que destaca la promoción de la investigación y los hallazgos que dicha universidad pueda exponer ante la comunidad internacional.')
+    st.write('La Licencia de Funcionamiento Institucional es de carácter temporal y renovable, con una vigencia mínima de seis (6) años, y es otorgada o denegada por el Consejo Directivo de la SUNEDU. Esta se determina en base a una serie de factores, entre los que destaca la promoción de la investigación y los hallazgos que dicha universidad pueda exponer ante la comunidad internacional.')
     st.write('- La Ley Universitaria estableció un periodo mínimo de vigencia de 6 años, al que se suma otro de 8 años y de 10 años.')
     st.markdown("###")
     df = pd.read_csv('Licenciadas.csv')
