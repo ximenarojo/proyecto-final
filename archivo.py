@@ -282,7 +282,7 @@ if selected == 'Periodo':
         ]
     };
     st_echarts(
-        options=option, height="600px",height="600px",
+        options=option, height="600px", height="600px",
     )
     
 
