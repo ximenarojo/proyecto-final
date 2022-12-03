@@ -256,6 +256,39 @@ if selected == 'Periodo':
     st.write(f'Se encontraron {n} resultados para su búsqueda.')
     st.markdown("###")
     #df = pd.read_csv('Licenciadas.csv')
+    
+    a = df["PERIODO_LICENCIAMIENTO"].value_counts().10
+    b = df["PERIODO_LICENCIAMIENTO"].value_counts().8
+    c = df["PERIODO_LICENCIAMIENTO"].value_counts().6
+    options = {
+        "title": {"text": " ", "left": "center"},
+        "tooltip": {"trigger": "item"},
+        "legend": {"orient": "vertical", "left": "left",},
+        "series": [
+            {
+                "name": "PERIODO_LICENCIAMIENTO",
+                "type": "pie",
+                "radius": "50%",
+                "data": [
+                    {"value": int(a), "name": "10 años"},
+                    {"value": int(b), "name": "8 años"},
+                    {"value": int(c), "name": "6 años"},
+                ],
+                "emphasis": {
+                    "itemStyle": {
+                        "shadowBlur": 10,
+                        "shadowOffsetX": 0,
+                        "shadowColor": "rgba(0, 0, 0, 0.5)",
+                    }
+                },
+            }
+        ],
+    }
+    st_echarts(
+        options=options, height="600px",
+    )
+    
+    
     pie_chart = df.PERIODO_LICENCIAMIENTO.value_counts()
     pie_chart = pd.DataFrame(pie_chart)
     pie_chart = pie_chart.reset_index()
