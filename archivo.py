@@ -257,8 +257,7 @@ if selected == 'Periodo':
     st.markdown("###")
     #df = pd.read_csv('Licenciadas.csv')
     
-    #from pyecharts import options as opts
-    from streamlit_echarts import st_pyecharts
+    #from streamlit_echarts import st_pyecharts
     from streamlit_echarts import st_echarts
     option = {
         'series': [
