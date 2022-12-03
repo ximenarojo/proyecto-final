@@ -127,7 +127,7 @@ if selected == 'Inicio':
     st.markdown("---")
     st.header('Un poco de historia')
     st.write('Hacia 1959, el Perú contaba con 9 universidades, de las cuales una era de gestión privada. En adelante, el número de universidades incrementó con el Decreto Legislativo Nº 882, Ley de Promoción de la Inversión en la Educación, que permitió la creación y el funcionamiento de universidades privadas con o sin fines de lucro, bajo cualquier forma de organización.')
-    st.write('**Figura 3. La educación superior universitaria en Perú.**')
+    st.write('**Historia de la educación superior universitaria en Perú.**')
     image = Image.open('Historia.jpeg')
     st.image(image) 
     st.write("**Fuente**: SUNEDU, 2016.")
