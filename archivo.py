@@ -247,15 +247,14 @@ if selected == 'Periodo':
     st.write('La Licencia Institucional es de carácter temporal y renovable, otorgada o denegada por el Consejo Directivo de la SUNEDU. Esta se determina en base a una serie de factores, entre los que destaca la promoción de la investigación y los hallazgos que dicha universidad pueda exponer ante la comunidad internacional.')
     st.write('La Ley Universitaria estableció un periodo mínimo de vigencia de seis (6)años, al que se suma otro de ocho (8) y de diez(10).')
     st.markdown("###")
-    df = pd.read_csv('Licenciadas.csv')
-    periodo = df['PERIODO_LICENCIAMIENTO'].unique().tolist()
-    periodo_selec = st.multiselect('A continuación, seleccione una opción para visualizar la cantidad de universidades por períodos de vigencia:', 
+    #df = pd.read_csv('Licenciadas.csv')
+    #periodo = df['PERIODO_LICENCIAMIENTO'].unique().tolist()
+    #periodo_selec = st.multiselect('A continuación, seleccione una opción para visualizar la cantidad de universidades por períodos de vigencia:', 
                                    periodo,
                                    default = periodo)
-    mask = (df['PERIODO_LICENCIAMIENTO'].isin(periodo_selec))
-    n = df[mask].shape[0]
-    st.write(f'Se encontraron {n} resultados para su búsqueda.')
-    
+    #mask = (df['PERIODO_LICENCIAMIENTO'].isin(periodo_selec))
+    #n = df[mask].shape[0]
+    #st.write(f'Se encontraron {n} resultados para su búsqueda.')
     st.markdown("###")   
     st.write('**Gráfico 4.** Cantidad de universidades por períodos de vigencia (en años).')
     option = {
