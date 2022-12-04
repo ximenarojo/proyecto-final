@@ -8,22 +8,23 @@ import matplotlib.pyplot as plt
 from streamlit_echarts import st_echarts
 from PIL import Image
 
-#-----------------------------------------------------------
+#-------------------------------------------------------------------
+#Insertamos la barra lateral
 st.set_page_config(layout='wide', initial_sidebar_state='expanded')
 with open('upch.css') as f:
-    st.markdown(f'<style>{f.read()}</upch>', unsafe_allow_html=True)
+    st.markdown(f'<style>{f.read()}</upch>', unsafe_allow_html=True) #Insertamos el logo upch
 with st.sidebar: 
-    st.markdown("###")
+    st.markdown("###") #Lo utilizamos como un separador
     st.sidebar.header('Programación Avanzada - Proyecto Final 2022-2')
     st.sidebar.info('Análisis y exploración de datos sobre el avance y estatus del Licenciamiento Institucional de las universidades peruanas.')
     selected = option_menu(
         menu_title = 'Menú',
-        options = ['Inicio', 'Localización','Periodo','Equipo'],
-        icons = ['house', 'map', 'book','people'],
+        options = ['Inicio', 'Localización','Periodo','Equipo'],   #Dividimos en secciones
+        icons = ['house', 'map', 'book','people'],                 #Agregamos los iconos correspondientes a cada sección
         menu_icon='cast',
         default_index = 0,
         styles={
-            "nav-link-selected":{"background-color":"skyblue"}
+            "nav-link-selected":{"background-color":"skyblue"}     #Cambiamos el color de selección del menú a celeste
         },
     )
 #------------------------------------------------------------------------------------------------------------
@@ -82,13 +83,14 @@ if selected == 'Inicio':
     st.write('**Gráfico 1. Registro (en general) de la cantidad de universidades existentes por departamento.**')
     df = pd.read_csv('Licenciamiento%20Institucional_2.csv')
     df_dep = pd.DataFrame(df["DEPARTAMENTO"].value_counts())
-    st.bar_chart(df_dep)
+    st.bar_chart(df_dep)    #Insertamos el primer gráfico de barras
     
     st.write('**A continuación, seleccione una zona geográfica para visualizar el registro de universidades.**')
     st.markdown("###")
     df = pd.read_csv('Licenciamiento%20Institucional_2.csv')
-    df = df.drop(columns = ["CODIGO_ENTIDAD","NOMBRE","FECHA_INICIO_LICENCIAMIENTO","FECHA_FIN_LICENCIAMIENTO","LATITUD","LONGITUD","UBIGEO","FECHA_CORTE"])
+    df = df.drop(columns = ["CODIGO_ENTIDAD","NOMBRE","FECHA_INICIO_LICENCIAMIENTO","FECHA_FIN_LICENCIAMIENTO","LATITUD","LONGITUD","UBIGEO","FECHA_CORTE"])  #Para minimizar el dataset
     
+    #Insertamos una caja de selección para departamento, provincia y distrito en base al dataset
     set1 = np.sort(df['DEPARTAMENTO'].dropna().unique())
     sel1 = st.selectbox('Seleccione un departamento:', set1)
     df_DEPARTAMENTO = df[df['DEPARTAMENTO'] == sel1]
@@ -115,7 +117,7 @@ if selected == 'Inicio':
     ax1.axis('equal')
     st.write('**Gráfico 2. Estado de Licenciamiento (en %) de las universidades según zona geográfica seleccionada.**')
     st.markdown("###")
-    st.pyplot(fig1)
+    st.pyplot(fig1)  #Insertamos el primer gráfico circular 
 
     st.markdown("###")
     bar_chart = df_DISTRITO.TIPO_GESTION.value_counts()
@@ -123,7 +125,7 @@ if selected == 'Inicio':
     bar_chart.columns = ['Tipo de gestión']
     st.write('**Gráfico 3. Tipo de gestión de las universidades según zona geográfica seleccionada.**')
     st.markdown("###")
-    st.bar_chart(bar_chart)
+    st.bar_chart(bar_chart) #E insertamos el segundo gráfico de barras que está vinculado al gráfico circular anterior
     
     st.markdown("---")
     st.header('Un poco de historia')
@@ -152,17 +154,19 @@ df_denegada = pd.read_csv('https://raw.githubusercontent.com/ximenarojo/prueba/m
 df_io = pd.read_csv('https://raw.githubusercontent.com/ximenarojo/prueba/main/IO.csv')
 df_ninguno = pd.read_csv('https://raw.githubusercontent.com/ximenarojo/prueba/main/Ninguno.csv')
 
+#Una vez cargado los archivos, procedemos a insertar un mapa interactivo que se vincule a cada uno.
 if selected == 'Localización': 
     st.markdown("<h1 style ='text-align: center'>Mapa interactivo: Localización</h1>", unsafe_allow_html=True)
     st.markdown("---")
     st.write('**A continuación, seleccione una opción para visualizar la información.**')
+    #Primero, creamos una caja de selección para que el usuario elija su opción
     dataset = st.selectbox(
         'Seleccione una opción:',
         ('Licencia otorgada',
          'Licencia denegada',
          'Con informe de observaciones (IO) notificado',
          'Ninguno')
-        )
+        ) 
     option = '-'
     if dataset == 'Licencia otorgada':
         option = 'licencia otorgada'
@@ -172,12 +176,12 @@ if selected == 'Localización':
         def otorgada_data():
             df_otorgada = pd.read_csv('Licenciadas.csv')
             df_otorgada = df_otorgada.rename(columns={
-                'LATITUD':'lat',
+                'LATITUD':'lat',         
                 'LONGITUD':'lon',
             })
             return df_otorgada
         data = otorgada_data()
-        st.map(data)        
+        st.map(data)  #Insertamos el primer mapa con respecto a las universidades licenciadas       
         st.markdown("###")
         st.write('**Lista de universidades con '+option+' localizadas en el mapa interactivo mundial.**')
         st.dataframe(df_otorgada)
@@ -196,7 +200,7 @@ if selected == 'Localización':
             })
             return df_denegada
         data = denegada_data()
-        st.map(data)
+        st.map(data) #Insertamos el segundo mapa con respecto a las universidades no licenciadas     
         st.write('**Lista de universidades con '+option+' localizadas en el mapa interactivo mundial.**')
         st.dataframe(df_denegada)
         n = len(df_denegada.axes[0])
@@ -214,7 +218,7 @@ if selected == 'Localización':
             })
             return df_io
         data = io_data()
-        st.map(data)
+        st.map(data)  #Insertamos el tercer mapa con respecto a las universidades con io  
         st.write('**Lista de universidades con '+option+' localizadas en el mapa interactivo mundial.**')
         st.dataframe(df_io)
         n = len(df_io.axes[0])
@@ -232,13 +236,15 @@ if selected == 'Localización':
             })
             return df_ninguno
         data = ninguno_data()
-        st.map(data)
+        st.map(data) #Insertamos el cuarto mapa con respecto a las universidades que no presentan ningun estado de licenciamiento  
         
         st.write('**Lista de universidades con '+option+' localizadas en el mapa interactivo mundial.**')
         st.dataframe(df_ninguno)
         n = len(df_ninguno.axes[0])
      
     st.write('Se encontraron', n,'registros de universidades para su búsqueda.')    
+    
+#Todos los gráficos de las secciones anteriores se realizaron de acuerdo a la guía de chart elements disponible en: https://docs.streamlit.io/library/api-reference/charts    
     
 #--------------------------------------------------------------------------------------------
 if selected == 'Periodo':
@@ -249,6 +255,8 @@ if selected == 'Periodo':
     st.markdown("###")
     #df = pd.read_csv('Licenciadas.csv') 
     st.write('**Gráfico 4.** Cantidad de universidades por períodos de vigencia (en años).')
+    
+    #Insertamos un segundo gráfico circular de acuerdo a la guía de echarts disponible en: https://echarts.apache.org/en/index.html
     option = {
         'title': {'text': " ", 'left': 'center'},
         'legend': {'orient': 'horizontal', 'left': 'left',},
@@ -295,6 +303,8 @@ if selected == 'Equipo':
     st.image(image)
     st.markdown("###")
     st.header('Contáctanos:')
+    
+    #Finalmente, insertamos un formulario de contacto a modo de brindar una experiencia más interactiva con el usuario
     contact_form = """
     <form action = "https://formsubmit.co/ximena.rojo@upch.pe" method="POST">
     <input type="hidden" name="_captcha" value="false" requiered>
