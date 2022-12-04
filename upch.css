@@ -1,5 +1,3 @@
-#Código para insertar logo upch en la parte superior del menú
-
 [data-testid="stSidebar"] {
                 background-image: url(https://www.cayetano.edu.pe/cayetano/images/2018/Logo_Oficial.png);
                 background-size: 250px; 
