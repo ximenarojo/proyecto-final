@@ -69,10 +69,10 @@ if selected == 'Inicio':
     st.caption('A continuación, se proporciona una descripción de las variables incluidas en el Dataset.')
     @st.experimental_memo
     def download_data():
-        url ="https://raw.githubusercontent.com/ximenarojo/prueba/main/variables.csv"
-        filename ="variables.csv"
+        url ="https://raw.githubusercontent.com/ximenarojo/proyecto-final/main/descripcion.csv"
+        filename ="descripcion.csv"
         urllib.request.urlretrieve(url,filename)
-        df_variables = pd.read_csv('variables.csv')
+        df_variables = pd.read_csv('descripcion.csv')
         return df_variables
     download_data()
     st.dataframe(download_data())        
