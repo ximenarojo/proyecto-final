@@ -18,3 +18,6 @@ Rojo Sánchez, Ximena Lucía
 
 Yalli Espinoza, Milena Nicol
 - correo: milena.yalli@upch.pe
+
+## Streamlit App
+Enlace: https://ximenarojo-proyecto-final-archivo-zddfnd.streamlit.app/
