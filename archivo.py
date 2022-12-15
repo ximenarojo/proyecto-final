@@ -317,3 +317,4 @@ if selected == 'Equipo':
     st.markdown(contact_form, unsafe_allow_html=True)
     with open('message.css') as f:
         st.markdown(f'<style>{f.read()}</message>', unsafe_allow_html=True)
+ 
